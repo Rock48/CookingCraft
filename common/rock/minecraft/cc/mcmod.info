@@ -1,0 +1,17 @@
+[
+{
+  "modid": "Rock_CookingCraft",
+  "name": "CookingCraft",
+  "description": "A Mod that adds more in-depth cooking aspects and food to Minecraft.",
+  "version": "pralpha0a",
+  "mcversion": "1.4.7",
+  "logoFile": "",
+  "url": "None Yet, Sooorrrryyyyyy",
+  "updateUrl": "",
+  "authors": ["Rock"],
+  "credits": "Made By Rock",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
