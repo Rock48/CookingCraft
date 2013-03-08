@@ -26,7 +26,7 @@ public class CookingCraft
 		proxy.registerRenderThings();
 		
 		kitchenTile = new BlockKitchenTile(250,0).setBlockName("kitchenTile");
-		doStuffBlock = new BlockDoStuffBlock(251,1).setBlockName("doStuffBlock");
+		doStuffBlock = new BlockDoStuffBlock(251,1).setBlockName("doStuffBlock").setRequiresSelfNotify();
 		
 		GameRegistry.registerBlock(kitchenTile, "kitchenTile");
 		GameRegistry.registerBlock(doStuffBlock, "doStuffBlock");

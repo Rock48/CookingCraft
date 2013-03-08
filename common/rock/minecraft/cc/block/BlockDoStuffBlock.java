@@ -18,17 +18,12 @@ public class BlockDoStuffBlock extends Block
 	{
 		return "/rock/minecraft/cc/art/sprites/cc_blocks.png";
 	}
-    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    public boolean onBlockActivated(World world, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
-    	if(par1World.isRemote)
-    	{
-    		return true;
-    	}
-    	else
-    	{
-    		World.setBlock(par2, par3+1, par4, Block.cake.blockID);
-    		return true;
-    	}
+
+   		world.setBlock(par2, par3+1, par4, Block.cake.blockID);
+    	return true;
+    	
     }
 
 }
