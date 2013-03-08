@@ -1,5 +1,6 @@
 package rock.minecraft.cc.core.proxy;
 
+import rock.minecraft.cc.lib.Sprites;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy
@@ -7,7 +8,7 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void registerRenderThings()
 	{
-		MinecraftForgeClient.preloadTexture("/rock/minecraft/cc/art/sprites/cc_blocks.png");
+		MinecraftForgeClient.preloadTexture(Sprites.CC_BLOCKS);
 	}
 
 }

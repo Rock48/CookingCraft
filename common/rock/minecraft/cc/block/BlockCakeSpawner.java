@@ -1,6 +1,7 @@
 
 package rock.minecraft.cc.block;
 
+import rock.minecraft.cc.lib.Sprites;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -15,7 +16,7 @@ public class BlockCakeSpawner extends Block
 	}
 	public String getTextureFile()
 	{
-		return "/rock/minecraft/cc/art/sprites/cc_blocks.png";
+		return Sprites.CC_BLOCKS;
 	}
     public void onBlockAdded(World world, int x, int y, int z)
     {
