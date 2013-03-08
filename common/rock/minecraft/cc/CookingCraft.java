@@ -1,7 +1,7 @@
 package rock.minecraft.cc;
 
 import net.minecraft.block.Block;
-import rock.minecraft.cc.block.BlockDoStuffBlock;
+import rock.minecraft.cc.block.BlockCakeSpawner;
 import rock.minecraft.cc.block.BlockKitchenTile;
 import rock.minecraft.cc.core.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -17,7 +17,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class CookingCraft 
 {
 	public static Block kitchenTile;
-	public static Block doStuffBlock;
+	public static Block cakeSpawner;
 	@SidedProxy(clientSide = "rock.minecraft.cc.core.proxy.ClientProxy", serverSide = "rock.minecraft.cc.core.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	@Init
@@ -26,13 +26,13 @@ public class CookingCraft
 		proxy.registerRenderThings();
 		
 		kitchenTile = new BlockKitchenTile(250,0).setBlockName("kitchenTile");
-		doStuffBlock = new BlockDoStuffBlock(251,1).setBlockName("doStuffBlock").setRequiresSelfNotify();
+		cakeSpawner = new BlockCakeSpawner(251,1).setBlockName("cakeSpawner").setRequiresSelfNotify();
 		
 		GameRegistry.registerBlock(kitchenTile, "kitchenTile");
-		GameRegistry.registerBlock(doStuffBlock, "doStuffBlock");
+		GameRegistry.registerBlock(cakeSpawner, "cakeSpawner");
 		
 		LanguageRegistry.addName(kitchenTile, "Kitchen Tile");
-		LanguageRegistry.addName(doStuffBlock, "Cake Spawner");
+		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");
 	}
 
 }

@@ -7,9 +7,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class BlockDoStuffBlock extends Block
+public class BlockCakeSpawner extends Block
 {
-	public BlockDoStuffBlock(int id, int texture)
+	public BlockCakeSpawner(int id, int texture)
 	{
 		super(id, texture, Material.rock);
 		this.setCreativeTab(CreativeTabs.tabRedstone);
@@ -25,5 +25,6 @@ public class BlockDoStuffBlock extends Block
     	return true;
     	
     }
+    
 
 }
