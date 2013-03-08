@@ -17,23 +17,23 @@ public class BlockCakeSpawner extends Block
 	{
 		return "/rock/minecraft/cc/art/sprites/cc_blocks.png";
 	}
-    public void onBlockAdded(World world, int par2, int par3, int par4)
+    public void onBlockAdded(World world, int x, int y, int z)
     {
     	if(!world.isRemote)
     	{
-            if(world.isBlockIndirectlyGettingPowered(par2, par3, par4)||world.isBlockGettingPowered(par2, par3, par4))
+            if(world.isBlockIndirectlyGettingPowered(x, y, z)||world.isBlockGettingPowered(x, y, z))
             {
-           		world.setBlock(par2, par3+1, par4, Block.cake.blockID);
+           		world.setBlock(x, y+1, z, Block.cake.blockID);
             }
     	}
     }
-    public void onNeighborBlockChange(World world, int par2, int par3, int par4, int par5)
+    public void onNeighborBlockChange(World world, int x, int y, int z, int par5)
     {	
     	if(!world.isRemote)
     	{
-            if(world.isBlockIndirectlyGettingPowered(par2, par3, par4)||world.isBlockGettingPowered(par2, par3, par4))
+            if(world.isBlockIndirectlyGettingPowered(x, y, z)||world.isBlockGettingPowered(x, y, z))
             {
-           		world.setBlock(par2, par3+1, par4, Block.cake.blockID);
+           		world.setBlock(x, y+1, z, Block.cake.blockID);
             }
     	}
     }
