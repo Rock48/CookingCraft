@@ -1,4 +1,4 @@
-package rock.minecraft.cc;
+package mods.cc.rock;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -6,13 +6,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import rock.minecraft.cc.block.BlockAluminumOre;
-import rock.minecraft.cc.block.BlockCakeSpawner;
-import rock.minecraft.cc.block.BlockKitchenTile;
-import rock.minecraft.cc.core.proxy.CommonProxy;
-import rock.minecraft.cc.item.ItemAluminumIngot;
-import rock.minecraft.cc.item.ItemFoodWormHole;
-import rock.minecraft.cc.world.OreGen;
+import mods.cc.rock.block.BlockAluminumOre;
+//import mods.cc.rock.block.BlockCakeSpawner;
+import mods.cc.rock.block.BlockKitchenTile;
+import mods.cc.rock.core.proxy.CommonProxy;
+import mods.cc.rock.item.ItemAluminumIngot;
+import mods.cc.rock.item.ItemFoodWormHole;
+import mods.cc.rock.world.OreGen;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.SidedProxy;
@@ -26,32 +26,32 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class CookingCraft 
 {
 	public static Block kitchenTile;
-	public static Block cakeSpawner;
+//	public static Block cakeSpawner;
 	public static Block aluminumOre;
 	
 	public static Item foodWormHole;
 	public static Item aluminumIngot;
 	
-	@SidedProxy(clientSide = "rock.minecraft.cc.core.proxy.ClientProxy", serverSide = "rock.minecraft.cc.core.proxy.CommonProxy")
+	@SidedProxy(clientSide = "mods.cc.rock.core.proxy.ClientProxy", serverSide = "mods.cc.core.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderThings();
 		
-		kitchenTile = new BlockKitchenTile(250,0).setBlockName("kitchenTile");
-		cakeSpawner = new BlockCakeSpawner(251,1).setBlockName("cakeSpawner").setRequiresSelfNotify();
-		aluminumOre = new BlockAluminumOre(252,2).setBlockName("aluminumOre");
+		kitchenTile = new BlockKitchenTile(250);
+	//	cakeSpawner = new BlockCakeSpawner(251);
+		aluminumOre = new BlockAluminumOre(252);
 		
-		aluminumIngot = new ItemAluminumIngot(1236).setIconIndex(1).setItemName("aluminumIngot");
-		foodWormHole = new ItemFoodWormHole(1235).setIconIndex(0).setItemName("foodWormHole");
+		aluminumIngot = new ItemAluminumIngot(1236);
+		foodWormHole = new ItemFoodWormHole(1235);
 		
-		GameRegistry.registerBlock(kitchenTile, kitchenTile.getBlockName());
-		GameRegistry.registerBlock(cakeSpawner, cakeSpawner.getBlockName());
-		GameRegistry.registerBlock(aluminumOre, aluminumOre.getBlockName());
+		GameRegistry.registerBlock(kitchenTile, "kitchenTile");
+	//	GameRegistry.registerBlock(cakeSpawner, "cakeSpawner");
+		GameRegistry.registerBlock(aluminumOre, "aluminumOre");
 		
 		LanguageRegistry.addName(kitchenTile, "Kitchen Tile");
-		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");	
+//		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");	
 		LanguageRegistry.addName(foodWormHole, "Food Worm Hole");
 		LanguageRegistry.addName(aluminumOre, "Aluminum Ore");
 		LanguageRegistry.addName(aluminumIngot, "Aluminum Ingot");
@@ -64,12 +64,12 @@ public class CookingCraft
 		GameRegistry.addSmelting(aluminumOre.blockID, new ItemStack(aluminumIngot), 0.4F);
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(kitchenTile, 1), new Object[]{Block.stoneBrick});
-		addOreRecipe(new ItemStack(cakeSpawner, 1), new Object[]{
-			"CCC",
-			"AFA",
-			"RSR",
-			'C', Item.cake, 'S', Block.stone, 'R', Block.torchRedstoneActive, 'F', foodWormHole, 'A',"ingotAluminum"
-			});
+//		addOreRecipe(new ItemStack(cakeSpawner, 1), new Object[]{
+//			"CCC",
+//			"AFA",
+//			"RSR",
+//			'C', Item.cake, 'S', Block.stone, 'R', Block.torchRedstoneActive, 'F', foodWormHole, 'A',"ingotAluminum"
+//			});
 		GameRegistry.addRecipe(new ItemStack(foodWormHole, 8), new Object[]{
 			"AEA",
 			"ENE",

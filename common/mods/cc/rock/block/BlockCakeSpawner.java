@@ -1,7 +1,7 @@
-
+/*
 package rock.minecraft.cc.block;
 
-import rock.minecraft.cc.lib.Sprites;
+import mods.cc.rock.lib.Sprites;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,7 +22,7 @@ public class BlockCakeSpawner extends Block
     {
     	if(!world.isRemote)
     	{
-            if(world.isBlockIndirectlyGettingPowered(x, y, z)||world.isBlockGettingPowered(x, y, z))
+            if(world.isBlockIndirectlyGettingPowered(x, y, z))
             {
            		world.setBlock(x, y+1, z, Block.cake.blockID);
             }
@@ -32,10 +32,11 @@ public class BlockCakeSpawner extends Block
     {	
     	if(!world.isRemote)
     	{
-            if(world.isBlockIndirectlyGettingPowered(x, y, z)||world.isBlockGettingPowered(x, y, z))
+            if(world.isBlockIndirectlyGettingPowered(x, y, z))
             {
-           		world.setBlock(x, y+1, z, Block.cake.blockID);
+           		world.func(x, y+1, z, Block.cake.blockID);
             }
     	}
     }
 }
+*/

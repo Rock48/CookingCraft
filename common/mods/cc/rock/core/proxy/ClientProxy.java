@@ -1,6 +1,6 @@
-package rock.minecraft.cc.core.proxy;
+package mods.cc.rock.core.proxy;
 
-import rock.minecraft.cc.lib.Sprites;
+import mods.cc.rock.lib.Sprites;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy

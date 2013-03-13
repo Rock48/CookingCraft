@@ -1,21 +1,19 @@
-package rock.minecraft.cc.item;
+package mods.cc.rock.item;
 
-import rock.minecraft.cc.lib.Sprites;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class ItemFoodWormHole extends Item
 {
-
 	public ItemFoodWormHole(int id) 
 	{
 		super(id);
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 	}
-	public String getTextureFile()
+	public void func_94581_a(IconRegister iconRegister)
 	{
-		return Sprites.CC_ITEMS;
+	         iconIndex = iconRegister.func_94245_a("cc:ItemFoodWormHole");
 	}
-	
 
 }

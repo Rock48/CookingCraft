@@ -1,8 +1,8 @@
-package rock.minecraft.cc.world;
+package mods.cc.rock.world;
 
 import java.util.Random;
 
-import rock.minecraft.cc.CookingCraft;
+import mods.cc.rock.CookingCraft;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
