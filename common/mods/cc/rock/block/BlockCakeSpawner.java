@@ -1,22 +1,22 @@
-/*
-package rock.minecraft.cc.block;
 
-import mods.cc.rock.lib.Sprites;
+package mods.cc.rock.block;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
 
 public class BlockCakeSpawner extends Block
 {
-	public BlockCakeSpawner(int id, int texture)
+	public BlockCakeSpawner(int id)
 	{
-		super(id, texture, Material.rock);
+		super(id, Material.rock);
 		this.setCreativeTab(CreativeTabs.tabRedstone);
 	}
-	public String getTextureFile()
+	public void func_94332_a(IconRegister iconRegister)
 	{
-		return Sprites.CC_BLOCKS;
+		 this.field_94336_cN = iconRegister.func_94245_a("cc:BlockCakeSpawner");
 	}
     public void onBlockAdded(World world, int x, int y, int z)
     {
@@ -24,7 +24,7 @@ public class BlockCakeSpawner extends Block
     	{
             if(world.isBlockIndirectlyGettingPowered(x, y, z))
             {
-           		world.setBlock(x, y+1, z, Block.cake.blockID);
+           		world.func_94575_c(x, y+1, z, Block.cake.blockID);
             }
     	}
     }
@@ -34,9 +34,9 @@ public class BlockCakeSpawner extends Block
     	{
             if(world.isBlockIndirectlyGettingPowered(x, y, z))
             {
-           		world.func(x, y+1, z, Block.cake.blockID);
+           		world.func_94575_c(x, y+1, z, Block.cake.blockID);
             }
     	}
     }
 }
-*/
+

@@ -7,7 +7,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import mods.cc.rock.block.BlockAluminumOre;
-//import mods.cc.rock.block.BlockCakeSpawner;
+import mods.cc.rock.block.BlockCakeSpawner;
 import mods.cc.rock.block.BlockKitchenTile;
 import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.item.ItemAluminumIngot;
@@ -26,7 +26,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class CookingCraft 
 {
 	public static Block kitchenTile;
-//	public static Block cakeSpawner;
+	public static Block cakeSpawner;
 	public static Block aluminumOre;
 	
 	public static Item foodWormHole;
@@ -40,18 +40,18 @@ public class CookingCraft
 		proxy.registerRenderThings();
 		
 		kitchenTile = new BlockKitchenTile(250);
-	//	cakeSpawner = new BlockCakeSpawner(251);
+		cakeSpawner = new BlockCakeSpawner(251);
 		aluminumOre = new BlockAluminumOre(252);
 		
 		aluminumIngot = new ItemAluminumIngot(1236);
 		foodWormHole = new ItemFoodWormHole(1235);
 		
 		GameRegistry.registerBlock(kitchenTile, "kitchenTile");
-	//	GameRegistry.registerBlock(cakeSpawner, "cakeSpawner");
+		GameRegistry.registerBlock(cakeSpawner, "cakeSpawner");
 		GameRegistry.registerBlock(aluminumOre, "aluminumOre");
 		
 		LanguageRegistry.addName(kitchenTile, "Kitchen Tile");
-//		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");	
+		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");	
 		LanguageRegistry.addName(foodWormHole, "Food Worm Hole");
 		LanguageRegistry.addName(aluminumOre, "Aluminum Ore");
 		LanguageRegistry.addName(aluminumIngot, "Aluminum Ingot");
@@ -64,12 +64,12 @@ public class CookingCraft
 		GameRegistry.addSmelting(aluminumOre.blockID, new ItemStack(aluminumIngot), 0.4F);
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(kitchenTile, 1), new Object[]{Block.stoneBrick});
-//		addOreRecipe(new ItemStack(cakeSpawner, 1), new Object[]{
-//			"CCC",
-//			"AFA",
-//			"RSR",
-//			'C', Item.cake, 'S', Block.stone, 'R', Block.torchRedstoneActive, 'F', foodWormHole, 'A',"ingotAluminum"
-//			});
+		addOreRecipe(new ItemStack(cakeSpawner, 1), new Object[]{
+			"CCC",
+			"AFA",
+			"RSR",
+			'C', Item.cake, 'S', Block.stone, 'R', Block.torchRedstoneActive, 'F', foodWormHole, 'A',"ingotAluminum"
+			});
 		GameRegistry.addRecipe(new ItemStack(foodWormHole, 8), new Object[]{
 			"AEA",
 			"ENE",

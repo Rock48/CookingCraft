@@ -7,7 +7,6 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockAluminumOre extends Block
 {
-
 	public BlockAluminumOre(int par1)
 	{
 		super(par1, Material.rock);
@@ -18,5 +17,4 @@ public class BlockAluminumOre extends Block
 	{
 		 this.field_94336_cN = iconRegister.func_94245_a("cc:BlockAluminumOre");
 	}
-
 }
