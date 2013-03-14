@@ -3,15 +3,16 @@ package mods.cc.rock.item;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
-public class ItemFoodWormHole extends Item
+public class ItemSaucePan extends Item
 {
-	public ItemFoodWormHole(int id) 
+
+	public ItemSaucePan(int par1) 
 	{
-		super(id);
+		super(par1);
 	}
 	public void func_94581_a(IconRegister iconRegister)
 	{
-	         iconIndex = iconRegister.func_94245_a("cc:ItemFoodWormHole");
+	         iconIndex = iconRegister.func_94245_a("cc:ItemAluminumIngot");
 	}
 
 }

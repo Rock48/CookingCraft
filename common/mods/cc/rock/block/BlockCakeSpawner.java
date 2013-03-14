@@ -4,7 +4,6 @@ package mods.cc.rock.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
 
 public class BlockCakeSpawner extends Block
@@ -12,7 +11,6 @@ public class BlockCakeSpawner extends Block
 	public BlockCakeSpawner(int id)
 	{
 		super(id, Material.rock);
-		this.setCreativeTab(CreativeTabs.tabRedstone);
 	}
 	public void func_94332_a(IconRegister iconRegister)
 	{
