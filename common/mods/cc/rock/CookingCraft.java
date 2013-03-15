@@ -1,6 +1,8 @@
 package mods.cc.rock;
 
+import mods.cc.rock.block.BakingItemBlock;
 import mods.cc.rock.block.BlockAluminumOre;
+import mods.cc.rock.block.BlockBakingOven;
 import mods.cc.rock.block.BlockCakeSpawner;
 import mods.cc.rock.block.BlockKitchenTile;
 import mods.cc.rock.core.proxy.CommonProxy;
@@ -33,6 +35,7 @@ public class CookingCraft
 	public static Block kitchenTile;
 	public static Block cakeSpawner;
 	public static Block aluminumOre;
+	public static Block bakingOven;
 	
 	public static Item foodWormHole;
 	public static Item aluminumIngot;
@@ -51,6 +54,7 @@ public class CookingCraft
 		kitchenTile = new BlockKitchenTile(250).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("kitchenTile");
 		aluminumOre = new BlockAluminumOre(251).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("aluminumOre");
 		cakeSpawner = new BlockCakeSpawner(252).setCreativeTab(CreativeTabs.tabRedstone).setUnlocalizedName("cakeSpawner");
+		bakingOven = new BlockBakingOven(253).setCreativeTab(CreativeTabs.tabBlock);
 		
 		foodWormHole = new ItemFoodWormHole(1235).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("foodWormHole");
 		aluminumIngot = new ItemAluminumIngot(1236).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("aluminumIngot");
@@ -62,6 +66,7 @@ public class CookingCraft
 		GameRegistry.registerBlock(kitchenTile, kitchenTile.getUnlocalizedName());
 		GameRegistry.registerBlock(cakeSpawner, cakeSpawner.getUnlocalizedName());
 		GameRegistry.registerBlock(aluminumOre, aluminumOre.getUnlocalizedName());
+		GameRegistry.registerBlock(bakingOven, BakingItemBlock.class, "bakingOven");
 		
 		LanguageRegistry.addName(kitchenTile, "Kitchen Tile");
 		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");
@@ -72,6 +77,8 @@ public class CookingCraft
 		LanguageRegistry.addName(fryingPan, "Frying Pan");
 		LanguageRegistry.addName(saucePan, "Sauce Pan");
 		LanguageRegistry.addName(panHandle, "Pan Handle");
+		LanguageRegistry.addName(new ItemStack(bakingOven,1,0), "Primative Oven");
+		LanguageRegistry.addName(new ItemStack(bakingOven,1,1), "Primative Oven On");
 		
 		OreDictionary.registerOre("ingotAluminum", new ItemStack(aluminumIngot));
 		OreDictionary.registerOre("oreAlimunum", new ItemStack(aluminumOre));
