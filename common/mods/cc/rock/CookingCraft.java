@@ -1,19 +1,14 @@
 package mods.cc.rock;
 
 import mods.cc.rock.block.BakingItemBlock;
-import mods.cc.rock.block.BlockAluminumOre;
 import mods.cc.rock.block.BlockBakingOven;
 import mods.cc.rock.block.BlockCakeSpawner;
-import mods.cc.rock.block.BlockKitchenTile;
+import mods.cc.rock.block.BlockUnscripted;
 import mods.cc.rock.core.proxy.CommonProxy;
-import mods.cc.rock.item.ItemAluminumIngot;
-import mods.cc.rock.item.ItemBakingTray;
-import mods.cc.rock.item.ItemFoodWormHole;
-import mods.cc.rock.item.ItemFryingPan;
-import mods.cc.rock.item.ItemPanHandle;
-import mods.cc.rock.item.ItemSaucePan;
+import mods.cc.rock.item.ItemUnscripted;
 import mods.cc.rock.world.OreGen;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -44,24 +39,24 @@ public class CookingCraft
 	public static Item saucePan;
 	public static Item panHandle;
 	
-	@SidedProxy(clientSide = "mods.cc.rock.core.proxy.ClientProxy", serverSide = "mods.cc.core.proxy.CommonProxy")
+	@SidedProxy(clientSide = "mods.cc.rock.core.proxy.ClientProxy", serverSide = "mods.cc.rock.core.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderThings();
 		
-		kitchenTile = new BlockKitchenTile(250).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("kitchenTile");
-		aluminumOre = new BlockAluminumOre(251).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("aluminumOre");
+		kitchenTile = new BlockUnscripted(250,Material.rock,"BlockKitchenTile").setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("kitchenTile");
+		aluminumOre = new BlockUnscripted(251,Material.rock,"BlockAluminumOre").setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("aluminumOre");
 		cakeSpawner = new BlockCakeSpawner(252).setCreativeTab(CreativeTabs.tabRedstone).setUnlocalizedName("cakeSpawner");
 		bakingOven = new BlockBakingOven(253).setCreativeTab(CreativeTabs.tabBlock);
 		
-		foodWormHole = new ItemFoodWormHole(1235).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("foodWormHole");
-		aluminumIngot = new ItemAluminumIngot(1236).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("aluminumIngot");
-		bakingTray = new ItemBakingTray(1237).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("bakingTray");
-		fryingPan = new ItemFryingPan(1238).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("fryingPan");
-		saucePan = new ItemSaucePan(1239).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("saucePan");
-		panHandle = new ItemPanHandle(1240).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("panHandle");
+		foodWormHole = new ItemUnscripted(1235,"ItemFoodWormHole").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("foodWormHole");
+		aluminumIngot = new ItemUnscripted(1236,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("aluminumIngot");
+		bakingTray = new ItemUnscripted(1237,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("bakingTray");
+		fryingPan = new ItemUnscripted(1238,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("fryingPan");
+		saucePan = new ItemUnscripted(1239,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("saucePan");
+		panHandle = new ItemUnscripted(1240,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("panHandle");
 		
 		GameRegistry.registerBlock(kitchenTile, kitchenTile.getUnlocalizedName());
 		GameRegistry.registerBlock(cakeSpawner, cakeSpawner.getUnlocalizedName());
