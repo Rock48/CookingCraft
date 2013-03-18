@@ -1,9 +1,9 @@
 package mods.cc.rock;
 
-import mods.cc.rock.block.BakingItemBlock;
-import mods.cc.rock.block.BlockBakingOven;
 import mods.cc.rock.block.BlockCakeSpawner;
+import mods.cc.rock.block.BlockPrimitiveOven;
 import mods.cc.rock.block.BlockUnscripted;
+import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.item.ItemUnscripted;
 import mods.cc.rock.world.OreGen;
@@ -27,10 +27,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class CookingCraft 
 {
-	public static Block kitchenTile;
-	public static Block cakeSpawner;
-	public static Block aluminumOre;
-	public static Block bakingOven;
+
 	
 	public static Item foodWormHole;
 	public static Item aluminumIngot;
@@ -44,12 +41,9 @@ public class CookingCraft
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
-		proxy.registerRenderThings();
+		ModBlocks.init();
 		
-		kitchenTile = new BlockUnscripted(250,Material.rock,"BlockKitchenTile").setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("kitchenTile");
-		aluminumOre = new BlockUnscripted(251,Material.rock,"BlockAluminumOre").setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("aluminumOre");
-		cakeSpawner = new BlockCakeSpawner(252).setCreativeTab(CreativeTabs.tabRedstone).setUnlocalizedName("cakeSpawner");
-		bakingOven = new BlockBakingOven(253).setCreativeTab(CreativeTabs.tabBlock);
+		proxy.registerRenderThings();
 		
 		foodWormHole = new ItemUnscripted(1235,"ItemFoodWormHole").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("foodWormHole");
 		aluminumIngot = new ItemUnscripted(1236,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("aluminumIngot");
@@ -58,32 +52,22 @@ public class CookingCraft
 		saucePan = new ItemUnscripted(1239,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("saucePan");
 		panHandle = new ItemUnscripted(1240,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("panHandle");
 		
-		GameRegistry.registerBlock(kitchenTile, kitchenTile.getUnlocalizedName());
-		GameRegistry.registerBlock(cakeSpawner, cakeSpawner.getUnlocalizedName());
-		GameRegistry.registerBlock(aluminumOre, aluminumOre.getUnlocalizedName());
-		GameRegistry.registerBlock(bakingOven, BakingItemBlock.class, "bakingOven");
-		
-		LanguageRegistry.addName(kitchenTile, "Kitchen Tile");
-		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");
 		LanguageRegistry.addName(foodWormHole, "Food Worm Hole");
-		LanguageRegistry.addName(aluminumOre, "Aluminum Ore");
 		LanguageRegistry.addName(aluminumIngot, "Aluminum Ingot");
 		LanguageRegistry.addName(bakingTray, "Baking Tray");
 		LanguageRegistry.addName(fryingPan, "Frying Pan");
 		LanguageRegistry.addName(saucePan, "Sauce Pan");
 		LanguageRegistry.addName(panHandle, "Pan Handle");
-		LanguageRegistry.addName(new ItemStack(bakingOven,1,0), "Primative Oven");
-		LanguageRegistry.addName(new ItemStack(bakingOven,1,1), "Primative Oven On");
+
 		
 		OreDictionary.registerOre("ingotAluminum", new ItemStack(aluminumIngot));
-		OreDictionary.registerOre("oreAlimunum", new ItemStack(aluminumOre));
 		
 		GameRegistry.registerWorldGenerator(new OreGen());
 		
-		GameRegistry.addSmelting(aluminumOre.blockID, new ItemStack(aluminumIngot), 0.4F);
+		GameRegistry.addSmelting(ModBlocks.aluminumOre.blockID, new ItemStack(aluminumIngot), 0.4F);
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(kitchenTile, 1), new Object[]{Block.stoneBrick});
-		addOreRecipe(new ItemStack(cakeSpawner), new Object[]{
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.kitchenTile, 1), new Object[]{Block.stoneBrick});
+		addOreRecipe(new ItemStack(ModBlocks.cakeSpawner), new Object[]{
 			"CCC",
 			"AFA",
 			"RSR",

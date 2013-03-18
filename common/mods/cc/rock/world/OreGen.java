@@ -2,7 +2,7 @@ package mods.cc.rock.world;
 
 import java.util.Random;
 
-import mods.cc.rock.CookingCraft;
+import mods.cc.rock.block.ModBlocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -24,7 +24,7 @@ public class OreGen implements IWorldGenerator
 			int xCoord = i + random.nextInt(16);
 			int yCoord = random.nextInt(55);
 			int zCoord = j + random.nextInt(16);
-			new WorldGenMinable(CookingCraft.aluminumOre.blockID, 6).generate(world, random, xCoord, yCoord, zCoord);
+			new WorldGenMinable(ModBlocks.aluminumOre.blockID, 6).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 }
