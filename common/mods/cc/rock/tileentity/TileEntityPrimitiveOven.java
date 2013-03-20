@@ -172,7 +172,7 @@ public class TileEntityPrimitiveOven extends TileEntity implements IInventory
 	@Override
 	public boolean func_94041_b(int par1, ItemStack itemstack) 
 	{
-		return false;
+		return true;
 	}
 
 }

@@ -8,7 +8,9 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.src.ModLoader;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
@@ -18,6 +20,7 @@ import net.minecraft.world.World;
 
 public class BlockPrimitiveOven extends BlockContainer
 {
+	private static boolean keepInventory = false;
 	public int front = 0;
 	private Random bakingRand;
 	
@@ -98,7 +101,7 @@ public class BlockPrimitiveOven extends BlockContainer
 		default:
 			if(par5 == front)
 			{
-				return /*((TileEntityPrimitiveOven) tile).isActive() ? iconBuffer[2] : */iconBuffer[1];
+				return ((TileEntityPrimitiveOven) tile).isActive() ? iconBuffer[2] : iconBuffer[1];
 			
 			}
 			else
@@ -147,5 +150,45 @@ return iconBuffer[0];
 			((TileEntityPrimitiveOven) blockEntity).setFrontDirection(4);
 			break;
 		}
+	}
+	public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6)
+	{
+		if(!keepInventory)
+		{
+			TileEntityPrimitiveOven primitiveOven = (TileEntityPrimitiveOven) par1World.getBlockTileEntity(par2, par3, par4);
+			if(primitiveOven != null)
+			{
+				for(int i = 0; i < primitiveOven.getSizeInventory(); i++)
+				{
+					ItemStack IS = primitiveOven.getStackInSlot(i);
+					if(IS != null)
+					{
+						float j = this.bakingRand.nextFloat() * 0.8F + 0.1F;
+						float k = this.bakingRand.nextFloat() * 0.8F + 0.1F;
+						float l = this.bakingRand.nextFloat() * 0.8F + 0.1F;
+						while(IS.stackSize > 0)
+						{
+							int m = this.bakingRand.nextInt(21);
+							if(m > IS.stackSize)
+							{
+								m = IS.stackSize;
+							}
+							IS.stackSize -= m;
+							EntityItem n = new EntityItem(par1World, (double) ((float) par2 + j), (double) ((float) par3 + k), (double) ((float) par4 + l), new ItemStack(IS.itemID, m, IS.getItemDamage()));
+							if(IS.hasTagCompound())
+							{
+								n.getEntityItem().setTagCompound((NBTTagCompound) IS.getTagCompound().copy());
+							}
+							float o = 0.05F;
+							n.motionX = (double) ((float) this.bakingRand.nextGaussian() * o);
+							n.motionY = (double) ((float) this.bakingRand.nextGaussian() * o);
+							n.motionZ = (double) ((float) this.bakingRand.nextGaussian() * o);
+							par1World.spawnEntityInWorld(n);
+						}
+					}
+				}
+			}
+		}
+		super.breakBlock(par1World, par2, par3, par4, par5, par6);
 	}
 }
