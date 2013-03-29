@@ -115,11 +115,6 @@ public class TileEntityPrimitiveOven extends TileEntity implements IInventory
 	{
 		return bakingBurnTime > 0;
 	}
-	@Override
-	public boolean func_94042_c() 
-	{
-		return false;
-	}
 
 	@Override
 	public int getInventoryStackLimit() 
@@ -168,11 +163,14 @@ public class TileEntityPrimitiveOven extends TileEntity implements IInventory
 	{
 		return this.isActive;
 	}
+	@Override
+	public boolean isInvNameLocalized() {
+		return false;
+	}
 
 	@Override
-	public boolean func_94041_b(int par1, ItemStack itemstack) 
-	{
-		return true;
+	public boolean isStackValidForSlot(int i, ItemStack itemstack) {
+		return false;
 	}
 
 }

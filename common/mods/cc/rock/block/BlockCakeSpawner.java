@@ -12,27 +12,27 @@ public class BlockCakeSpawner extends Block
 	{
 		super(id, Material.rock);
 	}
-	public void func_94332_a(IconRegister iconRegister)
+	public void registerIcons(IconRegister iconRegister)
 	{
-		 this.field_94336_cN = iconRegister.func_94245_a("cc:BlockCakeSpawner");
+		 this.blockIcon = iconRegister.registerIcon("cc:BlockCakeSpawner");
 	}
-    public void onBlockAdded(World world, int x, int y, int z)
+    public void onBlockAdded(World par1World, int x, int y, int z)
     {
-    	if(!world.isRemote)
+    	if(!par1World.isRemote)
     	{
-            if(world.isBlockIndirectlyGettingPowered(x, y, z))
+            if(par1World.isBlockIndirectlyGettingPowered(x, y, z))
             {
-           		world.func_94575_c(x, y+1, z, Block.cake.blockID);
+           		par1World.setBlock(x, y+1, z, Block.cake.blockID);
             }
     	}
     }
-    public void onNeighborBlockChange(World world, int x, int y, int z, int par5)
+    public void onNeighborBlockChange(World par1World, int x, int y, int z, int par5)
     {	
-    	if(!world.isRemote)
+    	if(!par1World.isRemote)
     	{
-            if(world.isBlockIndirectlyGettingPowered(x, y, z))
+            if(par1World.isBlockIndirectlyGettingPowered(x, y, z))
             {
-           		world.func_94575_c(x, y+1, z, Block.cake.blockID);
+           		par1World.setBlock(x, y+1, z, Block.cake.blockID);
             }
     	}
     }

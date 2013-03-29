@@ -9,6 +9,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.src.ModLoader;
@@ -31,23 +33,30 @@ public class BlockPrimitiveOven extends BlockContainer
 		bakingRand = new Random();
 		
 	}
-	public void func_94332_a(IconRegister par1IconRegister)
+	@Override
+	public void registerIcons(IconRegister par1IconRegister)
 	{
 		iconBuffer = new Icon[3];
-		iconBuffer[0] = par1IconRegister.func_94245_a("cc:PrimitiveSides");
-		iconBuffer[1] = par1IconRegister.func_94245_a("cc:PrimitiveFront");
-		iconBuffer[2] = par1IconRegister.func_94245_a("cc:PrimitiveFrontOn");
+		iconBuffer[0] = par1IconRegister.registerIcon("cc:PrimitiveSides");
+		iconBuffer[1] = par1IconRegister.registerIcon("cc:PrimitiveFront");
+		iconBuffer[2] = par1IconRegister.registerIcon("cc:PrimitiveFrontOn");
 	}
 	@Override
 	public TileEntity createNewTileEntity(World world)
 	{
 		return new TileEntityPrimitiveOven();
 	}
+	@Override
 	public void onBlockAdded(World par1World, int par2, int par3, int par4)
 	{
 		super.onBlockAdded(par1World, par2, par3, par4);
 		this.setDefaultDirection(par1World, par2, par3, par4);
 		par1World.markBlockForUpdate(par2, par3, par4);
+	}
+	@Override
+	public boolean renderAsNormalBlock()
+	{
+		return false;
 	}
 	private void setDefaultDirection(World par1World, int par2, int par3, int par4)
 	{
@@ -79,11 +88,12 @@ public class BlockPrimitiveOven extends BlockContainer
 		}
 		((TileEntityPrimitiveOven) blockEntity).setFrontDirection(byte0);
 	}
+	@Override
 	public Icon getBlockTexture(IBlockAccess par1IBA, int par2, int par3, int par4, int par5)
 	{
 		
 		TileEntity tile = ModLoader.getMinecraftInstance().getIntegratedServer().worldServers[0].getBlockTileEntity(par2, par3, par4);        
-		System.out.print(tile);
+		System.out.println(tile);
 		if(tile != null)
 		{
 			front = ((TileEntityPrimitiveOven) tile).getFrontDirection();
@@ -92,25 +102,24 @@ public class BlockPrimitiveOven extends BlockContainer
 		{
 			ModLoader.getMinecraftInstance().getIntegratedServer().worldServers[0].markBlockForUpdate(par2, par3, par4);
 		}
-		
-		switch(par5) {
-		case 0:
-			return 	iconBuffer[0];
-		case 1:
-			return 	iconBuffer[0];
-		default:
-			if(par5 == front)
+		if(par5 == front)
+		{
+			if(((TileEntityPrimitiveOven) tile).isActive())
 			{
-				return ((TileEntityPrimitiveOven) tile).isActive() ? iconBuffer[2] : iconBuffer[1];
-			
+				return iconBuffer[2];
 			}
 			else
 			{
-				return  iconBuffer[0];
+				return iconBuffer[1];
 			}
 		}
-		
+		else
+		{
+			return  iconBuffer[0];
+		}
 	}
+		
+	@Override
 	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
 	{
 		switch(par1){
@@ -130,6 +139,7 @@ public class BlockPrimitiveOven extends BlockContainer
 return iconBuffer[0];
 		}
 	}
+	@Override
 	public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving EL, ItemStack par6ItemStack)
 	{
 		int i = MathHelper.floor_double((double) (EL.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
@@ -190,5 +200,15 @@ return iconBuffer[0];
 			}
 		}
 		super.breakBlock(par1World, par2, par3, par4, par5, par6);
+	}
+	@Override
+	public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+	{
+		TileEntityPrimitiveOven primitiveOven = (TileEntityPrimitiveOven) par1World.getBlockTileEntity(par2, par3, par4);
+		if(par5EntityPlayer instanceof EntityPlayerMP)
+		{
+			
+		}
+		return true;
 	}
 }

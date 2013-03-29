@@ -13,8 +13,8 @@ public class BlockUnscripted extends Block
 		this.blockTexture = par3;
 	}
 	@Override
-	public void func_94332_a(IconRegister iconRegister)
+	public void registerIcons(IconRegister iconRegister)
 	{
-		 this.field_94336_cN = iconRegister.func_94245_a("cc:"+this.blockTexture);
+		 this.blockIcon = iconRegister.registerIcon("cc:"+this.blockTexture);
 	}
 }

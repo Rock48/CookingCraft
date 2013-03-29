@@ -12,9 +12,10 @@ public class ItemUnscripted extends Item
 		super(par1);
 		this.itemTexture = par2;
 	}
-	public void func_94581_a(IconRegister iconRegister)
+	@Override
+	public void updateIcons(IconRegister iconRegister)
 	{
-	         iconIndex = iconRegister.func_94245_a("cc:"+this.itemTexture);
+	         this.iconIndex = iconRegister.registerIcon("cc:"+this.itemTexture);
 	}
 
 }
