@@ -1,5 +1,6 @@
 package mods.cc.rock.client.gui.inventory;
 
+import mods.cc.rock.inventory.ContainerBasicRefridgerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 
@@ -18,13 +19,13 @@ public class GuiBasicRefridgerator extends GuiContainer
 	@Override
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
 	{
-		this.fontRenderer.drawStringWithShadow("Basic Refridgerator", 0, 0, 4210752);
+		this.fontRenderer.drawString("Basic Refridgerator", 5, -39, 4210752);
 	}
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) 
 	{
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		this.mc.renderEngine.bindTexture("cc:basicFridge");
+		this.mc.renderEngine.bindTexture("/mods/cc/textures/gui/fridge.png");
 		this.xSize = 176;
 		this.ySize = 256;
 		int xStart = (this.width - this.xSize)/2;

@@ -1,8 +1,10 @@
 package mods.cc.rock.block;
 
 import mods.cc.rock.client.gui.inventory.GuiBasicRefridgerator;
+import mods.cc.rock.inventory.ContainerBasicRefridgerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -27,12 +29,16 @@ public class BlockBasicRefridgerator extends Block
 	{
 		if(player instanceof EntityPlayerMP)
 		{
-			ModLoader.serverOpenWindow(player, new ContainerBasicRefridgerator(), , x, y, z);
+			ModLoader.serverOpenWindow((EntityPlayerMP) player, new ContainerBasicRefridgerator(), 85, x, y, z);
 		}
 		else
 		{
-			ModLoader.openGUI(player, new GuiBasicRefridgerator(player.inventory, x, y, z));
+			ModLoader.openGUI((EntityPlayerSP) player, new GuiBasicRefridgerator(player.inventory, x, y, z));
 		}
 		return true;
 	}
+	/*public TileEntity createNewTileEntity(World par1World)
+	{
+		return new TileEntityBasicRefridgerator();
+	}*/
 }

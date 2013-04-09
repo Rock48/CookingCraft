@@ -4,6 +4,7 @@ import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.client.gui.inventory.GuiBasicRefridgerator;
 import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.item.ItemUnscripted;
+import mods.cc.rock.tileentity.TileEntityPrimitiveOven;
 import mods.cc.rock.world.OreGen;
 import net.minecraft.block.Block;
 import net.minecraft.client.entity.EntityClientPlayerMP;
@@ -69,6 +70,8 @@ public class mod_CookingCraft extends BaseMod
 			OreDictionary.registerOre("ingotAluminum", new ItemStack(aluminumIngot));
 			
 			GameRegistry.registerWorldGenerator(new OreGen());
+			
+			GameRegistry.registerTileEntity(TileEntityPrimitiveOven.class, "tileEntityPrimitiveOven");
 			
 			GameRegistry.addSmelting(ModBlocks.aluminumOre.blockID, new ItemStack(aluminumIngot), 0.4F);
 			
