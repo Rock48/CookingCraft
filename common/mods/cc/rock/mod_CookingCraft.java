@@ -4,6 +4,7 @@ import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.client.gui.inventory.GuiBasicRefridgerator;
 import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.item.ItemUnscripted;
+import mods.cc.rock.tileentity.TileEntityBasicRefridgerator;
 import mods.cc.rock.tileentity.TileEntityPrimitiveOven;
 import mods.cc.rock.world.OreGen;
 import net.minecraft.block.Block;
@@ -24,7 +25,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "CC", name = "CookingCraft", version = "pralpha0a")
+
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class mod_CookingCraft extends BaseMod
 {
@@ -39,12 +40,16 @@ public class mod_CookingCraft extends BaseMod
 	@SidedProxy(clientSide = "mods.cc.rock.core.proxy.ClientProxy", serverSide = "mods.cc.rock.core.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	@Override
+	public String getName()
+	{
+		return "CookingCraft";
+	}
+	@Override
 	public String getVersion() 
 	{
 		return "0.0.1";
 	}
 	@Override
-	@Init
 	public void load()
 		{
 			ModBlocks.init();
@@ -72,6 +77,7 @@ public class mod_CookingCraft extends BaseMod
 			GameRegistry.registerWorldGenerator(new OreGen());
 			
 			GameRegistry.registerTileEntity(TileEntityPrimitiveOven.class, "tileEntityPrimitiveOven");
+			GameRegistry.registerTileEntity(TileEntityBasicRefridgerator.class, "tileEntityBasicRefridgerator");
 			
 			GameRegistry.addSmelting(ModBlocks.aluminumOre.blockID, new ItemStack(aluminumIngot), 0.4F);
 			

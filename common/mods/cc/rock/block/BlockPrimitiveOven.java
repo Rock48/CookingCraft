@@ -104,14 +104,14 @@ public class BlockPrimitiveOven extends BlockContainer
 		}
 		if(par5 == front)
 		{
-			if(((TileEntityPrimitiveOven) tile).isActive())
-			{
-				return iconBuffer[2];
-			}
-			else
-			{
+			//if(((TileEntityPrimitiveOven) tile).isActive())
+			//{
+			//	return iconBuffer[2];
+			//}
+			//else
+			//{
 				return iconBuffer[1];
-			}
+			//}
 		}
 		else
 		{

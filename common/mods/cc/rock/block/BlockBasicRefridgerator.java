@@ -2,6 +2,7 @@ package mods.cc.rock.block;
 
 import mods.cc.rock.client.gui.inventory.GuiBasicRefridgerator;
 import mods.cc.rock.inventory.ContainerBasicRefridgerator;
+import mods.cc.rock.tileentity.TileEntityBasicRefridgerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -9,6 +10,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.src.ModLoader;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class BlockBasicRefridgerator extends Block
@@ -37,8 +39,8 @@ public class BlockBasicRefridgerator extends Block
 		}
 		return true;
 	}
-	/*public TileEntity createNewTileEntity(World par1World)
+	public TileEntity createNewTileEntity(World par1World)
 	{
 		return new TileEntityBasicRefridgerator();
-	}*/
+	}
 }
