@@ -34,6 +34,7 @@ public class ModBlocks
 		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");
 		LanguageRegistry.addName(aluminumOre, "Aluminum Ore");
 		LanguageRegistry.addName(primitiveOven, "Primitive Oven [WIP] do not use yet");
+		LanguageRegistry.addName(basicRefridgerator, "Basic Refridgerator");
 		
 		OreDictionary.registerOre("oreAlimunum", new ItemStack(aluminumOre));
 	}

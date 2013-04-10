@@ -9,6 +9,7 @@ import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.src.ModLoader;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -31,7 +32,8 @@ public class BlockBasicRefridgerator extends Block
 	{
 		if(player instanceof EntityPlayerMP)
 		{
-			ModLoader.serverOpenWindow((EntityPlayerMP) player, new ContainerBasicRefridgerator(), 85, x, y, z);
+			TileEntity te = world.getBlockTileEntity(x, y, z);
+			ModLoader.serverOpenWindow((EntityPlayerMP) player, new ContainerBasicRefridgerator(player.inventory, ((IInventory) te)), 85, x, y, z);
 		}
 		else
 		{

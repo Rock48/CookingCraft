@@ -16,10 +16,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.src.BaseMod;
 import net.minecraft.src.ModLoader;
+import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -127,6 +126,7 @@ public class mod_CookingCraft extends BaseMod
 		{
 			switch(id)
 			{
+			
 			case 85:
 				return new GuiBasicRefridgerator(player.inventory, x, y, z);
 			default:

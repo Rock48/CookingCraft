@@ -2,6 +2,7 @@ package mods.cc.rock.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
@@ -9,17 +10,17 @@ import net.minecraftforge.common.ForgeDirection;
 public class TileEntityBasicRefridgerator extends TileEntity implements ISidedInventory, net.minecraftforge.common.ISidedInventory
 {
 	private ItemStack[] chestStuff = new ItemStack[72];
+	private String localizedName;
+	public int playersUsingChest;
 	
 	@Override
 	public int getSizeInventory() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 72;
 	}
 
 	@Override
 	public ItemStack getStackInSlot(int i) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.chestStuff[i];
 	}
 
 	@Override
@@ -42,32 +43,34 @@ public class TileEntityBasicRefridgerator extends TileEntity implements ISidedIn
 
 	@Override
 	public String getInvName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.isInvNameLocalized() ? this.localizedName : "container.basicRefridgerator";
 	}
 
 	@Override
 	public boolean isInvNameLocalized() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.localizedName != null && this.localizedName.length() > 0;
 	}
-
+	/**
+	 * Setting the localizedName variable
+	 * @param par1Str -- Name
+	 */
+	public void func_94043_a(String par1Str)
+	{
+		this.localizedName = par1Str;
+	}
 	@Override
 	public int getInventoryStackLimit() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 8;
 	}
 
 	@Override
-	public boolean isUseableByPlayer(EntityPlayer entityplayer) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isUseableByPlayer(EntityPlayer entityPlayer) {
+		return this.worldObj.getBlockTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : entityPlayer.getDistanceSq( (double)this.xCoord+0.5D, (double)this.yCoord+0.5D, (double)this.zCoord+0.5D) <= 64.0D;
 	}
 
 	@Override
 	public void openChest() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -78,8 +81,30 @@ public class TileEntityBasicRefridgerator extends TileEntity implements ISidedIn
 
 	@Override
 	public boolean isStackValidForSlot(int i, ItemStack itemstack) {
-		// TODO Auto-generated method stub
-		return false;
+		return 	itemstack == new ItemStack(Item.appleRed)||
+				itemstack == new ItemStack(Item.appleGold)||
+				itemstack == new ItemStack(Item.potato)||
+				itemstack == new ItemStack(Item.bakedPotato)||
+				itemstack == new ItemStack(Item.poisonousPotato)||
+				itemstack == new ItemStack(Item.bread)||
+				itemstack == new ItemStack(Item.cake)||
+				itemstack == new ItemStack(Item.carrot)||
+				itemstack == new ItemStack(Item.chickenCooked)||
+				itemstack == new ItemStack(Item.chickenRaw)||
+				itemstack == new ItemStack(Item.fishRaw)||
+				itemstack == new ItemStack(Item.fishCooked)||
+				itemstack == new ItemStack(Item.cookie)||
+				itemstack == new ItemStack(Item.goldenCarrot)||
+				itemstack == new ItemStack(Item.melon)||
+				itemstack == new ItemStack(Item.bowlSoup)||
+				itemstack == new ItemStack(Item.pumpkinPie)||
+				itemstack == new ItemStack(Item.beefRaw)||
+				itemstack == new ItemStack(Item.beefCooked)||
+				itemstack == new ItemStack(Item.porkRaw)||
+				itemstack == new ItemStack(Item.porkCooked)||
+				itemstack == new ItemStack(Item.rottenFlesh)||
+				itemstack == new ItemStack(Item.spiderEye)||
+				itemstack == new ItemStack(Item.bucketMilk);
 	}
 
 	@Override

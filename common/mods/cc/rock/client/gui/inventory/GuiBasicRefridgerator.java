@@ -3,6 +3,9 @@ package mods.cc.rock.client.gui.inventory;
 import mods.cc.rock.inventory.ContainerBasicRefridgerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
@@ -14,12 +17,13 @@ public class GuiBasicRefridgerator extends GuiContainer
 {
 	public GuiBasicRefridgerator(InventoryPlayer inventory, int x, int y, int z) 
 	{
-		super(new ContainerBasicRefridgerator());
+		super(new ContainerBasicRefridgerator(inventory, inventory));
 	}
 	@Override
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
 	{
 		this.fontRenderer.drawString("Basic Refridgerator", 5, -39, 4210752);
+		this.fontRenderer.drawString("Inventory", 5, 118, 4210752);
 	}
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) 
