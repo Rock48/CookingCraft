@@ -115,7 +115,7 @@ public class mod_CookingCraft extends BaseMod
 				"AAA",
 				'A', "ingotAluminum", 'P', panHandle
 			});
-			addOreRecipe(new ItemStack(ModBlocks.rsTestBlock), new Object[]{
+			addOreRecipe(new ItemStack(ModBlocks.rsTestBlockOff), new Object[]{
 				"ARA",
 				"RAR",
 				"ARA",
