@@ -15,6 +15,7 @@ public class ModBlocks
 	public static Block aluminumOre;
 	public static Block primitiveOven;
 	public static Block basicRefridgerator;
+	public static Block rsTestBlock;
 	
 	public static void init()
 	{
@@ -23,18 +24,21 @@ public class ModBlocks
 		cakeSpawner = new BlockCakeSpawner(252).setCreativeTab(CreativeTabs.tabRedstone).setUnlocalizedName("cakeSpawner");
 		primitiveOven = new BlockPrimitiveOven(253, false).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("PrimitiveOven");
 		basicRefridgerator = new BlockBasicRefridgerator(254).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("basicRefridgerator");
+		rsTestBlock = new BlockRsTestBlock(255).setCreativeTab(CreativeTabs.tabRedstone).setUnlocalizedName("rsTestBlock");
 		
 		GameRegistry.registerBlock(kitchenTile, kitchenTile.getUnlocalizedName());
 		GameRegistry.registerBlock(cakeSpawner, cakeSpawner.getUnlocalizedName());
 		GameRegistry.registerBlock(aluminumOre, aluminumOre.getUnlocalizedName());
 		GameRegistry.registerBlock(primitiveOven, primitiveOven.getUnlocalizedName());
 		GameRegistry.registerBlock(basicRefridgerator, basicRefridgerator.getUnlocalizedName());
+		GameRegistry.registerBlock(rsTestBlock, rsTestBlock.getUnlocalizedName());
 		
 		LanguageRegistry.addName(kitchenTile, "Kitchen Tile");
 		LanguageRegistry.addName(cakeSpawner, "Cake Spawner");
 		LanguageRegistry.addName(aluminumOre, "Aluminum Ore");
 		LanguageRegistry.addName(primitiveOven, "Primitive Oven [WIP] do not use yet");
 		LanguageRegistry.addName(basicRefridgerator, "Basic Refridgerator");
+		LanguageRegistry.addName(rsTestBlock, "Redstone Test Block");
 		
 		OreDictionary.registerOre("oreAlimunum", new ItemStack(aluminumOre));
 	}
