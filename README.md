@@ -10,7 +10,7 @@ Planned Features
 
 CookingCraft will be adding and changing many things in Minecraft. It will be totally revamping the aquisiton of food and the reasons behind doing it slowly and efficiently.
 
-#Game Mechanic Changes#
+###Game Mechanic Changes
  - More advanced cooking system
  - 15-25 new foods
  - Ovens, only able to cook food, fast, 3 tiers, each get faster
@@ -18,7 +18,7 @@ CookingCraft will be adding and changing many things in Minecraft. It will be to
  - Refridgerators - large food storage -- prevents food decay
  - Revamp baking -- Will require making flour/dough -- cook in oven
  
- #Misc Things#
+ ###Misc Things
  - Kitchen asthetic blocks
 	* Floor Tile
 	* Counter
