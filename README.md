@@ -17,7 +17,7 @@ CookingCraft will be adding and changing many things in Minecraft. It will be to
  - Food will decay over time
  - Refridgerators - large food storage -- prevents food decay
  - Revamp baking -- Will require making flour/dough -- cook in oven
- ###
+ 
  ###Misc Things
  - Kitchen asthetic blocks
 	* Floor Tile
@@ -27,7 +27,7 @@ CookingCraft will be adding and changing many things in Minecraft. It will be to
  - Food Worm Hole and Food Spawner
 	* Allows for infinite food
 	* VERY endgame
-###
+
 Endnote
 ----------------
 
