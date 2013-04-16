@@ -18,7 +18,7 @@ CookingCraft will be adding and changing many things in Minecraft. It will be to
  - Refridgerators - large food storage -- prevents food decay
  - Revamp baking -- Will require making flour/dough -- cook in oven
  
- ###Misc Things
+ ####Misc Things
  - Kitchen asthetic blocks
 	* Floor Tile
 	* Counter
