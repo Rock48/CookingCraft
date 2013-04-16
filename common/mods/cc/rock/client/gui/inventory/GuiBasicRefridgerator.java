@@ -3,9 +3,6 @@ package mods.cc.rock.client.gui.inventory;
 import mods.cc.rock.inventory.ContainerBasicRefridgerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 

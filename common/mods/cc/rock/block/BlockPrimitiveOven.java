@@ -91,8 +91,10 @@ public class BlockPrimitiveOven extends BlockContainer
 	@Override
 	public Icon getBlockTexture(IBlockAccess par1IBA, int par2, int par3, int par4, int par5)
 	{
-		
 		TileEntity tile = ModLoader.getMinecraftInstance().getIntegratedServer().worldServers[0].getBlockTileEntity(par2, par3, par4);        
+		
+		
+		
 		System.out.println(tile);
 		if(tile != null)
 		{
@@ -116,27 +118,6 @@ public class BlockPrimitiveOven extends BlockContainer
 		else
 		{
 			return  iconBuffer[0];
-		}
-	}
-		
-	@Override
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-	{
-		switch(par1){
-		case 0:
-			return iconBuffer[0];
-		case 1:
-			return iconBuffer[0];
-		case 2:
-			return iconBuffer[0];
-		case 3:
-			return iconBuffer[1];
-		case 4:
-			return iconBuffer[0];
-		case 5:
-			return iconBuffer[0];
-		default:
-return iconBuffer[0];
 		}
 	}
 	@Override

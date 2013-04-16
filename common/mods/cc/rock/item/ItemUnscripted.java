@@ -13,9 +13,9 @@ public class ItemUnscripted extends Item
 		this.itemTexture = par2;
 	}
 	@Override
-	public void updateIcons(IconRegister iconRegister)
+	public void registerIcons(IconRegister iconRegister)
 	{
-	         this.iconIndex = iconRegister.registerIcon("cc:"+this.itemTexture);
+	         this.itemIcon = iconRegister.registerIcon("cc:"+this.itemTexture);
 	}
 
 }
