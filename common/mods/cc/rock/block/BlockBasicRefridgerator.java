@@ -1,5 +1,7 @@
 package mods.cc.rock.block;
 
+import java.util.Random;
+
 import mods.cc.rock.client.gui.inventory.GuiBasicRefridgerator;
 import mods.cc.rock.inventory.ContainerBasicRefridgerator;
 import mods.cc.rock.tileentity.TileEntityBasicRefridgerator;
@@ -16,7 +18,6 @@ import net.minecraft.world.World;
 
 public class BlockBasicRefridgerator extends Block
 {
-	public String blockTexture;
 	public BlockBasicRefridgerator(int par1)
 	{
 		super(par1, Material.rock);
@@ -45,4 +46,9 @@ public class BlockBasicRefridgerator extends Block
 	{
 		return new TileEntityBasicRefridgerator();
 	}
+	@Override
+	public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return this.blockID;
+    }
 }

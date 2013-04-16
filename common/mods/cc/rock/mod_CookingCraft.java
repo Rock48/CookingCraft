@@ -16,13 +16,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.src.BaseMod;
 import net.minecraft.src.ModLoader;
-import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -51,6 +53,8 @@ public class mod_CookingCraft extends BaseMod
 	@Override
 	public void load()
 		{
+			MinecraftForge.EVENT_BUS.register(new mods.cc.rock.event.CookingCraftLivingDropsEvent());
+		
 			ModBlocks.init();
 			
 			ModLoader.registerContainerID(this, 85);
@@ -59,7 +63,7 @@ public class mod_CookingCraft extends BaseMod
 			foodWormHole = new ItemUnscripted(1235,"ItemFoodWormHole").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("foodWormHole");
 			aluminumIngot = new ItemUnscripted(1236,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("aluminumIngot");
 			bakingTray = new ItemUnscripted(1237,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("bakingTray");
-			fryingPan = new ItemUnscripted(1238,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("fryingPan");
+			fryingPan = new ItemUnscripted(1238,"ItemFryingPan").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("fryingPan");
 			saucePan = new ItemUnscripted(1239,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("saucePan");
 			panHandle = new ItemUnscripted(1240,"ItemAluminumIngot").setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("panHandle");
 			
@@ -127,7 +131,7 @@ public class mod_CookingCraft extends BaseMod
 		{
 			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(output, new Object[] { Boolean.valueOf(true), input }));
 		}
-		
+		@SideOnly(Side.CLIENT)
 		public GuiContainer getContainerGUI(EntityClientPlayerMP player, int id, int x, int y, int z)
 		{
 			switch(id)

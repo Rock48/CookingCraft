@@ -6,8 +6,6 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.Icon;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockRsTestBlock extends Block
@@ -60,5 +58,14 @@ public class BlockRsTestBlock extends Block
             par1World.setBlock(par2, par3, par4, ModBlocks.rsTestBlockOff.blockID, 0, 2);
         }
     }
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return ModBlocks.rsTestBlockOff.blockID;
+    }
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return ModBlocks.rsTestBlockOff.blockID;
+    }
+    
 }
 

@@ -53,11 +53,6 @@ public class BlockPrimitiveOven extends BlockContainer
 		this.setDefaultDirection(par1World, par2, par3, par4);
 		par1World.markBlockForUpdate(par2, par3, par4);
 	}
-	@Override
-	public boolean renderAsNormalBlock()
-	{
-		return false;
-	}
 	private void setDefaultDirection(World par1World, int par2, int par3, int par4)
 	{
 		TileEntity blockEntity = par1World.getBlockTileEntity(par2, par3, par4);
@@ -192,4 +187,8 @@ public class BlockPrimitiveOven extends BlockContainer
 		}
 		return true;
 	}
+	public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return this.blockID;
+    }
 }

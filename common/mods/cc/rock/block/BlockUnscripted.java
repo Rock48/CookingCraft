@@ -1,5 +1,7 @@
 package mods.cc.rock.block;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -17,4 +19,8 @@ public class BlockUnscripted extends Block
 	{
 		 this.blockIcon = iconRegister.registerIcon("cc:"+this.blockTexture);
 	}
+	public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return this.blockID;
+    }
 }
