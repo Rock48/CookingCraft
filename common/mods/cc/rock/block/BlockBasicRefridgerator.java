@@ -6,6 +6,7 @@ import mods.cc.rock.client.gui.inventory.GuiBasicRefridgerator;
 import mods.cc.rock.inventory.ContainerBasicRefridgerator;
 import mods.cc.rock.tileentity.TileEntityBasicRefridgerator;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -16,7 +17,7 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockBasicRefridgerator extends Block
+public class BlockBasicRefridgerator extends BlockContainer
 {
 	public BlockBasicRefridgerator(int par1)
 	{
@@ -33,12 +34,12 @@ public class BlockBasicRefridgerator extends Block
 	{
 		if(player instanceof EntityPlayerMP)
 		{
-			TileEntity te = world.getBlockTileEntity(x, y, z);
-			ModLoader.serverOpenWindow((EntityPlayerMP) player, new ContainerBasicRefridgerator(player.inventory, ((IInventory) te)), 85, x, y, z);
+
+			ModLoader.serverOpenWindow((EntityPlayerMP) player, new ContainerBasicRefridgerator(player, world, x, y, z), 85, x, y, z);
 		}
 		else
 		{
-			ModLoader.openGUI((EntityPlayerSP) player, new GuiBasicRefridgerator(player.inventory, x, y, z));
+			ModLoader.openGUI((EntityPlayerSP) player, new GuiBasicRefridgerator(player, world, x, y, z));
 		}
 		return true;
 	}

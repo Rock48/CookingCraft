@@ -138,7 +138,7 @@ public class mod_CookingCraft extends BaseMod
 			{
 			
 			case 85:
-				return new GuiBasicRefridgerator(player.inventory, x, y, z);
+				return new GuiBasicRefridgerator(player, player.worldObj, x, y, z);
 			default:
 				return null;
 			}

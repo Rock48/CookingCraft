@@ -2,7 +2,10 @@ package mods.cc.rock.client.gui.inventory;
 
 import mods.cc.rock.inventory.ContainerBasicRefridgerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
@@ -12,9 +15,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiBasicRefridgerator extends GuiContainer
 {
-	public GuiBasicRefridgerator(InventoryPlayer inventory, int x, int y, int z) 
+	public GuiBasicRefridgerator(EntityPlayer player, World world, int x, int y, int z) 
 	{
-		super(new ContainerBasicRefridgerator(inventory, inventory));
+		
+		super(new ContainerBasicRefridgerator(player, world, x, y, z));
 	}
 	@Override
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
