@@ -1,20 +1,16 @@
 [
 {
-  "modid": "mod_CookingCraft",
+  "modid": "CC",
   "name": "CookingCraft",
   "description": "A Mod that adds more in-depth cooking aspects and food to Minecraft.",
   "version": "pralpha0a",
   "url": "http://www.google.com/",
   "updateUrl": "",
-  "authorList": [
-  "Rock"
-  ],
-  "credits": "Made By Rock",
+  "authorList": ["Rock", "Darth_Feder"],
+  "credits": "Made By Rock, with help from Darth",
   "logoFile": "/mods/cc/textures/CookingCraft.png",
-  "screenshots": [
-  ],
+  "screenshots": [],
   "parent": "",
-  "dependencies": [
-  ]
+  "dependencies": []
 }
 ]

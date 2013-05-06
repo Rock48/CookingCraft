@@ -15,7 +15,7 @@ public class CookingCraftLivingDropsEvent {
 		this.rand = new Random();
 		if(event.entityLiving instanceof EntityZombie)
 		{
-			event.entityLiving.dropItem(mod_CookingCraft.fryingPan.itemID, this.rand.nextInt(3));
+			//event.entityLiving.dropItem(mod_CookingCraft.fryingPan.itemID, this.rand.nextInt(3));
 		}
 	}
 

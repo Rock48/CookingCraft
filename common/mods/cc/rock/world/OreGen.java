@@ -2,7 +2,6 @@ package mods.cc.rock.world;
 
 import java.util.Random;
 
-import mods.cc.rock.block.ModBlocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -26,7 +25,7 @@ public class OreGen implements IWorldGenerator
 			int xCoord = i + this.random.nextInt(16);
 			int yCoord = this.random.nextInt(55);
 			int zCoord = j + this.random.nextInt(16);
-			new WorldGenMinable(ModBlocks.aluminumOre.blockID, 6).generate(world, random, xCoord, yCoord, zCoord);
+			//new WorldGenMinable(ModBlocks.aluminumOre.blockID, 6).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 }
