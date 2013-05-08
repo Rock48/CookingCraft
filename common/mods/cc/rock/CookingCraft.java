@@ -1,6 +1,7 @@
 package mods.cc.rock;
 
 import mods.cc.rock.core.proxy.CommonProxy;
+import mods.cc.rock.lib.Reference;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -21,7 +22,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class CookingCraft
 {
-        @Instance()
+        @Instance(Reference.MOD_ID)
         public static CookingCraft instance;
         
     	@SidedProxy(clientSide = "mods.cc.rock.core.proxy.ClientProxy", serverSide = "mods.cc.rock.core.proxy.CommonProxy")
