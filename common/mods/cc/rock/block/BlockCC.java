@@ -37,6 +37,7 @@ public class BlockCC extends Block
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister)
     {
+    	if(this.texture != null)
         this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.texture);
     }
 
