@@ -1,5 +1,6 @@
 package mods.cc.rock;
 
+import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.lib.Reference;
 
@@ -18,14 +19,14 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid = "CC", name = "CookingCraft")
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class CookingCraft
 {
         @Instance(Reference.MOD_ID)
         public static CookingCraft instance;
         
-    	@SidedProxy(clientSide = "mods.cc.rock.core.proxy.ClientProxy", serverSide = "mods.cc.rock.core.proxy.CommonProxy")
+    	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     	public static CommonProxy proxy;
     	
         
@@ -39,7 +40,7 @@ public class CookingCraft
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
-            
+            ModBlocks.initBlocks();
             
         }
         
