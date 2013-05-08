@@ -2,7 +2,7 @@ package mods.cc.rock.event;
 
 import java.util.Random;
 
-import mods.cc.rock.mod_CookingCraft;
+import mods.cc.rock.CookingCraft;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
