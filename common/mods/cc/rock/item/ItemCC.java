@@ -1,6 +1,6 @@
 package mods.cc.rock.item;
 
-public class ItemUnlisted
+public class ItemCC
 {
 
 }

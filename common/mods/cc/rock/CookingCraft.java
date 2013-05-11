@@ -2,6 +2,7 @@ package mods.cc.rock;
 
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.proxy.CommonProxy;
+import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
 
 import net.minecraft.item.ItemStack;
@@ -41,6 +42,8 @@ public class CookingCraft
         public void preInit(FMLPreInitializationEvent event)
         {
             ModBlocks.initBlocks();
+            
+            ModItems.initItems();
             
         }
         

@@ -76,10 +76,10 @@ public class BlockCC extends Block
 
         if (itemStack.hasDisplayName())
         {
-            ((TileDC) world.getBlockTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
+            ((TileCC) world.getBlockTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
         }
 
-        ((TileDC) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
+        ((TileCC) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
     }*/
 
 

@@ -1,6 +1,6 @@
 package mods.cc.rock.block;
 
-public class BlockUnlisted
+public class AluminumOre
 {
 
 }

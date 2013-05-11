@@ -13,6 +13,7 @@ import net.minecraftforge.common.MinecraftForge;
 public class ModBlocks
 {
 	public static Block kitchenTile;
+	
 	public static void initBlocks(){
 		
 		kitchenTile = new BlockCC(BlockIDs.ID_KITCHEN_TILE, Material.rock, Textures.TEX_KITCHEN_TILE).setHardness(1F).setResistance(2F).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("kitchenTile");
@@ -22,14 +23,14 @@ public class ModBlocks
 		registry();
 		blockCrafting();
 	}
-	public static void registry(){
+	private static void registry(){
 		//Register Blocks
 		GameRegistry.registerBlock(kitchenTile, kitchenTile.getUnlocalizedName());
 		
 		//Register Language
 		LanguageRegistry.addName(kitchenTile, "Kitchen Tile");
 	}
-	public static void blockCrafting(){
+	private static void blockCrafting(){
 		GameRegistry.addShapelessRecipe(new ItemStack(kitchenTile), new Object[]{Block.stoneBrick});
 		
 	}
