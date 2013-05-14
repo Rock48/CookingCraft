@@ -2,9 +2,11 @@ package mods.cc.rock;
 
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.proxy.CommonProxy;
+import mods.cc.rock.creativetabs.CreativeTabCC;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -29,6 +31,9 @@ public class CookingCraft
         
     	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     	public static CommonProxy proxy;
+    	
+    	
+    	public static CreativeTabs tabCC = new CreativeTabCC(Reference.MOD_ID);
     	
         
         @SuppressWarnings("unchecked")
