@@ -1,6 +1,7 @@
 package mods.cc.rock;
 
 import mods.cc.rock.block.ModBlocks;
+import mods.cc.rock.core.handlers.LocalizationHandler;
 import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.creativetabs.CreativeTabCC;
 import mods.cc.rock.item.ModItems;
@@ -47,6 +48,9 @@ public class CookingCraft
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
+            
+            LocalizationHandler.loadLanguages();
+            
             ModBlocks.initBlocks();
             
             ModItems.initItems();
@@ -57,7 +61,7 @@ public class CookingCraft
         @Init
         public void load(FMLInitializationEvent event)
         {
-        	LanguageRegistry.instance().addStringLocalization("itemGroup.CC", "en_US", "CookingCraft");
+        	
             
         }
         

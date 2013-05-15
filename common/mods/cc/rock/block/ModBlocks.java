@@ -1,8 +1,6 @@
 package mods.cc.rock.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.lib.BlockIDs;
 import mods.cc.rock.lib.Textures;
@@ -29,11 +27,10 @@ public class ModBlocks
 	}
 	
 	private static void registry(){
+	    
 		//Register Blocks
 		GameRegistry.registerBlock(kitchenTile, kitchenTile.getUnlocalizedName());
 		
-		//Register Language
-		LanguageRegistry.addName(kitchenTile, "Kitchen Tile");
 	}
 	
 	private static void blockCrafting(){
