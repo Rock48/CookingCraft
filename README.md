@@ -3,6 +3,8 @@ CookingCraft
 
 A Cooking Mod for Minecraft
 
+by Rock and Darth
+
 Licenced Under the LGPLv3
 
 Planned Features
