@@ -6,6 +6,7 @@ import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.creativetabs.CreativeTabCC;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
+import mods.cc.rock.world.OreGen;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -22,7 +23,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -62,6 +63,7 @@ public class CookingCraft
         public void load(FMLInitializationEvent event)
         {
         	
+            GameRegistry.registerWorldGenerator(new OreGen());
             
         }
         

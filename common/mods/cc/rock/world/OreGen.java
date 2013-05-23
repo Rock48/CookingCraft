@@ -2,6 +2,7 @@ package mods.cc.rock.world;
 
 import java.util.Random;
 
+import mods.cc.rock.lib.BlockIDs;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -20,12 +21,13 @@ public class OreGen implements IWorldGenerator
 
 	private void generateAluminum(World world, int i, int j)
 	{
-		for(int k=0;k<30;k++)
+		for(int k = 0;k < 25;k++)
 		{
 			int xCoord = i + this.random.nextInt(16);
 			int yCoord = this.random.nextInt(55);
 			int zCoord = j + this.random.nextInt(16);
-			//new WorldGenMinable(ModBlocks.aluminumOre.blockID, 6).generate(world, random, xCoord, yCoord, zCoord);
+			
+			new WorldGenMinable(BlockIDs.ID_ALUMINUM_ORE, 6).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 }

@@ -14,26 +14,34 @@ public class ModBlocks
 {
     
 	public static Block kitchenTile;
+	public static Block aluminumOre;
 	
-	
-	public static void initBlocks(){
+	public static void initBlocks()
+	{
 		
  		kitchenTile = new BlockCC(BlockIDs.ID_KITCHEN_TILE, Material.rock, Textures.TEX_KITCHEN_TILE).setHardness(1F).setResistance(2F).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("kitchenTile");
 		MinecraftForge.setBlockHarvestLevel(kitchenTile, "pickaxe", 0);
+		
+		aluminumOre = new BlockAluminumOre(BlockIDs.ID_ALUMINUM_ORE, Material.rock, Textures.TEX_ALUMINUM_ORE);
+		MinecraftForge.setBlockHarvestLevel(aluminumOre, "pickaxe", 2);
 		
 		
 		registry();
 		blockCrafting();
 	}
 	
-	private static void registry(){
+	private static void registry()
+	{
 	    
 		//Register Blocks
 		GameRegistry.registerBlock(kitchenTile, kitchenTile.getUnlocalizedName());
+		GameRegistry.registerBlock(aluminumOre, aluminumOre.getUnlocalizedName());
 		
 	}
 	
-	private static void blockCrafting(){
+	private static void blockCrafting()
+	{
+	    
 		GameRegistry.addShapelessRecipe(new ItemStack(kitchenTile), new Object[]{Block.stoneBrick});
 		
 	}
