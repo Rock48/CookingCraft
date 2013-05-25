@@ -38,7 +38,11 @@ public class CookingCraft
     	
     	public static CreativeTabs tabCC = new CreativeTabCC(Reference.MOD_ID);
     	
-        
+    	/**
+    	 * Adds a recipe, supports ore dictionary
+    	 * @param output
+    	 * @param input
+    	 */
         @SuppressWarnings("unchecked")
         public static void addOreRecipe(ItemStack output, Object[] input) 
     	{

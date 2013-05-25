@@ -20,16 +20,25 @@ public class BlockCC extends Block
 {
 	String texture;
 	/**
-	 * 
+	 * BlockCC
 	 * @param id of block
 	 * @param material of block
-	 * @param texture of block: use null if Overriding registerIcons
+	 * @param texture of block
 	 */
     public BlockCC(int id, Material material, String texture)
     {
         super(id, material);
         if(texture != null)
         this.texture = texture;
+    }
+    /**
+     * BlockCC
+     * @param id of block
+     * @param material of block
+     */
+    public BlockCC(int id, Material material)
+    {
+        super(id, material);
     }
     
     

@@ -3,5 +3,11 @@
 <properties version="1.0">
 	<comment>English (en_US) Localization File</comment>
 	<entry key="itemGroup.CC">CookingCraft</entry>
+	
 	<entry key="tile.kitchenTile.name">Kitchen Tile</entry>
+	<entry key="tile.aluminumOre.name">Aluminum Ore</entry>
+	<entry key="tile.machineCoreOn.name">Machine Core On</entry>
+	<entry key="tile.machineCoreOff.name">Machine Core</entry>
+	
+	<entry key="item.ingotAluminum.name">Aluminum Ingot</entry>
 </properties>
