@@ -7,6 +7,7 @@ import mods.cc.rock.lib.Reference;
 import mods.cc.rock.lib.Textures;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.World;
 
 public class BlockMachineCore extends BlockCC
@@ -58,6 +59,9 @@ public class BlockMachineCore extends BlockCC
         {
             par1World.setBlock(par2, par3, par4, ModBlocks.machineCoreOff.blockID, 0, 2);
         }
+    }
+    public boolean canCreatureSpawn(EnumCreatureType type, World world, int x, int y, int z){
+    	return false;
     }
 }
 

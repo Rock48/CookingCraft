@@ -17,11 +17,12 @@ public class CraftingRecipies
     {
         
         //Kitchen Tile
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.kitchenTile, 5),
-            "asa",
-            "sss",
-            "asa",
-            'a', new ItemStack(ModItems.ingotAluminum), 's', new ItemStack(Block.stoneBrick));
+        CookingCraft.addOreRecipe(new ItemStack(ModBlocks.kitchenTile, 5), new Object[]{
+            "ASA",
+            "SSS",
+            "ASA",
+            'A', "ingotAluminum", 'S', Block.stoneBrick});
+        
         GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.kitchenTile), Block.stoneBrick, ModItems.ingotAluminum);
         
         //Machine Core
@@ -30,6 +31,14 @@ public class CraftingRecipies
             "ISI",
             "AGA",
             'A', "ingotAluminum", 'G', Block.glass, 'I', Item.ingotIron, 'S', Item.ingotGold});
+        
+        //Hammer
+        CookingCraft.addOreRecipe(new ItemStack(ModItems.itemHammer), new Object[]{
+        	"AAA",
+        	"AS ",
+        	" S ",
+        	'A', "ingotAluminum", 'S', Item.stick
+        });
         
         
     }
