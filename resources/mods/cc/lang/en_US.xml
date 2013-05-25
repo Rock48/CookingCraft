@@ -5,7 +5,7 @@
 	<entry key="itemGroup.CC">CookingCraft</entry>
 	
 	<entry key="tile.kitchenTile.name">Kitchen Tile</entry>
-	<entry key="tile.aluminumOre.name">Aluminum Ore</entry>
+	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
 	<entry key="tile.machineCoreOn.name">Machine Core On</entry>
 	<entry key="tile.machineCoreOff.name">Machine Core</entry>
 	
