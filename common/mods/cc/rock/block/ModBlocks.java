@@ -3,12 +3,11 @@ package mods.cc.rock.block;
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.lib.BlockIDs;
 import mods.cc.rock.lib.Textures;
+
 import net.minecraft.block.Block;
-import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks
@@ -33,7 +32,6 @@ public class ModBlocks
 		MinecraftForge.setBlockHarvestLevel(machineCoreOff, "pickaxe", 0);
 		
 		registry();
-		blockCrafting();
 	}
 	
 	private static void registry()
@@ -47,17 +45,4 @@ public class ModBlocks
 		
 	}
 	
-	private static void blockCrafting()
-	{
-	    
-		GameRegistry.addShapelessRecipe(new ItemStack(kitchenTile), new Object[]{Block.stoneBrick});
-		
-		CookingCraft.addOreRecipe(new ItemStack(machineCoreOff), new Object[]{
-			"AGA",
-			"ISI",
-			"AGA",
-			'A', "ingotAluminum", 'G', Block.glass, 'I', Item.ingotIron, 'S', Item.ingotGold
-		});
-		
-	}
 }

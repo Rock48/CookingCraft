@@ -6,6 +6,7 @@ import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.creativetabs.CreativeTabCC;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
+import mods.cc.rock.recipie.ModRecipies;
 import mods.cc.rock.world.OreGen;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -59,6 +60,8 @@ public class CookingCraft
             ModBlocks.initBlocks();
             
             ModItems.initItems();
+            
+            ModRecipies.init();
             
         }
         

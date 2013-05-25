@@ -5,11 +5,8 @@ import java.util.Random;
 
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.lib.Textures;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.Icon;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockMachineCore extends BlockCC
