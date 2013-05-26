@@ -12,6 +12,8 @@ public class Textures {
 	public static final String TEX_ALUMINUM_INGOT = "ItemAluminumIngot";
 	public static final String TEX_HAMMER = "ItemHammer";
 	public static final String TEX_ROD = "ItemRod";
-
+	public static final String TEX_FLOUR = "ItemFlour";
+	public static final String TEX_OIL_LIGHT = "oilLight";
+	public static final String TEX_OIL_DARK = "oilDark";
 
 }

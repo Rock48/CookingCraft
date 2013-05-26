@@ -10,4 +10,7 @@
 	<entry key="tile.machineCoreOff.name">Machine Core</entry>
 	
 	<entry key="item.ingotAluminum.name">Aluminum Ingot</entry>
+	<entry key="item.itemHammer.name">Hammer</entry>
+	<entry key="item.itemRod.name">Aluminum Rod</entry>
+	<entry key="item.itemFlour.name">Flour</entry>
 </properties>

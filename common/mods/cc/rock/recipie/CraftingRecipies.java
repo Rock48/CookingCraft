@@ -3,11 +3,10 @@ package mods.cc.rock.recipie;
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.item.ModItems;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
+import net.minecraft.item.crafting.CraftingManager;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CraftingRecipies
@@ -32,15 +31,34 @@ public class CraftingRecipies
             "AGA",
             'A', "ingotAluminum", 'G', Block.glass, 'I', Item.ingotIron, 'S', Item.ingotGold});
         
-        //Hammer
+        //Hammer 
         CookingCraft.addOreRecipe(new ItemStack(ModItems.itemHammer), new Object[]{
         	"AAA",
         	"AS ",
         	" S ",
-        	'A', "ingotAluminum", 'S', Item.stick
+        	'A', "ingotAluminum", 'S', ModItems.itemRod
         });
         
+        //bread
+        GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[]{
+        	"OFO",
+        	"FWF",
+        	"OFO",
+        	'O', ModItems.oilLight, 'F', ModItems.itemFlour, 'W', Item.bucketWater
+        });
         
+        //rod
+        CookingCraft.addOreRecipe(new ItemStack(ModItems.itemRod), new Object[]{
+        	"DAD",
+        	"DAD",
+        	'D', new ItemStack(Item.dyePowder, 1, 1), 'A', "ingotAluminum"
+        });
+        
+        //oils
+        //light
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilLight), Item.glassBottle, Block.plantYellow);
+        //dark
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilDark), Item.glassBottle, Block.plantRed);
     }
     
 }

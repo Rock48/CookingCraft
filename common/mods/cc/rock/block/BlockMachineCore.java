@@ -3,11 +3,18 @@ package mods.cc.rock.block;
 
 import java.util.Random;
 
+import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.lib.Textures;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class BlockMachineCore extends BlockCC
@@ -62,6 +69,34 @@ public class BlockMachineCore extends BlockCC
     }
     public boolean canCreatureSpawn(EnumCreatureType type, World world, int x, int y, int z){
     	return false;
+    }
+    public void dropItem(World par1World, int par2, int par3, int par4, int par5, EntityLiving par6EntityLiving)
+    {
+        if (!par1World.isRemote)
+        {
+            if ((par5 & 1) == 1)
+            {
+                EntityItem entityItem = new EntityItem(par1World, (double) par2 + Math.random(), (double) par3 + Math.random(), (double) par4 + Math.random(), new ItemStack(this));
+                par1World.spawnEntityInWorld(entityItem);
+            }
+        }
+    }
+
+    /**
+     * Called upon block activation (right click on the block.)
+     */
+    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    {
+        if (par5EntityPlayer.getCurrentEquippedItem() != null && par5EntityPlayer.getCurrentEquippedItem().itemID == ModItems.itemHammer.itemID)
+        {
+            this.dropItem(par1World, par2, par3, par4, 1, par5EntityPlayer);
+            par1World.setBlockToAir(par2, par3, par4);
+            return true;
+        }
+        else
+        {
+            return super.onBlockActivated(par1World, par2, par3, par4, par5EntityPlayer, par6, par7, par8, par9);
+        }
     }
 }
 
