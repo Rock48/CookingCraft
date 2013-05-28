@@ -6,6 +6,7 @@ import java.util.Random;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.lib.Textures;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
@@ -20,11 +21,14 @@ import net.minecraft.world.World;
 public class BlockMachineCore extends BlockCC
 {
 	private boolean isActive;
+	
 	public BlockMachineCore(int id, boolean par2Active)
 	{
 		super(id, Material.rock);
 		this.isActive = par2Active;
+		this.setHardness(1F).setResistance(2F).setStepSound(Block.soundStoneFootstep);
 	}
+	
 	public void registerIcons(IconRegister iconRegister)
 	{
 		if(this.isActive)
@@ -32,6 +36,7 @@ public class BlockMachineCore extends BlockCC
 		else if(!this.isActive)
 		this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase()+":"+Textures.TEX_MACHINE_CORE_OFF);
 	}
+	
     public void onBlockAdded(World par1World, int x, int y, int z)
     {
     	if(!par1World.isRemote)
@@ -46,6 +51,7 @@ public class BlockMachineCore extends BlockCC
             }
     	}
     }
+    
     public void onNeighborBlockChange(World par1World, int x, int y, int z, int par5)
     {	
     	if(!par1World.isRemote)
@@ -60,6 +66,7 @@ public class BlockMachineCore extends BlockCC
             }
     	}
     }
+    
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         if (!par1World.isRemote && this.isActive && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
@@ -67,9 +74,11 @@ public class BlockMachineCore extends BlockCC
             par1World.setBlock(par2, par3, par4, ModBlocks.machineCoreOff.blockID, 0, 2);
         }
     }
+    
     public boolean canCreatureSpawn(EnumCreatureType type, World world, int x, int y, int z){
     	return false;
     }
+    
     public void dropItem(World par1World, int par2, int par3, int par4, int par5, EntityLiving par6EntityLiving)
     {
         if (!par1World.isRemote)

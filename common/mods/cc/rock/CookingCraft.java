@@ -76,7 +76,7 @@ public class CookingCraft
 
                 if (ItemStack.areItemStacksEqual(resultItem, recipeResult))
                 {
-                    System.out.println("[YOUR_MOD_NAME] Removed Recipe: " + recipes.get(scan) + " -> " + recipeResult);
+                    System.out.println("[CookingCraft] Removed Recipe: " + recipes.get(scan) + " -> " + recipeResult);
                     recipes.remove(scan);
                 }
             }
@@ -85,8 +85,7 @@ public class CookingCraft
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
-        	RecipeOverride.init();
-            
+
             LocalizationHandler.loadLanguages();
             
             ModBlocks.initBlocks();

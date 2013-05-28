@@ -13,4 +13,6 @@
 	<entry key="item.itemHammer.name">Hammer</entry>
 	<entry key="item.itemRod.name">Aluminum Rod</entry>
 	<entry key="item.itemFlour.name">Flour</entry>
+	<entry key="item.oilLight.name">Lightflower Oil</entry>
+	<entry key="item.oilDark.name">Darkflower Oil</entry>
 </properties>

@@ -38,7 +38,7 @@ public class CraftingRecipies
         	'A', "ingotAluminum", 'S', ModItems.itemRod
         });
         
-        //bread
+        //Bread
         GameRegistry.addShapedRecipe(new ItemStack(Item.bread), new Object[]{
         	"OFO",
         	"FWF",
@@ -46,18 +46,18 @@ public class CraftingRecipies
         	'O', ModItems.oilLight, 'F', ModItems.itemFlour, 'W', Item.bucketWater
         });
         
-        //rod
+        //Rod
         CookingCraft.addOreRecipe(new ItemStack(ModItems.itemRod), new Object[]{
         	"DAD",
         	"DAD",
         	'D', new ItemStack(Item.dyePowder, 1, 1), 'A', "ingotAluminum"
         });
         
-        //oils
-        //light
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilLight), Item.glassBottle, Block.plantYellow);
-        //dark
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilDark), Item.glassBottle, Block.plantRed);
+        //Light Oil
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilLight), Item.potion, Block.plantYellow);
+        
+        //Dark Oil
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilDark), Item.potion, Block.plantRed);
     }
     
 }
