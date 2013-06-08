@@ -13,9 +13,9 @@ public class CookingCraftLivingDropsEvent
 	@ForgeSubscribe
 	public void onEntityDrop(LivingDropsEvent event)
 	{
-		if(event.entityLiving instanceof EntityZombie)
+		if(event.entityLiving instanceof EntityZombie && event.source.getDamageType().equals("player"))
 		{
-			ItemHelper.dropItem(event.entityLiving, ItemIDs.ID_HAMMER, 40);
+			ItemHelper.dropItem(event.entityLiving, ItemIDs.ID_HAMMER, 50);
 		}
 	}
 
