@@ -9,5 +9,7 @@ public class ItemIDs
     public static final int ID_FLOUR = 1703;
     public static final int ID_OIL_DARK = 1704;
     public static final int ID_OIL_LIGHT = 1705;
+    public static final int ID_FRYING_PAN = 1706;
+    
     
 }

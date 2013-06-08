@@ -15,4 +15,5 @@
 	<entry key="item.itemFlour.name">Flour</entry>
 	<entry key="item.oilLight.name">Lightflower Oil</entry>
 	<entry key="item.oilDark.name">Darkflower Oil</entry>
+	<entry key="item.fryingPan.name">Frying Pan</entry>
 </properties>

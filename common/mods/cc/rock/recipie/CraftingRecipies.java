@@ -58,6 +58,14 @@ public class CraftingRecipies
         
         //Dark Oil
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilDark), Item.potion, Block.plantRed);
+        
+        //Frying Pan
+        CookingCraft.addOreRecipe(new ItemStack(ModItems.fryingPan), new Object[]{
+            "AA ",
+            "AI ",
+            "  R",
+            'A', new ItemStack(ModItems.ingotAluminum), 'R', new ItemStack(ModItems.itemRod), 'I', new ItemStack(Item.ingotIron)
+        });
     }
     
 }

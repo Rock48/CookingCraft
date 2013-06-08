@@ -6,10 +6,10 @@ import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.handlers.LocalizationHandler;
 import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.creativetabs.CreativeTabCC;
+import mods.cc.rock.event.CookingCraftLivingDropsEvent;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.recipie.ModRecipies;
-import mods.cc.rock.recipie.RecipeOverride;
 import mods.cc.rock.world.OreGen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -17,6 +17,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -54,6 +55,7 @@ public class CookingCraft
     		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(output, new Object[] { Boolean.valueOf(true), input }));
     	}
         
+        @SuppressWarnings("rawtypes")
         public static void RemoveRecipe(ItemStack resultItem) //Code by yope_fried inspired by pigalot
         {
             ItemStack recipeResult = null;
@@ -86,12 +88,16 @@ public class CookingCraft
         public void preInit(FMLPreInitializationEvent event)
         {
 
+            //Load Language Files
             LocalizationHandler.loadLanguages();
             
+            //Load Blocks
             ModBlocks.initBlocks();
             
+            //Load Items
             ModItems.initItems();
             
+            //Load Recipes
             ModRecipies.init();
             
         }
@@ -100,8 +106,12 @@ public class CookingCraft
         @Init
         public void load(FMLInitializationEvent event)
         {
-        	
+            
+        	//Load Ore Gen
             GameRegistry.registerWorldGenerator(new OreGen());
+            
+            //Register Mob Drops
+            MinecraftForge.EVENT_BUS.register(new CookingCraftLivingDropsEvent());
             
         }
         

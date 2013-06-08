@@ -6,15 +6,14 @@ import java.util.Random;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.lib.Textures;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -75,7 +74,8 @@ public class BlockMachineCore extends BlockCC
         }
     }
     
-    public boolean canCreatureSpawn(EnumCreatureType type, World world, int x, int y, int z){
+    public boolean canCreatureSpawn(EnumCreatureType type, World world, int x, int y, int z)
+    {
     	return false;
     }
     

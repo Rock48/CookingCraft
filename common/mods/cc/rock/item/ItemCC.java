@@ -7,15 +7,19 @@ import net.minecraft.item.Item;
 public class ItemCC extends Item
 {
 	public String texture;
+	
 	public ItemCC(int id, String texture) 
 	{
 		super(id-256);
 		this.texture = texture;
+		this.setMaxStackSize(1);
 	}
+	
 	public ItemCC(int id)
 	{
-		super(id);
+		super(id-256);
 	}
+	
     public void registerIcons(IconRegister iconRegister)
     {
     	if(this.texture != null)
