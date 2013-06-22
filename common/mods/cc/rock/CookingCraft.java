@@ -1,6 +1,7 @@
 package mods.cc.rock;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
 
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.handlers.LocalizationHandler;
@@ -8,8 +9,10 @@ import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.creativetabs.CreativeTabCC;
 import mods.cc.rock.event.CookingCraftLivingDropsEvent;
 import mods.cc.rock.item.ModItems;
+import mods.cc.rock.lib.Messages;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.recipie.ModRecipies;
+import mods.cc.rock.util.LogUtil;
 import mods.cc.rock.world.OreGen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -78,7 +81,7 @@ public class CookingCraft
 
                 if (ItemStack.areItemStacksEqual(resultItem, recipeResult))
                 {
-                    System.out.println("[CookingCraft] Removed Recipe: " + recipes.get(scan) + " -> " + recipeResult);
+                    LogUtil.log(Level.INFO, "Removed Recipe: " + recipes.get(scan) + " -> " + recipeResult);
                     recipes.remove(scan);
                 }
             }
@@ -87,9 +90,11 @@ public class CookingCraft
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
-
+            LogUtil.init();
             //Load Language Files
             LocalizationHandler.loadLanguages();
+            
+            LogUtil.log(Level.INFO, Messages.MSG_LOCALIZATION_INITIALIZATION_SUCCESS);
             
             //Load Blocks
             ModBlocks.initBlocks();
@@ -100,6 +105,9 @@ public class CookingCraft
             //Load Recipes
             ModRecipies.init();
             
+
+            
+            LogUtil.log(Level.INFO, Messages.MSG_MOD_INIT_SUCCESS);
         }
         
         
@@ -109,9 +117,12 @@ public class CookingCraft
             
         	//Load Ore Gen
             GameRegistry.registerWorldGenerator(new OreGen());
+            LogUtil.log(Level.INFO, Messages.MSG_ORE_GENERATION_SUCCESS);
             
             //Register Mob Drops
             MinecraftForge.EVENT_BUS.register(new CookingCraftLivingDropsEvent());
+            
+            LogUtil.log(Level.INFO, Messages.MSG_MOB_DROP_INITIALIZATION_SUCCESS);
             
         }
         

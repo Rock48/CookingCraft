@@ -1,8 +1,11 @@
 package mods.cc.rock.world;
 
 import java.util.Random;
+import java.util.logging.Level;
 
 import mods.cc.rock.lib.BlockIDs;
+import mods.cc.rock.lib.Messages;
+import mods.cc.rock.util.LogUtil;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -29,5 +32,6 @@ public class OreGen implements IWorldGenerator
 			
 			new WorldGenMinable(BlockIDs.ID_ALUMINUM_ORE, 6).generate(world, random, xCoord, yCoord, zCoord);
 		}
+		
 	}
 }

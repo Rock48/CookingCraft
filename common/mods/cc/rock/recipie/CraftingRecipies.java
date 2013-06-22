@@ -1,8 +1,12 @@
 package mods.cc.rock.recipie;
 
+import java.util.logging.Level;
+
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.item.ModItems;
+import mods.cc.rock.lib.Messages;
+import mods.cc.rock.util.LogUtil;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -54,10 +58,10 @@ public class CraftingRecipies
         });
         
         //Light Oil
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilLight), Item.potion, Block.plantYellow);
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilLight), Item.glassBottle, Block.plantYellow);
         
         //Dark Oil
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilDark), Item.potion, Block.plantRed);
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilDark), Item.glassBottle, Block.plantRed);
         
         //Frying Pan
         CookingCraft.addOreRecipe(new ItemStack(ModItems.fryingPan), new Object[]{
@@ -66,6 +70,7 @@ public class CraftingRecipies
             "  R",
             'A', new ItemStack(ModItems.ingotAluminum), 'R', new ItemStack(ModItems.itemRod), 'I', new ItemStack(Item.ingotIron)
         });
+        LogUtil.log(Level.INFO, Messages.MSG_CRAFTING_RECIPE_SUCCESS);
     }
     
 }

@@ -51,6 +51,7 @@ public class ItemHammer extends ItemCC
     		((EntityCreeper) par2EntityLiving).onStruckByLightning(new EntityLightningBolt(w, 0, 0, 0));
     		((EntityCreeper) par2EntityLiving).extinguish();
     		((EntityCreeper) par2EntityLiving).setEntityHealth(tempHp);
+    		
     		return true;
     	}
     	
