@@ -1,7 +1,5 @@
 package mods.cc.rock;
 
-import java.util.logging.Level;
-
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.handlers.LocalizationHandler;
 import mods.cc.rock.core.proxy.CommonProxy;
@@ -54,7 +52,7 @@ public class CookingCraft
             
             //Load Language Files
             LocalizationHandler.loadLanguages();
-            LogUtil.log(Level.INFO, Messages.MSG_LOCALIZATION_INITIALIZATION_SUCCESS);
+            LogUtil.info(Messages.MSG_LOCALIZATION_INITIALIZATION_SUCCESS);
             
             //Load Blocks
             ModBlocks.initBlocks();
@@ -74,11 +72,11 @@ public class CookingCraft
             
         	//Load Ore Gen
             GameRegistry.registerWorldGenerator(new OreGen());
-            LogUtil.log(Level.INFO, Messages.MSG_ORE_GENERATION_SUCCESS);
+            LogUtil.info(Messages.MSG_ORE_GENERATION_SUCCESS);
             
             //Register Mob Drops
             MinecraftForge.EVENT_BUS.register(new CookingCraftLivingDropsEvent());
-            LogUtil.log(Level.INFO, Messages.MSG_MOB_DROP_INITIALIZATION_SUCCESS);
+            LogUtil.info(Messages.MSG_MOB_DROP_INITIALIZATION_SUCCESS);
            
             
         }
@@ -87,7 +85,7 @@ public class CookingCraft
         @PostInit
         public void postInit(FMLPostInitializationEvent event)
         {
-             LogUtil.log(Level.INFO, Messages.MSG_MOD_INIT_SUCCESS);
+             LogUtil.info(Messages.MSG_MOD_INIT_SUCCESS);
             
         }
 

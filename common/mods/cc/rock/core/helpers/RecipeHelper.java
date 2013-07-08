@@ -1,7 +1,6 @@
 package mods.cc.rock.core.helpers;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
 
 import mods.cc.rock.util.LogUtil;
 
@@ -49,7 +48,7 @@ public class RecipeHelper
 
             if (ItemStack.areItemStacksEqual(resultItem, recipeResult))
             {
-                LogUtil.log(Level.INFO, "Removed Recipe: " + recipes.get(scan) + " -> " + recipeResult);
+                LogUtil.info("Removed Recipe: " + recipes.get(scan) + " -> " + recipeResult);
                 recipes.remove(scan);
             }
         }

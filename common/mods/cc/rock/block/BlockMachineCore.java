@@ -6,6 +6,7 @@ import java.util.Random;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.lib.Textures;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -73,10 +74,12 @@ public class BlockMachineCore extends BlockCC
     {
     	return false;
     }
+    
     public int idDropped(int par1, Random par2Random, int par3)
     {
         return ModItems.ingotAluminum.itemID;
     }
+    
     public int quantityDropped(Random par1Random)
     {
         return par1Random.nextInt(3) + 1;
