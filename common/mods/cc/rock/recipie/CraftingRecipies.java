@@ -27,10 +27,10 @@ public class CraftingRecipies
         
         //Machine Core
         RecipeHelper.addOreRecipe(new ItemStack(ModBlocks.machineCoreOff), new Object[]{
-            "AGA",
+            "ARA",
             "ISI",
-            "AGA",
-            'A', "ingotAluminum", 'G', Block.glass, 'I', Item.ingotIron, 'S', Item.ingotGold});
+            "ARA",
+            'A', "ingotAluminum", 'R', Item.redstone, 'I', Item.ingotIron, 'S', Item.ingotGold});
         
         //Hammer 
         RecipeHelper.addOreRecipe(new ItemStack(ModItems.itemHammer), new Object[]{
@@ -66,9 +66,9 @@ public class CraftingRecipies
             "AA ",
             "AI ",
             "  R",
-            'A', new ItemStack(ModItems.ingotAluminum), 'R', new ItemStack(ModItems.itemRod), 'I', new ItemStack(Item.ingotIron)
+            'A', "ingotAluminum", 'R', ModItems.itemRod, 'I', Item.ingotIron
         });
-        
+
     }
     
 }
