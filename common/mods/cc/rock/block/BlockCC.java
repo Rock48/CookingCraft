@@ -5,6 +5,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.cc.rock.lib.Reference;
+import mods.cc.rock.tileentity.TileCC;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -13,12 +14,14 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+
 import net.minecraftforge.common.ForgeDirection;
 
 
 public class BlockCC extends Block
 {
 	String texture;
+	
 	/**
 	 * BlockCC
 	 * @param id of block
@@ -29,7 +32,7 @@ public class BlockCC extends Block
     {
         super(id, material);
         if(texture != null)
-        this.texture = texture;
+            this.texture = texture;
     }
     /**
      * BlockCC
@@ -47,11 +50,11 @@ public class BlockCC extends Block
     public void registerIcons(IconRegister iconRegister)
     {
     	if(this.texture != null)
-        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.texture);
+    	    this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.texture);
     }
 
     
-    /*Sets the direction of the block when placed
+    //Sets the direction of the block when placed
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entityLiving, ItemStack itemStack)
     {
@@ -88,8 +91,8 @@ public class BlockCC extends Block
             ((TileCC) world.getBlockTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
         }
 
-        ((TileCC) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
-    }*/
+        //((TileCC) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
+    }
 
 
 }
