@@ -68,6 +68,12 @@ public class CraftingRecipies
             "  R",
             'A', "ingotAluminum", 'R', ModItems.itemRod, 'I', Item.ingotIron
         });
+        RecipeHelper.addOreRecipe(new ItemStack(ModBlocks.fridge), new Object[]{
+        	"AAA",
+        	"RCR",
+        	"AAA",
+        	'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff, 'R', Block.blockRedstone
+        });
 
     }
     

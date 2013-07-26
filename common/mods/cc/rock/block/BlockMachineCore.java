@@ -19,7 +19,7 @@ public class BlockMachineCore extends BlockCC
 	
 	public BlockMachineCore(int id, boolean par2Active)
 	{
-		super(id, Material.rock);
+		super(id, Material.rock, false);
 		this.isActive = par2Active;
 		this.setHardness(1F).setResistance(2F).setStepSound(Block.soundStoneFootstep);
 	}

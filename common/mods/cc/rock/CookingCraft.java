@@ -9,6 +9,7 @@ import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Messages;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.recipie.ModRecipies;
+import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import mods.cc.rock.util.LogUtil;
 import mods.cc.rock.world.OreGen;
 
@@ -29,6 +30,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
@@ -47,6 +49,7 @@ public class CookingCraft
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
+        	GameRegistry.registerTileEntity(TileEntityRefridgerator.class, "tileRefridgerator");
             //Init Log
             LogUtil.init();
             
@@ -69,7 +72,9 @@ public class CookingCraft
         @Init
         public void load(FMLInitializationEvent event)
         {
-            
+        	
+            //gui
+        	NetworkRegistry.instance().registerGuiHandler(instance, proxy);
         	//Load Ore Gen
             GameRegistry.registerWorldGenerator(new OreGen());
             LogUtil.info(Messages.MSG_ORE_GENERATION_SUCCESS);

@@ -2,11 +2,11 @@ package mods.cc.rock.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
-
 import net.minecraftforge.common.ForgeDirection;
 
 public class TileCC extends TileEntity
 {
+
     private ForgeDirection orientation;
     private byte state;
     private String customName;

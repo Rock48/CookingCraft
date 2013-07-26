@@ -8,6 +8,7 @@
 	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
 	<entry key="tile.machineCoreOn.name">Machine Core On</entry>
 	<entry key="tile.machineCoreOff.name">Machine Core</entry>
+	<entry key="tile.fridge.name">Refrigerator</entry>
 	
 	<entry key="item.ingotAluminum.name">Aluminum Ingot</entry>
 	<entry key="item.itemHammer.name">Hammer</entry>
@@ -16,4 +17,5 @@
 	<entry key="item.oilLight.name">Lightflower Oil</entry>
 	<entry key="item.oilDark.name">Darkflower Oil</entry>
 	<entry key="item.fryingPan.name">Frying Pan</entry>
+	
 </properties>

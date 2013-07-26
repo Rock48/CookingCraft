@@ -54,45 +54,8 @@ public class BlockCC extends Block
     }
 
     
-    //Sets the direction of the block when placed
-    @Override
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entityLiving, ItemStack itemStack)
-    {
-        int direction = 0;
-        int facing = MathHelper.floor_double(entityLiving.rotationYaw * 4.0F / 360.0F + 0.5D) & 3;
+    /**Sets the direction of the block when placed*/
 
-
-        switch (facing)
-        {
-            case 0:
-                direction = ForgeDirection.NORTH.ordinal();
-                break;
-                
-            case 1:
-                direction = ForgeDirection.EAST.ordinal();
-                break;
-                
-            case 2:
-                direction = ForgeDirection.SOUTH.ordinal();
-                break;
-                
-            case 3:
-                direction = ForgeDirection.WEST.ordinal();
-                break;
-                
-        };
-
-
-        world.setBlockMetadataWithNotify(x, y, z, direction, 3);
-
-
-        if (itemStack.hasDisplayName())
-        {
-            ((TileCC) world.getBlockTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
-        }
-
-        //((TileCC) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
-    }
 
 
 }
