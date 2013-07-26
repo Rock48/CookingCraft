@@ -7,13 +7,13 @@ import net.minecraftforge.common.ForgeDirection;
 public class TileCC extends TileEntity
 {
 
-    private ForgeDirection orientation;
+    protected ForgeDirection orientation;
     private byte state;
     private String customName;
     
     public TileCC()
     {
-        orientation = ForgeDirection.SOUTH;
+        
         state = 0;
         customName = "";
         

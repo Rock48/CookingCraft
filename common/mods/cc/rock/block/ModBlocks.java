@@ -22,8 +22,8 @@ public class ModBlocks
 	public static void initBlocks()
 	{
 		
- 		kitchenTile = new BlockCC(BlockIDs.ID_KITCHEN_TILE, Material.rock, Textures.TEX_KITCHEN_TILE, false).setHardness(1F).setResistance(2F).setCreativeTab(CookingCraft.tabCC).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("kitchenTile");
-		aluminumOre = new BlockCC(BlockIDs.ID_ALUMINUM_ORE, Material.rock, Textures.TEX_ALUMINUM_ORE, false).setHardness(3F).setResistance(5F).setCreativeTab(CookingCraft.tabCC).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreAluminum");
+ 		kitchenTile = new BlockCC(BlockIDs.ID_KITCHEN_TILE, Material.rock, Textures.TEX_KITCHEN_TILE).setHardness(1F).setResistance(2F).setCreativeTab(CookingCraft.tabCC).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("kitchenTile");
+		aluminumOre = new BlockCC(BlockIDs.ID_ALUMINUM_ORE, Material.rock, Textures.TEX_ALUMINUM_ORE).setHardness(3F).setResistance(5F).setCreativeTab(CookingCraft.tabCC).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreAluminum");
 		machineCoreOff = new BlockMachineCore(BlockIDs.ID_MACHINE_CORE, false).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("machineCoreOff");
 		machineCoreOn = new BlockMachineCore(BlockIDs.ID_MACHINE_CORE_ON, true).setUnlocalizedName("machineCoreOn").setLightValue(0.9F);
 		fridge = new BlockRefridgerator(704).setUnlocalizedName("frige").setCreativeTab(CookingCraft.tabCC);
