@@ -9,17 +9,12 @@ import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Messages;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.recipie.ModRecipies;
+import mods.cc.rock.tileentity.TileEntityOven;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import mods.cc.rock.util.LogUtil;
 import mods.cc.rock.world.OreGen;
-
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -50,6 +45,7 @@ public class CookingCraft
         public void preInit(FMLPreInitializationEvent event)
         {
         	GameRegistry.registerTileEntity(TileEntityRefridgerator.class, "tileRefridgerator");
+        	GameRegistry.registerTileEntity(TileEntityOven.class, "tileOven");
             //Init Log
             LogUtil.init();
             

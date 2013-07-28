@@ -18,6 +18,8 @@ public class ModBlocks
 	public static Block kitchenTile;
 	public static Block aluminumOre;
 	public static Block fridge;
+	public static Block oven;
+	public static Block ovenOn;
 	
 	public static void initBlocks()
 	{
@@ -26,7 +28,9 @@ public class ModBlocks
 		aluminumOre = new BlockCC(BlockIDs.ID_ALUMINUM_ORE, Material.rock, Textures.TEX_ALUMINUM_ORE).setHardness(3F).setResistance(5F).setCreativeTab(CookingCraft.tabCC).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreAluminum");
 		machineCoreOff = new BlockMachineCore(BlockIDs.ID_MACHINE_CORE, false).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("machineCoreOff");
 		machineCoreOn = new BlockMachineCore(BlockIDs.ID_MACHINE_CORE_ON, true).setUnlocalizedName("machineCoreOn").setLightValue(0.9F);
-		fridge = new BlockRefridgerator(704).setUnlocalizedName("frige").setCreativeTab(CookingCraft.tabCC);
+		fridge = new BlockRefridgerator(704).setUnlocalizedName("fridge").setCreativeTab(CookingCraft.tabCC);
+		oven = new BlockOven(705, false).setUnlocalizedName("Oven").setCreativeTab(CookingCraft.tabCC);
+		ovenOn = new BlockOven(706, true).setUnlocalizedName("OvenOn").setCreativeTab(CookingCraft.tabCC).setLightValue(1F);
 		
 		harvests();
 		registry();
@@ -40,6 +44,8 @@ public class ModBlocks
 	    MinecraftForge.setBlockHarvestLevel(machineCoreOff, "pickaxe", 1);
 	    MinecraftForge.setBlockHarvestLevel(machineCoreOff, "pickaxe", 1);
 	    MinecraftForge.setBlockHarvestLevel(fridge, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(oven, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(ovenOn, "pickaxe", 1);
 	}
 	
 	private static void registry()
@@ -50,6 +56,8 @@ public class ModBlocks
 		GameRegistry.registerBlock(machineCoreOff, machineCoreOff.getUnlocalizedName());
 		GameRegistry.registerBlock(machineCoreOn, machineCoreOn.getUnlocalizedName());
 		GameRegistry.registerBlock(fridge, fridge.getUnlocalizedName());
+		GameRegistry.registerBlock(oven, oven.getUnlocalizedName());
+		GameRegistry.registerBlock(ovenOn, ovenOn.getUnlocalizedName());
 	}
 	
 }

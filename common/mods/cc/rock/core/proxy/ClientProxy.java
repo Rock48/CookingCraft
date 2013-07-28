@@ -1,6 +1,8 @@
 package mods.cc.rock.core.proxy;
 
+import mods.cc.rock.client.inventory.GuiOven;
 import mods.cc.rock.client.inventory.GuiRefridgerator;
+import mods.cc.rock.tileentity.TileEntityOven;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -16,6 +18,11 @@ public class ClientProxy extends CommonProxy {
         	
                 return new GuiRefridgerator(player.inventory, (TileEntityRefridgerator) tileEntity);
                 
+        }
+        if(ID==1){
+        	
+            return new GuiOven(player.inventory, (TileEntityOven) tileEntity);
+            
         }
         return null;
     }

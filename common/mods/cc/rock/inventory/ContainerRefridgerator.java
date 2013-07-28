@@ -2,12 +2,10 @@ package mods.cc.rock.inventory;
 
 
 
-import mods.cc.rock.client.inventory.SlotRefrigerator;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class ContainerRefridgerator extends Container{
@@ -67,9 +65,9 @@ public class ContainerRefridgerator extends Container{
                 stack = stackInSlot.copy();
 
                 //merges the item into player inventory since its in the tileEntity
-                if (slot < tileEntity.INVENTORY_SIZE) {
+                if (slot < TileEntityRefridgerator.INVENTORY_SIZE) {
                 		
-	                        if (!this.mergeItemStack(stackInSlot, tileEntity.INVENTORY_SIZE, this.inventorySlots.size(), true)) {
+	                        if (!this.mergeItemStack(stackInSlot, TileEntityRefridgerator.INVENTORY_SIZE, this.inventorySlots.size(), true)) {
 	                                return null;
 	                        }
                 		
@@ -77,7 +75,7 @@ public class ContainerRefridgerator extends Container{
                 //places it into the tileEntity is possible since its in the player inventory
                 else{
                 	if(((SlotRefrigerator)slotObject).isItemValid(stack)){
-	                	if (!this.mergeItemStack(stackInSlot, 0, tileEntity.INVENTORY_SIZE, false)) {
+	                	if (!this.mergeItemStack(stackInSlot, 0, TileEntityRefridgerator.INVENTORY_SIZE, false)) {
 	                
 	                        return null;
 	                	}
