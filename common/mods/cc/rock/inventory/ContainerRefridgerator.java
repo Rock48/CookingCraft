@@ -51,7 +51,7 @@ public class ContainerRefridgerator extends Container{
 	@Override
 	public boolean canInteractWith(EntityPlayer entityplayer) {
 		
-		return tileEntity.isUseableByPlayer(entityplayer);
+		return true;
 	}
 	@Override
     public ItemStack transferStackInSlot(EntityPlayer player, int slot) {

@@ -100,7 +100,7 @@ public class ContainerOven extends Container{
     
 	@Override
 	public boolean canInteractWith(EntityPlayer entityplayer) {
-		return this.tileEntity.isUseableByPlayer(entityplayer);
+		return true;
 	}
 	
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
