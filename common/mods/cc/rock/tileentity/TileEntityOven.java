@@ -14,7 +14,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class TileEntityOven extends TileCC implements ISidedInventory, net.minecraftforge.common.ISidedInventory{
 
    
-    
+    public static final int COOK_SPEED = 100;
     /**What is in the oven*/
     public ItemStack[] ovenStacks = new ItemStack[3];
     
@@ -224,7 +224,7 @@ public class TileEntityOven extends TileCC implements ISidedInventory, net.minec
      */
     public int getCookProgressScaled(int par1)
     {
-        return this.ovenCookTime * par1 / 200;
+        return this.ovenCookTime * par1 / COOK_SPEED;
     }
     
     @SideOnly(Side.CLIENT)
@@ -291,7 +291,7 @@ public class TileEntityOven extends TileCC implements ISidedInventory, net.minec
             {
                 ++this.ovenCookTime;
 
-                if (this.ovenCookTime == 200)
+                if (this.ovenCookTime == COOK_SPEED)
                 {
                     this.ovenCookTime = 0;
                     this.smeltItem();
@@ -366,6 +366,4 @@ public class TileEntityOven extends TileCC implements ISidedInventory, net.minec
     {
         return getItemBurnTime(par0ItemStack) > 0;
     }
-    
-
 }
