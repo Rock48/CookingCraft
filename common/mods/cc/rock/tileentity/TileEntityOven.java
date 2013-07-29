@@ -177,9 +177,9 @@ public class TileEntityOven extends TileCC implements ISidedInventory, net.minec
             }
         }
 
-        this.ovenBurnTime = par1NBTTagCompound.getShort("BurnTime");
-        this.ovenCookTime = par1NBTTagCompound.getShort("CookTime");
-        this.currentItemBurnTime = getItemBurnTime(this.ovenStacks[1]);
+        this.ovenBurnTime = par1NBTTagCompound.getInteger("BurnTime");
+        this.ovenCookTime = par1NBTTagCompound.getInteger("CookTime");
+        this.currentItemBurnTime = par1NBTTagCompound.getInteger("CurrentItemBurnTime");
 
         
     }
@@ -189,8 +189,9 @@ public class TileEntityOven extends TileCC implements ISidedInventory, net.minec
     public void writeToNBT(NBTTagCompound par1NBTTagCompound)
     {
         super.writeToNBT(par1NBTTagCompound);
-        par1NBTTagCompound.setShort("BurnTime", (short)this.ovenBurnTime);
-        par1NBTTagCompound.setShort("CookTime", (short)this.ovenCookTime);
+        par1NBTTagCompound.setInteger("BurnTime", this.ovenBurnTime);
+        par1NBTTagCompound.setInteger("CookTime", this.ovenCookTime);
+        par1NBTTagCompound.setInteger("CurrentItemBurnTime", this.currentItemBurnTime);
         NBTTagList nbttaglist = new NBTTagList();
 
         for (int i = 0; i < this.ovenStacks.length; ++i)
