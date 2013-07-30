@@ -54,7 +54,7 @@ public class BlockRefridgerator extends BlockContainerCC{
     }
     @Override
     public Icon getIcon(int par1, int par2){
-    	return par1 == par2 ? front : ( par1 == 0 || par1 == 1 ? bottomtop : sides);
+    	return par2 == 0 && par1 == 3 ? front : (par1 == par2 ? front : ( par1 == 0 || par1 == 1 ? bottomtop : sides));
     }
     
     @Override

@@ -49,17 +49,17 @@ public class CraftingRecipies
         });
         
         //Rod
-        RecipeHelper.addOreRecipe(new ItemStack(ModItems.itemRod), new Object[]{
+        RecipeHelper.addOreRecipe(new ItemStack(ModItems.itemRod, 2), new Object[]{
         	"DAD",
         	"DAD",
         	'D', new ItemStack(Item.dyePowder, 1, 1), 'A', "ingotAluminum"
         });
         
         //Light Oil
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilLight), Item.glassBottle, Block.plantYellow);
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilLight, 4), Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle, Block.plantYellow);
         
         //Dark Oil
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilDark), Item.glassBottle, Block.plantRed);
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.oilDark, 4), Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle, Block.plantRed);
         
         //Frying Pan
         RecipeHelper.addOreRecipe(new ItemStack(ModItems.fryingPan), new Object[]{

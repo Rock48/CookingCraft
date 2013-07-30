@@ -56,7 +56,8 @@ public class BlockOven extends BlockContainerCC{
     }
     @Override
     public Icon getIcon(int par1, int par2){
-    	return par1 == par2 ? front : sides;
+    	return par2 == 0 && par1 == 3 ? front : ( par1 == par2 ? front : sides );
+    	
     }
     
     @Override
@@ -153,5 +154,10 @@ public class BlockOven extends BlockContainerCC{
     public int idDropped(int par1, Random par2Random, int par3)
     {
         return ModBlocks.machineCoreOff.blockID;
+    }
+    @Override
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return ModBlocks.oven.blockID;
     }
 }

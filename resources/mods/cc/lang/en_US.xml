@@ -9,6 +9,8 @@
 	<entry key="tile.machineCoreOn.name">Machine Core On</entry>
 	<entry key="tile.machineCoreOff.name">Machine Core</entry>
 	<entry key="tile.fridge.name">Refrigerator</entry>
+	<entry key="tile.Oven.name">Oven</entry>
+	<entry key="tile.OvenOn.name">Oven On</entry>
 	
 	<entry key="item.ingotAluminum.name">Aluminum Ingot</entry>
 	<entry key="item.itemHammer.name">Hammer</entry>

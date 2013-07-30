@@ -23,7 +23,7 @@ public class BlockMachineCore extends BlockCC
 		this.isActive = par2Active;
 		this.setHardness(1F).setResistance(2F).setStepSound(Block.soundStoneFootstep);
 	}
-	
+	@Override
 	public void registerIcons(IconRegister iconRegister)
 	{
 		if(this.isActive)
@@ -31,7 +31,7 @@ public class BlockMachineCore extends BlockCC
 		else if(!this.isActive)
 		this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase()+":"+Textures.TEX_MACHINE_CORE_OFF);
 	}
-	
+	@Override
     public void onBlockAdded(World par1World, int x, int y, int z)
     {
     	if(!par1World.isRemote)
@@ -46,7 +46,7 @@ public class BlockMachineCore extends BlockCC
             }
     	}
     }
-    
+    @Override
     public void onNeighborBlockChange(World par1World, int x, int y, int z, int par5)
     {	
     	if(!par1World.isRemote)
@@ -61,7 +61,7 @@ public class BlockMachineCore extends BlockCC
             }
     	}
     }
-    
+    @Override
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         if (!par1World.isRemote && this.isActive && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
@@ -69,22 +69,26 @@ public class BlockMachineCore extends BlockCC
             par1World.setBlock(par2, par3, par4, ModBlocks.machineCoreOff.blockID, 0, 2);
         }
     }
-    
+    @Override
     public boolean canCreatureSpawn(EnumCreatureType type, World world, int x, int y, int z)
     {
     	return false;
     }
-    
+    @Override
     public int idDropped(int par1, Random par2Random, int par3)
     {
         return ModItems.ingotAluminum.itemID;
     }
-    
+    @Override
     public int quantityDropped(Random par1Random)
     {
         return par1Random.nextInt(3) + 1;
     }
-
+    @Override
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return ModBlocks.machineCoreOff.blockID;
+    }
 
 
 }
