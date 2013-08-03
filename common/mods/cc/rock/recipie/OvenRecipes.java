@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import mods.cc.rock.item.ModItems;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -30,15 +31,22 @@ public class OvenRecipes
     private OvenRecipes()
     {
         this.addSmelting(Item.wheat.itemID, new ItemStack(ModItems.itemFlour, 2), 1F);
+        this.addSmelting(Item.porkRaw.itemID, new ItemStack(Item.porkCooked), 0.5F);
+        this.addSmelting(Item.beefRaw.itemID, new ItemStack(Item.beefCooked), 0.5F);
+        this.addSmelting(Item.chickenRaw.itemID, new ItemStack(Item.chickenCooked), 0.5F);
+        this.addSmelting(Item.fishRaw.itemID, new ItemStack(Item.fishCooked), 0.5F);
+        this.addSmelting(Item.potato.itemID, new ItemStack(Item.bakedPotato), 0.5F);
+        
     }
 
     /**
      * Adds a smelting recipe.
      */
-    public void addSmelting(int par1, ItemStack par2ItemStack, float par3)
+    @SuppressWarnings("unchecked")
+    public void addSmelting(int id, ItemStack itemStack, float xp)
     {
-        this.smeltingList.put(Integer.valueOf(par1), par2ItemStack);
-        this.experienceList.put(Integer.valueOf(par2ItemStack.itemID), Float.valueOf(par3));
+        this.smeltingList.put(Integer.valueOf(id), itemStack);
+        this.experienceList.put(Integer.valueOf(itemStack.itemID), Float.valueOf(xp));
     }
 
     /**
@@ -96,18 +104,16 @@ public class OvenRecipes
     public float getExperience(ItemStack item)
     {
         if (item == null || item.getItem() == null)
-        {
             return 0;
-        }
+
         float ret = item.getItem().getSmeltingExperience(item);
+        
         if (ret < 0 && metaExperience.containsKey(Arrays.asList(item.itemID, item.getItemDamage())))
-        {
             ret = metaExperience.get(Arrays.asList(item.itemID, item.getItemDamage()));
-        }
+
         if (ret < 0 && experienceList.containsKey(item.itemID))
-        {
             ret = ((Float)experienceList.get(item.itemID)).floatValue();
-        }
+
         return (ret < 0 ? 0 : ret);
     }
 
