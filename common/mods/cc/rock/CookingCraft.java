@@ -1,6 +1,9 @@
 package mods.cc.rock;
 
+import java.io.File;
+
 import mods.cc.rock.block.ModBlocks;
+import mods.cc.rock.configuration.ConfigHandler;
 import mods.cc.rock.core.handlers.LocalizationHandler;
 import mods.cc.rock.core.proxy.CommonProxy;
 import mods.cc.rock.creativetabs.CreativeTabCC;
@@ -13,8 +16,10 @@ import mods.cc.rock.tileentity.TileEntityOven;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import mods.cc.rock.util.LogUtil;
 import mods.cc.rock.world.OreGen;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -52,6 +57,9 @@ public class CookingCraft
             //Load Language Files
             LocalizationHandler.loadLanguages();
             LogUtil.info(Messages.MSG_LOCALIZATION_INITIALIZATION_SUCCESS);
+            
+            //Load the Configuration File
+            ConfigHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_NAME + ".cfg"));
             
             //Load Blocks
             ModBlocks.initBlocks();
