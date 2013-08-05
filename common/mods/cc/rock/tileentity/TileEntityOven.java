@@ -4,6 +4,7 @@ import mods.cc.rock.block.BlockOven;
 import mods.cc.rock.recipie.OvenRecipes;
 
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -14,6 +15,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileEntityOven extends TileCC implements ISidedInventory{
 
+	//important
+    private static final int[] slots_top = new int[] {0};
+    private static final int[] slots_bottom = new int[] {2, 1};
+    private static final int[] slots_sides = new int[] {1};
    
     public static final int COOK_SPEED = 100;
     /**What is in the oven*/
@@ -126,21 +131,20 @@ public class TileEntityOven extends TileCC implements ISidedInventory{
 
 
 	@Override
-	public int[] getAccessibleSlotsFromSide(int var1) {
-		// TODO Auto-generated method stub
-		return null;
+	public int[] getAccessibleSlotsFromSide(int par1) {
+		return par1 == 0 ? slots_bottom : (par1 == 1 ? slots_top : slots_sides);
 	}
 
 	@Override
 	public boolean canInsertItem(int i, ItemStack itemstack, int j) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return this.isItemValidForSlot(i, itemstack);
 	}
 
 	@Override
-	public boolean canExtractItem(int i, ItemStack itemstack, int j) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean canExtractItem(int par1, ItemStack par2ItemStack, int par3) {
+		
+		return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
 	}
 
 	@Override
