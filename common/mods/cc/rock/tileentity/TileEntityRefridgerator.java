@@ -94,35 +94,6 @@ public class TileEntityRefridgerator extends TileCC implements IInventory
     public void closeChest()
     {      
     }
-
-    @Override
-    public boolean isStackValidForSlot(int i, ItemStack itemstack)
-    {
-		return 	itemstack.getItem().itemID == Item.appleRed.itemID||
-				itemstack.getItem().itemID == Item.appleGold.itemID||
-				itemstack.getItem().itemID == Item.potato.itemID||
-				itemstack.getItem().itemID == Item.bakedPotato.itemID||
-				itemstack.getItem().itemID == Item.poisonousPotato.itemID||
-				itemstack.getItem().itemID == Item.bread.itemID||
-				itemstack.getItem().itemID == Item.cake.itemID||
-				itemstack.getItem().itemID == Item.carrot.itemID||
-				itemstack.getItem().itemID == Item.chickenCooked.itemID||
-				itemstack.getItem().itemID == Item.chickenRaw.itemID||
-				itemstack.getItem().itemID == Item.fishRaw.itemID||
-				itemstack.getItem().itemID == Item.fishCooked.itemID||
-				itemstack.getItem().itemID == Item.cookie.itemID||
-				itemstack.getItem().itemID == Item.goldenCarrot.itemID||
-				itemstack.getItem().itemID == Item.melon.itemID||
-				itemstack.getItem().itemID == Item.bowlSoup.itemID||
-				itemstack.getItem().itemID == Item.pumpkinPie.itemID||
-				itemstack.getItem().itemID == Item.beefRaw.itemID||
-				itemstack.getItem().itemID == Item.beefCooked.itemID||
-				itemstack.getItem().itemID == Item.porkRaw.itemID||
-				itemstack.getItem().itemID == Item.porkCooked.itemID||
-				itemstack.getItem().itemID == Item.rottenFlesh.itemID||
-				itemstack.getItem().itemID == Item.spiderEye.itemID||
-				itemstack.getItem().itemID == Item.bucketMilk.itemID;
-    }
     
     @Override
     public String toString()
@@ -173,6 +144,34 @@ public class TileEntityRefridgerator extends TileCC implements IInventory
             
             
     }
+
+	@Override
+	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+		return 	itemstack.getItem().itemID == Item.appleRed.itemID||
+				itemstack.getItem().itemID == Item.appleGold.itemID||
+				itemstack.getItem().itemID == Item.potato.itemID||
+				itemstack.getItem().itemID == Item.bakedPotato.itemID||
+				itemstack.getItem().itemID == Item.poisonousPotato.itemID||
+				itemstack.getItem().itemID == Item.bread.itemID||
+				itemstack.getItem().itemID == Item.cake.itemID||
+				itemstack.getItem().itemID == Item.carrot.itemID||
+				itemstack.getItem().itemID == Item.chickenCooked.itemID||
+				itemstack.getItem().itemID == Item.chickenRaw.itemID||
+				itemstack.getItem().itemID == Item.fishRaw.itemID||
+				itemstack.getItem().itemID == Item.fishCooked.itemID||
+				itemstack.getItem().itemID == Item.cookie.itemID||
+				itemstack.getItem().itemID == Item.goldenCarrot.itemID||
+				itemstack.getItem().itemID == Item.melon.itemID||
+				itemstack.getItem().itemID == Item.bowlSoup.itemID||
+				itemstack.getItem().itemID == Item.pumpkinPie.itemID||
+				itemstack.getItem().itemID == Item.beefRaw.itemID||
+				itemstack.getItem().itemID == Item.beefCooked.itemID||
+				itemstack.getItem().itemID == Item.porkRaw.itemID||
+				itemstack.getItem().itemID == Item.porkCooked.itemID||
+				itemstack.getItem().itemID == Item.rottenFlesh.itemID||
+				itemstack.getItem().itemID == Item.spiderEye.itemID||
+				itemstack.getItem().itemID == Item.bucketMilk.itemID;
+	}
 
 
 }

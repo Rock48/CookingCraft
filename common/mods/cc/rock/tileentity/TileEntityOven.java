@@ -11,7 +11,7 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityOven extends TileCC implements ISidedInventory, net.minecraftforge.common.ISidedInventory{
+public class TileEntityOven extends TileCC implements ISidedInventory{
 
    
     public static final int COOK_SPEED = 100;
@@ -121,25 +121,8 @@ public class TileEntityOven extends TileCC implements ISidedInventory, net.minec
 		
 	}
 
-	@Override
-	public boolean isStackValidForSlot(int i, ItemStack itemstack) {
-		
-		return true;
-	}
 
-	@Override
-	@Deprecated
-	public int getStartInventorySide(ForgeDirection side) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	@Override
-	@Deprecated
-	public int getSizeInventorySide(ForgeDirection side) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public int[] getAccessibleSlotsFromSide(int var1) {
@@ -367,4 +350,10 @@ public class TileEntityOven extends TileCC implements ISidedInventory, net.minec
     {
         return getItemBurnTime(par0ItemStack) > 0;
     }
+
+	@Override
+	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+		// TODO Auto-generated method stub
+		return true;
+	}
 }

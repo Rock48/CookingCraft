@@ -4,6 +4,7 @@ import mods.cc.rock.CookingCraft;
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.helpers.GeneralHelper;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -60,8 +61,8 @@ public class ItemHammer extends ItemCC
         return par1ItemStack;
     }
     
-    @Override
-    public boolean itemInteractionForEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving){
+    /*@Override
+    public boolean itemInteractionForEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLiving){
     	
     	if(par2EntityLiving instanceof EntityCreeper && w != null){
     		int tempHp = ((EntityCreeper) par2EntityLiving).getHealth();
@@ -73,7 +74,7 @@ public class ItemHammer extends ItemCC
     	}
     	
     	return false;
-    }
+    }*/
     
 	
 	

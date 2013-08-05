@@ -1,13 +1,13 @@
 package mods.cc.rock.core.helpers;
 
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class GeneralHelper
 {
-    public static void spawnItemOnGround(World par1World, int par2, int par3, int par4, int par5, EntityLiving par6EntityLiving, ItemStack par7ItemStack)
+    public static void spawnItemOnGround(World par1World, int par2, int par3, int par4, int par5, EntityLivingBase par6EntityLiving, ItemStack par7ItemStack)
     {
         if (!par1World.isRemote)
         {

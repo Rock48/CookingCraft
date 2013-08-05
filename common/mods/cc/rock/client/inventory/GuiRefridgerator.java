@@ -1,6 +1,7 @@
 package mods.cc.rock.client.inventory;
 
 import mods.cc.rock.inventory.ContainerRefridgerator;
+import mods.cc.rock.lib.Textures;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -33,7 +34,7 @@ public class GuiRefridgerator extends GuiContainer{
         //draw your Gui here, only thing you need to change is the path
         
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture("/mods/cc/textures/gui/fridge.png");
+        this.mc.func_110434_K().func_110577_a(Textures.REFRIDGERATOR_GUI);
         
         int x = (width - xSize) / 2;
         int y = (height - ySize) / 2;

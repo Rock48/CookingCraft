@@ -16,15 +16,11 @@ import mods.cc.rock.tileentity.TileEntityOven;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import mods.cc.rock.util.LogUtil;
 import mods.cc.rock.world.OreGen;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
-
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -46,7 +42,7 @@ public class CookingCraft
     	public static CreativeTabs tabCC = new CreativeTabCC(Reference.MOD_ID);
         
         
-        @PreInit
+        @EventHandler
         public void preInit(FMLPreInitializationEvent event)
         {
         	GameRegistry.registerTileEntity(TileEntityRefridgerator.class, "tileRefridgerator");
@@ -73,7 +69,7 @@ public class CookingCraft
         }
         
         
-        @Init
+        @EventHandler
         public void load(FMLInitializationEvent event)
         {
         	
@@ -91,7 +87,7 @@ public class CookingCraft
         }
         
         
-        @PostInit
+        @EventHandler
         public void postInit(FMLPostInitializationEvent event)
         {
              LogUtil.info(Messages.MSG_MOD_INIT_SUCCESS);
