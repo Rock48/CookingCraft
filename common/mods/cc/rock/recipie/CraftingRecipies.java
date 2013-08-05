@@ -1,7 +1,7 @@
 package mods.cc.rock.recipie;
 
 import mods.cc.rock.block.ModBlocks;
-import mods.cc.rock.core.helpers.RecipeHelper;
+import mods.cc.rock.core.util.RecipeHelper;
 import mods.cc.rock.item.ModItems;
 
 import net.minecraft.block.Block;

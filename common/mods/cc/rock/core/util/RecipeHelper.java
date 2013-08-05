@@ -1,8 +1,7 @@
-package mods.cc.rock.core.helpers;
+package mods.cc.rock.core.util;
 
 import java.util.ArrayList;
 
-import mods.cc.rock.util.LogUtil;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;

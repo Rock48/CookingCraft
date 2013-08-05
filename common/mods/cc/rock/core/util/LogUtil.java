@@ -1,4 +1,4 @@
-package mods.cc.rock.util;
+package mods.cc.rock.core.util;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

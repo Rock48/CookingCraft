@@ -2,11 +2,8 @@ package mods.cc.rock.item;
 
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.block.ModBlocks;
-import mods.cc.rock.core.helpers.GeneralHelper;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.entity.monster.EntityCreeper;
+import mods.cc.rock.core.util.GeneralHelper;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;

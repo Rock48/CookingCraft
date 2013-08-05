@@ -1,7 +1,7 @@
 package mods.cc.rock.core.handlers;
 
 
-import mods.cc.rock.core.helpers.LocalizationHelper;
+import mods.cc.rock.core.util.LocalizationHelper;
 import mods.cc.rock.lib.Localizations;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;

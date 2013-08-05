@@ -1,4 +1,4 @@
-package mods.cc.rock.core.helpers;
+package mods.cc.rock.core.util;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
 

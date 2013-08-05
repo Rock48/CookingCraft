@@ -1,7 +1,7 @@
 package mods.cc.rock.recipie;
 
+import mods.cc.rock.core.util.LogUtil;
 import mods.cc.rock.lib.Messages;
-import mods.cc.rock.util.LogUtil;
 
 public class ModRecipies
 {

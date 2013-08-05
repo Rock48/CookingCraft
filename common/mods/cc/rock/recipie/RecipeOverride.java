@@ -1,8 +1,8 @@
 package mods.cc.rock.recipie;
 
-import mods.cc.rock.core.helpers.RecipeHelper;
+import mods.cc.rock.core.util.LogUtil;
+import mods.cc.rock.core.util.RecipeHelper;
 import mods.cc.rock.lib.Messages;
-import mods.cc.rock.util.LogUtil;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

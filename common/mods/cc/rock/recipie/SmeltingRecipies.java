@@ -1,9 +1,9 @@
 package mods.cc.rock.recipie;
 
 import mods.cc.rock.block.ModBlocks;
+import mods.cc.rock.core.util.LogUtil;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Messages;
-import mods.cc.rock.util.LogUtil;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 

@@ -10,6 +10,7 @@ import mods.cc.rock.item.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+@SuppressWarnings("rawtypes")
 public class OvenRecipes
 {
     private static final OvenRecipes smeltingBase = new OvenRecipes();

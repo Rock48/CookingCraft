@@ -1,6 +1,5 @@
-package mods.cc.rock.core.helpers;
+package mods.cc.rock.core.util;
 
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 
 public class ItemHelper

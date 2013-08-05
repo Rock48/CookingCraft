@@ -1,6 +1,6 @@
 package mods.cc.rock.event;
 
-import mods.cc.rock.core.helpers.ItemHelper;
+import mods.cc.rock.core.util.ItemHelper;
 import mods.cc.rock.lib.ItemIDs;
 
 import net.minecraft.entity.monster.EntityZombie;
