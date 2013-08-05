@@ -18,8 +18,12 @@ public class ModBlocks
 	public static Block kitchenTile;
 	public static Block aluminumOre;
 	public static Block fridge;
-	public static Block oven;
-	public static Block ovenOn;
+	public static Block oven1;
+	public static Block oven1On;
+	public static Block oven2;
+	public static Block oven2On;
+	public static Block oven3;
+	public static Block oven3On;
 	
 	public static void initBlocks()
 	{
@@ -29,9 +33,20 @@ public class ModBlocks
 		machineCoreOff = new BlockMachineCore(BlockIDs.ID_MACHINE_CORE, false).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("machineCoreOff");
 		machineCoreOn = new BlockMachineCore(BlockIDs.ID_MACHINE_CORE_ON, true).setUnlocalizedName("machineCoreOn").setLightValue(0.9F);
 		fridge = new BlockRefridgerator(BlockIDs.ID_FRIDGE).setUnlocalizedName("fridge").setCreativeTab(CookingCraft.tabCC);
-		oven = new BlockOven(BlockIDs.ID_OVEN_OFF, false).setUnlocalizedName("Oven").setCreativeTab(CookingCraft.tabCC);
-		ovenOn = new BlockOven(BlockIDs.ID_OVEN_ON, true).setUnlocalizedName("OvenOn").setCreativeTab(CookingCraft.tabCC).setLightValue(1F);
 		
+		//OVENS
+		
+		//OVEN MK1
+		oven1 = new BlockOven(BlockIDs.ID_OVEN1_OFF, false, 1).setUnlocalizedName("Oven1").setCreativeTab(CookingCraft.tabCC);
+		oven1On = new BlockOven(BlockIDs.ID_OVEN1_ON, true, 1).setUnlocalizedName("Oven1On").setCreativeTab(CookingCraft.tabCC).setLightValue(1F);
+		
+		//OVEN MK2
+		oven2 = new BlockOven(BlockIDs.ID_OVEN2_OFF, false, 2).setUnlocalizedName("Oven2").setCreativeTab(CookingCraft.tabCC);
+		oven2On = new BlockOven(BlockIDs.ID_OVEN2_ON, true, 2).setUnlocalizedName("Oven2On").setCreativeTab(CookingCraft.tabCC).setLightValue(1F);
+		
+		//OVEN MK3
+		oven3 = new BlockOven(BlockIDs.ID_OVEN3_OFF, false, 3).setUnlocalizedName("Oven3").setCreativeTab(CookingCraft.tabCC);
+		oven3On = new BlockOven(BlockIDs.ID_OVEN3_ON, true, 3).setUnlocalizedName("Oven3On").setCreativeTab(CookingCraft.tabCC).setLightValue(1F);
 		harvests();
 		registry();
 	}
@@ -44,8 +59,13 @@ public class ModBlocks
 	    MinecraftForge.setBlockHarvestLevel(machineCoreOff, "pickaxe", 1);
 	    MinecraftForge.setBlockHarvestLevel(machineCoreOff, "pickaxe", 1);
 	    MinecraftForge.setBlockHarvestLevel(fridge, "pickaxe", 1);
-	    MinecraftForge.setBlockHarvestLevel(oven, "pickaxe", 1);
-	    MinecraftForge.setBlockHarvestLevel(ovenOn, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(oven1, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(oven1On, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(oven2, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(oven2On, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(oven3, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(oven3On, "pickaxe", 1);
+	    
 	}
 	
 	private static void registry()
@@ -56,8 +76,12 @@ public class ModBlocks
 		GameRegistry.registerBlock(machineCoreOff, machineCoreOff.getUnlocalizedName());
 		GameRegistry.registerBlock(machineCoreOn, machineCoreOn.getUnlocalizedName());
 		GameRegistry.registerBlock(fridge, fridge.getUnlocalizedName());
-		GameRegistry.registerBlock(oven, oven.getUnlocalizedName());
-		GameRegistry.registerBlock(ovenOn, ovenOn.getUnlocalizedName());
+		GameRegistry.registerBlock(oven1, oven1.getUnlocalizedName());
+		GameRegistry.registerBlock(oven1On, oven1On.getUnlocalizedName());
+		GameRegistry.registerBlock(oven2, oven2.getUnlocalizedName());
+		GameRegistry.registerBlock(oven2On, oven2On.getUnlocalizedName());
+		GameRegistry.registerBlock(oven3, oven3.getUnlocalizedName());
+		GameRegistry.registerBlock(oven3On, oven3On.getUnlocalizedName());
 	}
 	
 }

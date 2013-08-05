@@ -19,8 +19,11 @@ public class TileEntityOven extends TileCC implements ISidedInventory{
     private static final int[] slots_top = new int[] {0};
     private static final int[] slots_bottom = new int[] {2, 1};
     private static final int[] slots_sides = new int[] {1};
-   
-    public static final int COOK_SPEED = 100;
+    
+    public int COOK_SPEED;
+    
+    public int TYPE;
+    
     /**What is in the oven*/
     public ItemStack[] ovenStacks = new ItemStack[3];
     
@@ -168,7 +171,10 @@ public class TileEntityOven extends TileCC implements ISidedInventory{
         this.ovenBurnTime = par1NBTTagCompound.getInteger("BurnTime");
         this.ovenCookTime = par1NBTTagCompound.getInteger("CookTime");
         this.currentItemBurnTime = par1NBTTagCompound.getInteger("CurrentItemBurnTime");
-
+        
+        this.COOK_SPEED = par1NBTTagCompound.getInteger("SPEED");
+        this.TYPE = par1NBTTagCompound.getInteger("TYPE");
+         
         
     }
     /**
@@ -194,8 +200,10 @@ public class TileEntityOven extends TileCC implements ISidedInventory{
         }
 
         par1NBTTagCompound.setTag("Items", nbttaglist);
-
-       
+        
+        par1NBTTagCompound.setInteger("SPEED", COOK_SPEED);
+        par1NBTTagCompound.setInteger("TYPE", TYPE);
+        
     }
     /**
      * Returns the number of ticks that the supplied fuel item will keep the oven burning, or 0 if the item isn't

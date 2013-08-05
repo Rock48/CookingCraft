@@ -22,7 +22,8 @@ public class BlockOven extends BlockContainerCC{
     private Random rand = new Random();
     private static boolean keepOvenInventory;
     private boolean isActive;
-    public BlockOven(int id, boolean active)
+    private int type;
+    public BlockOven(int id, boolean active, int type)
     {
     	
         super(id, Material.rock);
@@ -31,12 +32,16 @@ public class BlockOven extends BlockContainerCC{
             .setStepSound(soundAnvilFootstep);
             this.isActive = active;
         keepOvenInventory = false;
+        this.type = type;
     }
     
     @Override
     public TileEntity createNewTileEntity(World world)
     {
-        return new TileEntityOven();
+    	TileEntityOven te = new TileEntityOven();
+    	te.COOK_SPEED = type == 1 ? 150 : (type == 2 ? 100 : (type == 3 ? 50 : 200));
+    	te.TYPE = type;
+        return te;
         
     }
 
@@ -51,7 +56,7 @@ public class BlockOven extends BlockContainerCC{
     @Override
     public void registerIcons(IconRegister iconRegister)
     {
-        sides = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":OvenSides");
+        sides = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":Oven"+type+"Sides");
         front = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + (this.isActive ? ":OvenFrontOn" : ":OvenFront"));
     }
     @Override
@@ -77,7 +82,7 @@ public class BlockOven extends BlockContainerCC{
 
                 if (tile != null){
                 	
-                    player.openGui(CookingCraft.instance, GuiIDs.ID_OVEN, world, x, y, z);
+                    player.openGui(CookingCraft.instance, type, world, x, y, z);
                 }
             
 
@@ -93,14 +98,15 @@ public class BlockOven extends BlockContainerCC{
         int l = par1World.getBlockMetadata(par2, par3, par4);
         TileEntity tileentity = par1World.getBlockTileEntity(par2, par3, par4);
         keepOvenInventory = true;
-
-        if (par0)
-        {
-            par1World.setBlock(par2, par3, par4, ModBlocks.ovenOn.blockID);
-        }
-        else
-        {
-            par1World.setBlock(par2, par3, par4, ModBlocks.oven.blockID);
+        if(tileentity != null){
+	        if (par0)
+	        {
+	            par1World.setBlock(par2, par3, par4, ((TileEntityOven)tileentity).TYPE == 1 ? ModBlocks.oven1On.blockID : (((TileEntityOven)tileentity).TYPE == 2 ? ModBlocks.oven2On.blockID : (((TileEntityOven)tileentity).TYPE == 3 ? ModBlocks.oven3On.blockID : 1)));
+	        }
+	        else
+	        {
+	            par1World.setBlock(par2, par3, par4, ((TileEntityOven)tileentity).TYPE == 1 ? ModBlocks.oven1.blockID : (((TileEntityOven)tileentity).TYPE == 2 ? ModBlocks.oven2.blockID : (((TileEntityOven)tileentity).TYPE == 3 ? ModBlocks.oven3.blockID : 1)));
+	        }
         }
 
         keepOvenInventory = false;
@@ -158,6 +164,6 @@ public class BlockOven extends BlockContainerCC{
     @Override
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return ModBlocks.oven.blockID;
+        return type == 1 ?  ModBlocks.oven1On.blockID : (type == 2 ?  ModBlocks.oven2On.blockID : (type == 3 ?  ModBlocks.oven3On.blockID : 1));
     }
 }

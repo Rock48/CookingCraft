@@ -3,6 +3,7 @@ package mods.cc.rock.core.proxy;
 import cpw.mods.fml.common.network.IGuiHandler;
 import mods.cc.rock.inventory.ContainerOven;
 import mods.cc.rock.inventory.ContainerRefridgerator;
+import mods.cc.rock.lib.GuiIDs;
 import mods.cc.rock.tileentity.TileEntityOven;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,10 +15,10 @@ public class CommonProxy implements IGuiHandler{
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-        if(ID==0){
+        if(ID==GuiIDs.ID_REFRIDGERATOR){
                 return new ContainerRefridgerator(player.inventory, (TileEntityRefridgerator) tileEntity);
         }
-        if(ID==1){
+        if(ID==GuiIDs.ID_OVEN1 || ID==GuiIDs.ID_OVEN2 || ID==GuiIDs.ID_OVEN3){
             return new ContainerOven(player.inventory, (TileEntityOven) tileEntity);
         }
         return null;

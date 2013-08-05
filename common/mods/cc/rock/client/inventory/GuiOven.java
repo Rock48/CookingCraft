@@ -15,16 +15,18 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiOven extends GuiContainer{
 	private TileEntityOven ovenInventory;
-	public GuiOven(InventoryPlayer playerinv, TileEntityOven oven) {
+	private String title;
+	public GuiOven(InventoryPlayer playerinv, TileEntityOven oven, String title) {
 		super(new ContainerOven(playerinv, oven));
 		this.ovenInventory = oven;
+		this.title = title;
 	}
 
 	@Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
-        String s = "Oven";
-        this.fontRenderer.drawString(s, this.xSize / 2 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
+        
+        this.fontRenderer.drawString(title, this.xSize / 2 - this.fontRenderer.getStringWidth(title) / 2, 6, 4210752);
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }
 

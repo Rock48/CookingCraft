@@ -40,11 +40,11 @@ public class ItemHammer extends ItemCC
             par3World.setBlockToAir(par4, par5, par6);
     		
     	}
-    	if(!par3World.isRemote && (par3World.getBlockId(par4, par5, par6) == ModBlocks.ovenOn.blockID) || (par3World.getBlockId(par4, par5, par6) == ModBlocks.oven.blockID))
+    	if(!par3World.isRemote && (par3World.getBlockId(par4, par5, par6) == ModBlocks.oven1On.blockID) || (par3World.getBlockId(par4, par5, par6) == ModBlocks.oven1.blockID))
     	{
 
     		par1ItemStack.damageItem(1, par2EntityPlayer);
-            GeneralHelper.spawnItemOnGround(par3World, par4, par5, par6, 1, par2EntityPlayer, new ItemStack(ModBlocks.oven));
+            GeneralHelper.spawnItemOnGround(par3World, par4, par5, par6, 1, par2EntityPlayer, new ItemStack(ModBlocks.oven1));
             par3World.setBlockToAir(par4, par5, par6);
     		
     	}
