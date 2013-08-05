@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>English (en_US) Localization File</comment>
+	<entry key="itemGroup.CC">CookingCraft</entry>
+	
+	<entry key="tile.kitchenTile.name">Kitchen Tile</entry>
+	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
+	<entry key="tile.machineCoreOn.name">Machine Core On</entry>
+	<entry key="tile.machineCoreOff.name">Machine Core</entry>
+	<entry key="tile.fridge.name">Refrigerator</entry>
+	<entry key="tile.Oven.name">Oven</entry>
+	<entry key="tile.OvenOn.name">Oven On</entry>
+	
+	<entry key="item.ingotAluminum.name">Aluminum Ingot</entry>
+	<entry key="item.itemHammer.name">Hammer</entry>
+	<entry key="item.itemRod.name">Aluminum Rod</entry>
+	<entry key="item.itemFlour.name">Flour</entry>
+	<entry key="item.oilLight.name">Lightflower Oil</entry>
+	<entry key="item.oilDark.name">Darkflower Oil</entry>
+	<entry key="item.fryingPan.name">Frying Pan</entry>
+	
+</properties>
