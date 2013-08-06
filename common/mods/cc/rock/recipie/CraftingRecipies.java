@@ -45,7 +45,7 @@ public class CraftingRecipies
         	"OFO",
         	"FWF",
         	"OFO",
-        	'O', ModItems.oilLight, 'F', ModItems.itemFlour, 'W', Item.bucketWater
+        	'O', ModItems.oilCookedLight, 'F', ModItems.itemFlour, 'W', Item.bucketWater
         });
         
         //Rod
