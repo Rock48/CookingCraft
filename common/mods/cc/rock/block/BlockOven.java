@@ -4,7 +4,6 @@ import java.util.Random;
 
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.item.ModItems;
-import mods.cc.rock.lib.GuiIDs;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.tileentity.TileEntityOven;
 import net.minecraft.block.material.Material;
