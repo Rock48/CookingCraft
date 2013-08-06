@@ -38,15 +38,15 @@ public class ModBlocks
 		
 		//OVEN MK1
 		oven1 = new BlockOven(BlockIDs.ID_OVEN1_OFF, false, 1).setUnlocalizedName("Oven1").setCreativeTab(CookingCraft.tabCC);
-		oven1On = new BlockOven(BlockIDs.ID_OVEN1_ON, true, 1).setUnlocalizedName("Oven1On").setCreativeTab(CookingCraft.tabCC).setLightValue(1F);
+		oven1On = new BlockOven(BlockIDs.ID_OVEN1_ON, true, 1).setUnlocalizedName("Oven1On").setLightValue(1F);
 		
 		//OVEN MK2
 		oven2 = new BlockOven(BlockIDs.ID_OVEN2_OFF, false, 2).setUnlocalizedName("Oven2").setCreativeTab(CookingCraft.tabCC);
-		oven2On = new BlockOven(BlockIDs.ID_OVEN2_ON, true, 2).setUnlocalizedName("Oven2On").setCreativeTab(CookingCraft.tabCC).setLightValue(1F);
+		oven2On = new BlockOven(BlockIDs.ID_OVEN2_ON, true, 2).setUnlocalizedName("Oven2On").setLightValue(1F);
 		
 		//OVEN MK3
 		oven3 = new BlockOven(BlockIDs.ID_OVEN3_OFF, false, 3).setUnlocalizedName("Oven3").setCreativeTab(CookingCraft.tabCC);
-		oven3On = new BlockOven(BlockIDs.ID_OVEN3_ON, true, 3).setUnlocalizedName("Oven3On").setCreativeTab(CookingCraft.tabCC).setLightValue(1F);
+		oven3On = new BlockOven(BlockIDs.ID_OVEN3_ON, true, 3).setUnlocalizedName("Oven3On").setLightValue(1F);
 		harvests();
 		registry();
 	}

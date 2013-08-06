@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import mods.cc.rock.item.ModItems;
+import mods.cc.rock.lib.ItemIDs;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -37,7 +38,8 @@ public class OvenRecipes
         this.addSmelting(Item.chickenRaw.itemID, new ItemStack(Item.chickenCooked), 0.5F);
         this.addSmelting(Item.fishRaw.itemID, new ItemStack(Item.fishCooked), 0.5F);
         this.addSmelting(Item.potato.itemID, new ItemStack(Item.bakedPotato), 0.5F);
-        
+        this.addSmelting(ItemIDs.ID_OIL_DARK, new ItemStack(ModItems.oilCookedDark), 0.5F);
+        this.addSmelting(ItemIDs.ID_OIL_LIGHT, new ItemStack(ModItems.oilCookedLight), 0.5F);
     }
 
     /**

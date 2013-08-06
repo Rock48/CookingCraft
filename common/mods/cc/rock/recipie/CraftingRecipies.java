@@ -68,11 +68,37 @@ public class CraftingRecipies
             "  R",
             'A', "ingotAluminum", 'R', ModItems.itemRod, 'I', Item.ingotIron
         });
+        
+        //Fridge
         RecipeHelper.addOreRecipe(new ItemStack(ModBlocks.fridge), new Object[]{
         	"AAA",
-        	"RCR",
-        	"AAA",
+        	"ACA",
+        	"ARA",
         	'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff, 'R', Block.blockRedstone
+        });
+        
+        //Oven MK 1
+        RecipeHelper.addOreRecipe(new ItemStack(ModBlocks.oven1), new Object[]{
+            "AAA",
+            "CFC",
+            "ALA",
+            'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff, 'F', Block.furnaceIdle, 'L', ModItems.oilCookedLight
+        });
+        
+        //Oven MK 2
+        RecipeHelper.addOreRecipe(new ItemStack(ModBlocks.oven2), new Object[]{
+            "GCG",
+            "CFC",
+            "ADA",
+            'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff, 'F', ModBlocks.oven1, 'D', ModItems.oilCookedDark, 'G', Item.diamond
+        });
+        
+        //Oven MK 3
+        RecipeHelper.addOreRecipe(new ItemStack(ModBlocks.oven3), new Object[]{
+            "GOG",
+            "CFC",
+            "ADA",
+            'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff, 'F', ModBlocks.oven2, 'D', Item.blazeRod, 'G', Item.diamond, 'O', Block.obsidian
         });
 
     }

@@ -10,6 +10,6 @@ public class ItemIDs
     public static final int ID_OIL_DARK = 1704;
     public static final int ID_OIL_LIGHT = 1705;
     public static final int ID_FRYING_PAN = 1706;
-    
-    
+    public static final int ID_OIL_COOKED_DARK = 1707;
+    public static final int ID_OIL_COOKED_LIGHT = 1708;
 }
