@@ -34,6 +34,8 @@ public class CraftingManagerCC{
     {
         
     	addShapelessRecipe(new ItemStack(Item.bread), new Object[]{ModItems.oilCookedLight,ModItems.oilCookedLight, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, Item.potion});
+        addShapelessRecipe(new ItemStack(ModItems.oilLight), new Object[]{Block.plantYellow}, Block.plantYellow, Item.flint, Item.potion);
+        addShapelessRecipe(new ItemStack(ModItems.oilDark), new Object[]{Block.plantRed}, Block.plantRed, Item.flint, Item.potion);
         
     }
 
