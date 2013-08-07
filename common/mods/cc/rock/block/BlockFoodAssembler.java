@@ -4,6 +4,7 @@ import java.util.Random;
 
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.item.ModItems;
+import mods.cc.rock.lib.GuiIDs;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.tileentity.TileEntityFoodAssembler;
 import net.minecraft.block.material.Material;
@@ -75,7 +76,7 @@ public class BlockFoodAssembler extends BlockContainerCC{
 
                 if (tile != null){
                 	
-                    player.openGui(CookingCraft.instance, 4, world, x, y, z);
+                    player.openGui(CookingCraft.instance, GuiIDs.FOOD_ASS, world, x, y, z);
                 }
             
 
