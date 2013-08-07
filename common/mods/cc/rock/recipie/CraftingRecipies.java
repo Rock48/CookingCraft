@@ -101,6 +101,7 @@ public class CraftingRecipies
             'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff, 'F', ModBlocks.oven2, 'D', Item.blazeRod, 'G', Item.diamond, 'O', Block.obsidian
         });
         
+        //Food Assembler
         RecipeHelper.addOreRecipe(new ItemStack(ModBlocks.foodAssembler), new Object[]{
         	"WLW",
         	"ACA",

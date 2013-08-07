@@ -8,23 +8,27 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
+
 @SuppressWarnings({ "unchecked", "rawtypes" })
-public class ShapelessRecipeCC extends ShapelessRecipes implements IRecipeCC{
+public class ShapelessRecipeCC extends ShapelessRecipes implements IRecipeCC
+{
 	private ItemStack recipeOutput;
-	public ShapelessRecipeCC(ItemStack par1ItemStack, List par2List) {
+	
+	public ShapelessRecipeCC(ItemStack par1ItemStack, List par2List)
+	{
 		super(par1ItemStack, par2List);
 		this.recipeOutput = par1ItemStack;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public boolean matches(IInventory inventorycrafting, World world) {
+	public boolean matches(IInventory inventorycrafting, World world)
+	{
 		ArrayList arraylist = new ArrayList(this.recipeItems);
+		
         for (int i = 0; i < 8; ++i)
         {
-            
-            	
                 ItemStack itemstack = inventorycrafting.getStackInSlot(i);
+                
                 if (itemstack != null)
                 {
                     boolean flag = false;
@@ -43,9 +47,7 @@ public class ShapelessRecipeCC extends ShapelessRecipes implements IRecipeCC{
                     }
 
                     if (!flag)
-                    {
                         return false;
-                    }
                 }
             
         }

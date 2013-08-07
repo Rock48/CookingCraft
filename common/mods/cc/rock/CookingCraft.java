@@ -13,12 +13,12 @@ import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Messages;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.recipie.ModRecipies;
-import mods.cc.rock.tileentity.TileEntityFoodAssembler;
-import mods.cc.rock.tileentity.TileEntityOven;
-import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import mods.cc.rock.world.OreGen;
+
 import net.minecraft.creativetab.CreativeTabs;
+
 import net.minecraftforge.common.MinecraftForge;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -46,15 +46,12 @@ public class CookingCraft
         @EventHandler
         public void preInit(FMLPreInitializationEvent event)
         {
-        	GameRegistry.registerTileEntity(TileEntityRefridgerator.class, "tileRefridgerator");
-        	GameRegistry.registerTileEntity(TileEntityOven.class, "tileOven");
-        	GameRegistry.registerTileEntity(TileEntityFoodAssembler.class, "tileFoodAssembler");
+        	
             //Init Log
             LogUtil.init();
             
             //Load Language Files
             LocalizationHandler.loadLanguages();
-            LogUtil.info(Messages.MSG_LOCALIZATION_INITIALIZATION_SUCCESS);
             
             //Load the Configuration File
             ConfigHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_NAME + ".cfg"));
@@ -75,8 +72,9 @@ public class CookingCraft
         public void load(FMLInitializationEvent event)
         {
         	
-            //gui
+            //Register GUI Handler
         	NetworkRegistry.instance().registerGuiHandler(instance, proxy);
+        	
         	//Load Ore Gen
             GameRegistry.registerWorldGenerator(new OreGen());
             LogUtil.info(Messages.MSG_ORE_GENERATION_SUCCESS);
@@ -84,8 +82,9 @@ public class CookingCraft
             //Register Mob Drops
             MinecraftForge.EVENT_BUS.register(new CookingCraftLivingDropsEvent());
             LogUtil.info(Messages.MSG_MOB_DROP_INITIALIZATION_SUCCESS);
-           
             
+            //Register Tile Entities
+            proxy.registerTileEntities();
         }
         
         

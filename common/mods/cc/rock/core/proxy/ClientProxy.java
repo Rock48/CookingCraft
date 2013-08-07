@@ -11,35 +11,26 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class ClientProxy extends CommonProxy {
+public class ClientProxy extends CommonProxy
+{
+    
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
-    {
-        
+    { 
     	TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-        if(ID==GuiIDs.ID_REFRIDGERATOR){
-        	
+    	
+        if (ID == GuiIDs.ID_REFRIDGERATOR)
                 return new GuiRefridgerator(player.inventory, (TileEntityRefridgerator) tileEntity);
-                
-        }
-        if(ID==GuiIDs.ID_OVEN1){
-        	
+        else if (ID == GuiIDs.ID_OVEN1)
             return new GuiOven(player.inventory, (TileEntityOven) tileEntity, "Oven Mk1");
-            
-        }
-        if(ID==GuiIDs.ID_OVEN2){
-        	
+        else if (ID == GuiIDs.ID_OVEN2)
             return new GuiOven(player.inventory, (TileEntityOven) tileEntity, "Oven Mk2");
-            
-        }
-        if(ID==GuiIDs.ID_OVEN3){
-	
+        else if (ID == GuiIDs.ID_OVEN3)
         	return new GuiOven(player.inventory, (TileEntityOven) tileEntity, "Oven Mk3");
-    
-        }
-        if(ID==4){
+        else if (ID == GuiIDs.FOOD_ASS)
             return new GuiFoodAssembler(player.inventory, (TileEntityFoodAssembler) tileEntity, world);
-        }
-        return null;
+        else
+            return null;
     }
+    
 }
