@@ -26,5 +26,6 @@
 	<entry key="item.oilCookedLight.name">Fresh Lightflower Oil</entry>
 	<entry key="item.oilCookedDark.name">Fresh DarkFlower Oil</entry>
 	<entry key="item.fryingPan.name">Frying Pan</entry>
+	<entry key="item.dough.name">Dough</entry>
 	
 </properties>

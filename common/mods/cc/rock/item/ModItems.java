@@ -18,6 +18,7 @@ public class ModItems
 	public static Item oilCookedLight;
     public static Item oilCookedDark;
 	public static Item fryingPan;
+	public static Item dough;
 	
 	public static void initItems()
     {
@@ -31,7 +32,8 @@ public class ModItems
 		oilCookedLight = new ItemCC(ItemIDs.ID_OIL_COOKED_LIGHT, Textures.TEX_OIL_LIGHT).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilCookedLight").setMaxStackSize(16);
         oilCookedDark = new ItemCC(ItemIDs.ID_OIL_COOKED_DARK, Textures.TEX_OIL_DARK).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilCookedDark").setMaxStackSize(16);
     	fryingPan = new ItemCC(ItemIDs.ID_FRYING_PAN, Textures.TEX_FRYING_PAN).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("fryingPan");
-		
+		dough = new ItemCC(ItemIDs.ID_DOUGH, Textures.TEX_DOUGH).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("dough");
+    	
     	registry();
     }
 	

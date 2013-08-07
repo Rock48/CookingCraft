@@ -40,6 +40,7 @@ public class OvenRecipes
         this.addSmelting(Item.potato.itemID, new ItemStack(Item.bakedPotato), 0.5F);
         this.addSmelting(ItemIDs.ID_OIL_DARK, new ItemStack(ModItems.oilCookedDark), 0.5F);
         this.addSmelting(ItemIDs.ID_OIL_LIGHT, new ItemStack(ModItems.oilCookedLight), 0.5F);
+        this.addSmelting(ItemIDs.ID_DOUGH, new ItemStack(Item.bread), 0.5F);
     }
 
     /**

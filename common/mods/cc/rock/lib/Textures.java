@@ -20,6 +20,7 @@ public class Textures {
 	public static final String TEX_OIL_LIGHT = "oilLight";
 	public static final String TEX_OIL_DARK = "oilDark";
 	public static final String TEX_FRYING_PAN = "ItemFryingPan";
+	public static final String TEX_DOUGH = "ItemDough";
 	
 	public static final ResourceLocation REFRIDGERATOR_GUI = new ResourceLocation(Reference.MOD_ID.toLowerCase(), GUI_SHEET_LOCATION + "fridge.png");
 	public static final ResourceLocation OVEN_GUI = new ResourceLocation(Reference.MOD_ID.toLowerCase(), GUI_SHEET_LOCATION + "oven.png");
