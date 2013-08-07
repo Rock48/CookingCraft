@@ -122,7 +122,15 @@ public class ContainerFoodAssembler extends Container
             {
                 slot1.onSlotChanged();
             }
+            if (itemstack1.stackSize == itemstack.stackSize)
+            {
+                return null;
+            }
+
+            slot1.onPickupFromSlot(player, itemstack1);
         }
+        
+        
 
         return itemstack;
     }
