@@ -1,7 +1,6 @@
 package mods.cc.rock.recipie;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import mods.cc.rock.item.ModItems;
@@ -9,7 +8,6 @@ import mods.cc.rock.tileentity.TileEntityFoodAssembler;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.world.World;
 
 @SuppressWarnings({ "unchecked", "rawtypes" })
@@ -38,88 +36,17 @@ public class CraftingManagerCC{
         addShapelessRecipe(new ItemStack(ModItems.oilDark), new Object[]{Block.plantRed}, Block.plantRed, Item.flint, Item.potion);
         
     }
-
-    
-	public ShapedRecipes addRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
-    {
-        String s = "";
-        int i = 0;
-        int j = 0;
-        int k = 0;
-
-        if (par2ArrayOfObj[i] instanceof String[])
-        {
-            String[] astring = (String[])((String[])par2ArrayOfObj[i++]);
-
-            for (int l = 0; l < astring.length; ++l)
-            {
-                String s1 = astring[l];
-                ++k;
-                j = s1.length();
-                s = s + s1;
-            }
-        }
-        else
-        {
-            while (par2ArrayOfObj[i] instanceof String)
-            {
-                String s2 = (String)par2ArrayOfObj[i++];
-                ++k;
-                j = s2.length();
-                s = s + s2;
-            }
-        }
-
-        HashMap hashmap;
-
-        for (hashmap = new HashMap(); i < par2ArrayOfObj.length; i += 2)
-        {
-            Character character = (Character)par2ArrayOfObj[i];
-            ItemStack itemstack1 = null;
-
-            if (par2ArrayOfObj[i + 1] instanceof Item)
-            {
-                itemstack1 = new ItemStack((Item)par2ArrayOfObj[i + 1]);
-            }
-            else if (par2ArrayOfObj[i + 1] instanceof Block)
-            {
-                itemstack1 = new ItemStack((Block)par2ArrayOfObj[i + 1], 1, 32767);
-            }
-            else if (par2ArrayOfObj[i + 1] instanceof ItemStack)
-            {
-                itemstack1 = (ItemStack)par2ArrayOfObj[i + 1];
-            }
-
-            hashmap.put(character, itemstack1);
-        }
-
-        ItemStack[] aitemstack = new ItemStack[j * k];
-
-        for (int i1 = 0; i1 < j * k; ++i1)
-        {
-            char c0 = s.charAt(i1);
-
-            if (hashmap.containsKey(Character.valueOf(c0)))
-            {
-                aitemstack[i1] = ((ItemStack)hashmap.get(Character.valueOf(c0))).copy();
-            }
-            else
-            {
-                aitemstack[i1] = null;
-            }
-        }
-
-        ShapedRecipes shapedrecipes = new ShapedRecipes(j, k, aitemstack, par1ItemStack);
-        this.recipes.add(shapedrecipes);
-        return shapedrecipes;
-    }
-
+    //add a shapeless recipe to the food preparation table. max 8 ingrediants
     public void addShapelessRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
     {
         ArrayList arraylist = new ArrayList();
         Object[] aobject = par2ArrayOfObj;
         int i = par2ArrayOfObj.length;
-
+        
+        if(i>8){
+        	throw new RuntimeException("Invalid Food Preparation Table Recipe!");
+        }
+        
         for (int j = 0; j < i; ++j)
         {
             Object object1 = aobject[j];
@@ -136,7 +63,7 @@ public class CraftingManagerCC{
             {
                 if (!(object1 instanceof Block))
                 {
-                    throw new RuntimeException("Invalid shapeless recipy!");
+                    throw new RuntimeException("Invalid Food Preparation Table Recipe!");
                 }
 
                 arraylist.add(new ItemStack((Block)object1));
