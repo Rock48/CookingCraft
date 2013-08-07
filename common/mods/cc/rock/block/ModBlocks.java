@@ -24,6 +24,7 @@ public class ModBlocks
 	public static Block oven2On;
 	public static Block oven3;
 	public static Block oven3On;
+	public static Block foodAssembler;
 	
 	public static void initBlocks()
 	{
@@ -47,6 +48,8 @@ public class ModBlocks
 		//OVEN MK3
 		oven3 = new BlockOven(BlockIDs.ID_OVEN3_OFF, false, 3).setUnlocalizedName("Oven3").setCreativeTab(CookingCraft.tabCC);
 		oven3On = new BlockOven(BlockIDs.ID_OVEN3_ON, true, 3).setUnlocalizedName("Oven3On").setLightValue(1F);
+		
+		foodAssembler = new BlockFoodAssembler(711).setUnlocalizedName("assemblerFood").setCreativeTab(CookingCraft.tabCC);
 		harvests();
 		registry();
 	}
@@ -65,6 +68,7 @@ public class ModBlocks
 	    MinecraftForge.setBlockHarvestLevel(oven2On, "pickaxe", 1);
 	    MinecraftForge.setBlockHarvestLevel(oven3, "pickaxe", 1);
 	    MinecraftForge.setBlockHarvestLevel(oven3On, "pickaxe", 1);
+	    MinecraftForge.setBlockHarvestLevel(foodAssembler, "pickaxe", 1);
 	    
 	}
 	
@@ -82,6 +86,7 @@ public class ModBlocks
 		GameRegistry.registerBlock(oven2On, oven2On.getUnlocalizedName());
 		GameRegistry.registerBlock(oven3, oven3.getUnlocalizedName());
 		GameRegistry.registerBlock(oven3On, oven3On.getUnlocalizedName());
+		GameRegistry.registerBlock(foodAssembler, foodAssembler.getUnlocalizedName());
 	}
 	
 }

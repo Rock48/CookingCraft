@@ -13,6 +13,7 @@ import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Messages;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.recipie.ModRecipies;
+import mods.cc.rock.tileentity.TileEntityFoodAssembler;
 import mods.cc.rock.tileentity.TileEntityOven;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import mods.cc.rock.world.OreGen;
@@ -47,6 +48,7 @@ public class CookingCraft
         {
         	GameRegistry.registerTileEntity(TileEntityRefridgerator.class, "tileRefridgerator");
         	GameRegistry.registerTileEntity(TileEntityOven.class, "tileOven");
+        	GameRegistry.registerTileEntity(TileEntityFoodAssembler.class, "tileFoodAssembler");
             //Init Log
             LogUtil.init();
             

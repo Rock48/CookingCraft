@@ -23,4 +23,5 @@ public class Textures {
 	
 	public static final ResourceLocation REFRIDGERATOR_GUI = new ResourceLocation(Reference.MOD_ID.toLowerCase(), GUI_SHEET_LOCATION + "fridge.png");
 	public static final ResourceLocation OVEN_GUI = new ResourceLocation(Reference.MOD_ID.toLowerCase(), GUI_SHEET_LOCATION + "oven.png");
+	public static final ResourceLocation FOOD_ASS_GUI = new ResourceLocation(Reference.MOD_ID.toLowerCase(), GUI_SHEET_LOCATION + "foodass.png");
 }

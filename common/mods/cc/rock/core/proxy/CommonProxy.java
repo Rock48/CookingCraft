@@ -1,9 +1,11 @@
 package mods.cc.rock.core.proxy;
 
 import cpw.mods.fml.common.network.IGuiHandler;
+import mods.cc.rock.inventory.ContainerFoodAssembler;
 import mods.cc.rock.inventory.ContainerOven;
 import mods.cc.rock.inventory.ContainerRefridgerator;
 import mods.cc.rock.lib.GuiIDs;
+import mods.cc.rock.tileentity.TileEntityFoodAssembler;
 import mods.cc.rock.tileentity.TileEntityOven;
 import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,6 +22,9 @@ public class CommonProxy implements IGuiHandler{
         }
         if(ID==GuiIDs.ID_OVEN1 || ID==GuiIDs.ID_OVEN2 || ID==GuiIDs.ID_OVEN3){
             return new ContainerOven(player.inventory, (TileEntityOven) tileEntity);
+        }
+        if(ID==4){
+            return new ContainerFoodAssembler(player.inventory, (TileEntityFoodAssembler) tileEntity, world);
         }
         return null;
     }
