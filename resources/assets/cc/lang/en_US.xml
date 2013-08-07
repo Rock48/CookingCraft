@@ -15,6 +15,7 @@
 	<entry key="tile.OvenOn2.name">Oven Mk2 On</entry>
 	<entry key="tile.Oven3.name">Oven Mk3</entry>
 	<entry key="tile.OvenOn3.name">Oven Mk3 On</entry>
+	<entry key="tile.assemblerFood.name">Food Preparation Table </entry>
 	
 	<entry key="item.ingotAluminum.name">Aluminum Ingot</entry>
 	<entry key="item.itemHammer.name">Hammer</entry>

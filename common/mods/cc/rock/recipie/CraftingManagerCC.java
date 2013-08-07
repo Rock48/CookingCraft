@@ -10,16 +10,17 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.ShapedRecipes;
-import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
 
+@SuppressWarnings({ "unchecked", "rawtypes" })
 public class CraftingManagerCC{
 	
     /** The static instance of this class */
     private static final CraftingManagerCC instance = new CraftingManagerCC();
 
     /** A list of all the recipes added */
-    private List recipes = new ArrayList();
+    
+	private List recipes = new ArrayList();
 
     /**
      * Returns the static instance of this class
@@ -36,7 +37,8 @@ public class CraftingManagerCC{
         
     }
 
-    public ShapedRecipes addRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
+    
+	public ShapedRecipes addRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
     {
         String s = "";
         int i = 0;

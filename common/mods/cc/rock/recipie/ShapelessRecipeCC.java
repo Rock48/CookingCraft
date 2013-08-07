@@ -5,11 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 
 import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
-
+@SuppressWarnings({ "unchecked", "rawtypes" })
 public class ShapelessRecipeCC extends ShapelessRecipes implements IRecipeCC{
 	private ItemStack recipeOutput;
 	public ShapelessRecipeCC(ItemStack par1ItemStack, List par2List) {

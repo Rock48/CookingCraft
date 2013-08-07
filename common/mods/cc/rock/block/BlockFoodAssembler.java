@@ -6,7 +6,6 @@ import mods.cc.rock.CookingCraft;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.tileentity.TileEntityFoodAssembler;
-import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.item.EntityItem;
@@ -44,17 +43,19 @@ public class BlockFoodAssembler extends BlockContainerCC{
     }
     private Icon sides;
     private Icon front;
-    private Icon bottomtop;
+    private Icon bottom;
+    private Icon top;
     @Override
     public void registerIcons(IconRegister iconRegister)
     {
-        sides = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":OvenFront");
-        front = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":basicFridge_front");
-        bottomtop = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":basicFridge_bottom");
+        sides = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":foodprepsides");
+        front = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":foodprepfront");
+        bottom = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":foodprepbottom");
+        top = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":foodpreptop");
     }
     @Override
     public Icon getIcon(int par1, int par2){
-    	return par2 == 0 && par1 == 3 ? front : (par1 == par2 ? front : ( par1 == 0 || par1 == 1 ? bottomtop : sides));
+    	return par2 == 0 && par1 == 3 ? front : (par1 == par2 ? front : ( par1 == 0  ? bottom : (par1 == 1 ? top : sides)));
     }
     
     @Override

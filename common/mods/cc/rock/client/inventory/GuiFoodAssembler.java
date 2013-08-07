@@ -1,10 +1,8 @@
 package mods.cc.rock.client.inventory;
 
 import mods.cc.rock.inventory.ContainerFoodAssembler;
-import mods.cc.rock.inventory.ContainerRefridgerator;
 import mods.cc.rock.lib.Textures;
 import mods.cc.rock.tileentity.TileEntityFoodAssembler;
-import mods.cc.rock.tileentity.TileEntityRefridgerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;

@@ -100,6 +100,13 @@ public class CraftingRecipies
             "ADA",
             'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff, 'F', ModBlocks.oven2, 'D', Item.blazeRod, 'G', Item.diamond, 'O', Block.obsidian
         });
+        
+        RecipeHelper.addOreRecipe(new ItemStack(ModBlocks.foodAssembler), new Object[]{
+        	"WLW",
+        	"ACA",
+        	"LLL",
+        	'W', Block.planks, 'L', Block.wood, 'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff
+        });
 
     }
     

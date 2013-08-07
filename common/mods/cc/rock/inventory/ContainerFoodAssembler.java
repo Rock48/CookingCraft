@@ -2,7 +2,6 @@ package mods.cc.rock.inventory;
 
 
 
-import mods.cc.rock.item.ModItems;
 import mods.cc.rock.recipie.CraftingManagerCC;
 import mods.cc.rock.tileentity.TileEntityFoodAssembler;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,7 +10,6 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotCrafting;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -36,8 +34,7 @@ public class ContainerFoodAssembler extends Container
         //the Slot constructor takes the IInventory and the slot number in that it binds to
         //and the x-y coordinates it resides on-screen
         
-        int x;
-        int y;
+        
         
         //circle
         
@@ -96,53 +93,38 @@ public class ContainerFoodAssembler extends Container
     @Override
     public ItemStack transferStackInSlot(EntityPlayer player, int slot)
     {
-        /*ItemStack stack = null;
-        Slot slotObject = (Slot) inventorySlots.get(slot);
 
-        //null checks and checks if the item can be stacked (maxStackSize > 1)
-        if (slotObject != null && slotObject.getHasStack())
+        ItemStack itemstack = null;
+        Slot slot1 = (Slot)this.inventorySlots.get(slot);
+
+        if (slot1 != null && slot1.getHasStack())
         {
-            ItemStack stackInSlot = slotObject.getStack();
-            stack = stackInSlot.copy();
-            
-            if (slot == 0)
+            ItemStack itemstack1 = slot1.getStack();
+            itemstack = itemstack1.copy();
+
+            if (slot < TileEntityFoodAssembler.INVENTORY_SIZE+1)
             {
-                if (!this.mergeItemStack(stackInSlot, 10, 46, true))
+                if (!this.mergeItemStack(itemstack1, TileEntityFoodAssembler.INVENTORY_SIZE+1, this.inventorySlots.size(), true))
                 {
                     return null;
                 }
-
-                slotObject.onSlotChange(stackInSlot, stack);
             }
-            
-            //merges the item into player inventory since its in the tileEntity
-            if (slot < TileScientificAssembler.INVENTORY_SIZE)
+            else if (!this.mergeItemStack(itemstack1, 1, TileEntityFoodAssembler.INVENTORY_SIZE+1, false))
             {
-                if (!this.mergeItemStack(stackInSlot, 0, 35, true))
-                    return null;
+                return null;
             }
-            //places it into the tileEntity is possible since its in the player inventory
-            else if (!this.mergeItemStack(stackInSlot, 0, TileScientificAssembler.INVENTORY_SIZE, false))
-                return null;
 
-            
-            if (stackInSlot.stackSize == 0)
-                slotObject.putStack(null);
+            if (itemstack1.stackSize == 0)
+            {
+                slot1.putStack((ItemStack)null);
+            }
             else
-                slotObject.onSlotChanged();
-
-            if (stackInSlot.stackSize == stack.stackSize)
-                return null;
-            
-            
-            if (stackInSlot.stackSize == stack.stackSize)
-                return null;
-
-            slotObject.onPickupFromSlot(player, stackInSlot);
+            {
+                slot1.onSlotChanged();
+            }
         }
-        
-        return stack;*/
-    	return null;
+
+        return itemstack;
     }
     
     /**
