@@ -32,8 +32,8 @@ public class CraftingManagerCC{
     {
         
     	addShapelessRecipe(new ItemStack(Item.bread), new Object[]{ModItems.oilCookedLight,ModItems.oilCookedLight, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, Item.potion});
-        addShapelessRecipe(new ItemStack(ModItems.oilLight), new Object[]{Block.plantYellow, Block.plantYellow, Item.flint, Item.potion});
-        addShapelessRecipe(new ItemStack(ModItems.oilDark), new Object[]{Block.plantRed, Block.plantRed, Item.flint, Item.potion});
+        addShapelessRecipe(new ItemStack(ModItems.oilLight, 4), new Object[]{Block.plantYellow, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
+        addShapelessRecipe(new ItemStack(ModItems.oilDark, 4), new Object[]{Block.plantRed, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
         
     }
     //add a shapeless recipe to the food preparation table. max 8 ingrediants
