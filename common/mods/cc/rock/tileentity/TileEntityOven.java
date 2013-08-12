@@ -119,28 +119,27 @@ public class TileEntityOven extends TileCC implements ISidedInventory{
 	}
 
 	@Override
-	public void openChest() {
-		// TODO Auto-generated method stub
-		
+	public void openChest()
+	{	
 	}
 
 	@Override
-	public void closeChest() {
-		// TODO Auto-generated method stub
-		
+	public void closeChest()
+	{
 	}
 
 
 
 
 	@Override
-	public int[] getAccessibleSlotsFromSide(int par1) {
+	public int[] getAccessibleSlotsFromSide(int par1)
+	{
 		return par1 == 0 ? slots_bottom : (par1 == 1 ? slots_top : slots_sides);
 	}
 
 	@Override
-	public boolean canInsertItem(int i, ItemStack itemstack, int j) {
-		
+	public boolean canInsertItem(int i, ItemStack itemstack, int j)
+	{	
 		return this.isItemValidForSlot(i, itemstack);
 	}
 
@@ -365,8 +364,8 @@ public class TileEntityOven extends TileCC implements ISidedInventory{
     }
 
 	@Override
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
-		// TODO Auto-generated method stub
+	public boolean isItemValidForSlot(int i, ItemStack itemstack)
+	{
 		return true;
 	}
 }

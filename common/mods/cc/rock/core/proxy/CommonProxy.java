@@ -19,6 +19,8 @@ import net.minecraft.world.World;
 public class CommonProxy implements IGuiHandler
 {
     
+    public void registerSoundHandler() {}
+    
     public void registerTileEntities()
     {
         GameRegistry.registerTileEntity(TileEntityRefridgerator.class, "tileRefridgerator");
@@ -30,6 +32,7 @@ public class CommonProxy implements IGuiHandler
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+        
         if(ID == GuiIDs.ID_REFRIDGERATOR)
                 return new ContainerRefridgerator(player.inventory, (TileEntityRefridgerator) tileEntity);
         else if (ID == GuiIDs.ID_OVEN1 || ID == GuiIDs.ID_OVEN2 || ID == GuiIDs.ID_OVEN3)

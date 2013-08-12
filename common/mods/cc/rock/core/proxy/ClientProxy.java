@@ -1,5 +1,6 @@
 package mods.cc.rock.core.proxy;
 
+import mods.cc.rock.client.audio.SoundHandler;
 import mods.cc.rock.client.inventory.GuiFoodAssembler;
 import mods.cc.rock.client.inventory.GuiOven;
 import mods.cc.rock.client.inventory.GuiRefridgerator;
@@ -11,8 +12,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+import net.minecraftforge.common.MinecraftForge;
+
 public class ClientProxy extends CommonProxy
 {
+    
+    @Override
+    public void registerSoundHandler()
+    {
+        MinecraftForge.EVENT_BUS.register(new SoundHandler());
+    }
     
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)

@@ -20,32 +20,39 @@ public class TileEntityFoodAssembler extends TileCC implements IInventory
     {
         inventory = new ItemStack[INVENTORY_SIZE];
     }
+    
     /**
      * Checks if there is an amount of a given item id in an inventory
      * @param itemID
      * @param amount
      * @return if there is the given amount of the item id provided
      */
-    public boolean contains(int itemID, int amount){
+    public boolean contains(int itemID, int amount)
+    {
     	int checknum = 0;
-    	for(int i = 0; i<7; i++){
-    		if(inventory[i]!=null){
-    			if(inventory[i].itemID == itemID){
+    	
+    	for(int i = 0; i < INVENTORY_SIZE; i++)
+    	{
+    		if(inventory[i] != null)
+    		{
+    			if(inventory[i].itemID == itemID)
 	    			checknum++;
-	    		}
-	    		if(checknum == amount){
+
+	    		if(checknum == amount)
 	    			return true;
-	    		}
     		}
     	}
+    	
     	return false;
     }
+    
     @Override
-    public void onInventoryChanged() {
-    	if(this.eventHandler != null){
+    public void onInventoryChanged()
+    {
+    	if(this.eventHandler != null)
         	this.eventHandler.onCraftMatrixChanged(this);
-        }
     }
+    
     @Override
     public int getSizeInventory()
     {
@@ -59,25 +66,32 @@ public class TileEntityFoodAssembler extends TileCC implements IInventory
     }
 
     @Override
-    public ItemStack decrStackSize(int slot, int amt) {
-            ItemStack stack = getStackInSlot(slot);
-            if (stack != null) {
-                    if (stack.stackSize <= amt) {
-                            setInventorySlotContents(slot, null);
-                            if(this.eventHandler != null){
-                            	this.eventHandler.onCraftMatrixChanged(this);
-                            }
-                    } else {
-                            stack = stack.splitStack(amt);
-                            if (stack.stackSize == 0) {
-                                    setInventorySlotContents(slot, null);
-                            }
-                            if(this.eventHandler != null){
-                            	this.eventHandler.onCraftMatrixChanged(this);
-                            }
-                    }
+    public ItemStack decrStackSize(int slot, int amt)
+    {
+        ItemStack stack = getStackInSlot(slot);
+        
+        if (stack != null)
+        {
+            if (stack.stackSize <= amt)
+            {
+                setInventorySlotContents(slot, null);
+                
+                if(this.eventHandler != null)
+                	this.eventHandler.onCraftMatrixChanged(this);
             }
-            return stack;
+            else
+            {
+                stack = stack.splitStack(amt);
+                
+                if (stack.stackSize == 0)
+                        setInventorySlotContents(slot, null);
+                
+                if(this.eventHandler != null)
+                	this.eventHandler.onCraftMatrixChanged(this);
+            }
+        }
+        
+        return stack;
     }
 
     @Override
@@ -103,7 +117,7 @@ public class TileEntityFoodAssembler extends TileCC implements IInventory
     @Override
     public String getInvName()
     {
-        return this.hasCustomName() ? this.getCustomName() : "container.refridgerator";
+        return this.hasCustomName() ? this.getCustomName() : "container.foodAssembler";
     }
 
     @Override
@@ -133,53 +147,58 @@ public class TileEntityFoodAssembler extends TileCC implements IInventory
     {
         StringBuilder s = new StringBuilder();
         s.append(super.toString());
-        s.append("Refridgerator Data - ");
+        s.append("Food Assembler Data - ");
         
         return s.toString();
     }
     
     @Override
-    public void readFromNBT(NBTTagCompound tagCompound) {
-            super.readFromNBT(tagCompound);
+    public void readFromNBT(NBTTagCompound tagCompound)
+    {
+        super.readFromNBT(tagCompound);
+        
+        NBTTagList tagList = tagCompound.getTagList("Inventory");
+        
+        for (int i = 0; i < tagList.tagCount(); i++)
+        {
+            NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
+            byte slot = tag.getByte("Slot");
             
-            NBTTagList tagList = tagCompound.getTagList("Inventory");
-            for (int i = 0; i < tagList.tagCount(); i++) {
-                    NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
-                    byte slot = tag.getByte("Slot");
-                    if (slot >= 0 && slot < inventory.length) {
-                            inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
-                    }
-            }
-            orientation = ForgeDirection.getOrientation(tagCompound.getInteger("Orientation"));
-            
-            	
-            
+            if (slot >= 0 && slot < inventory.length)
+                    inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
+        }
+        
+        orientation = ForgeDirection.getOrientation(tagCompound.getInteger("Orientation"));
     }
+    
     @Override
-    public void writeToNBT(NBTTagCompound tagCompound) {
-            super.writeToNBT(tagCompound);
-                            
-            NBTTagList itemList = new NBTTagList();
-            for (int i = 0; i < inventory.length; i++) {
-                    ItemStack stack = inventory[i];
-                    if (stack != null) {
-                            NBTTagCompound tag = new NBTTagCompound();
-                            tag.setByte("Slot", (byte) i);
-                            stack.writeToNBT(tag);
-                            itemList.appendTag(tag);
-                    }
+    public void writeToNBT(NBTTagCompound tagCompound)
+    {
+        super.writeToNBT(tagCompound);
+                        
+        NBTTagList itemList = new NBTTagList();
+        
+        for (int i = 0; i < inventory.length; i++)
+        {
+            ItemStack stack = inventory[i];
+            
+            if (stack != null)
+            {
+                NBTTagCompound tag = new NBTTagCompound();
+                tag.setByte("Slot", (byte) i);
+                stack.writeToNBT(tag);
+                itemList.appendTag(tag);
             }
-            tagCompound.setTag("Inventory", itemList);
-            
-            
-            tagCompound.setInteger("Orientation", orientation.ordinal());
-            
-            
-            
+        }
+        
+        tagCompound.setTag("Inventory", itemList);
+        
+        tagCompound.setInteger("Orientation", orientation.ordinal()); 
     }
 
 	@Override
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+	public boolean isItemValidForSlot(int i, ItemStack itemstack)
+	{
 		return true;
 	}
 

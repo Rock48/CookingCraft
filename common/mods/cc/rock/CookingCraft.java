@@ -56,6 +56,9 @@ public class CookingCraft
             //Load the Configuration File
             ConfigHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_NAME + ".cfg"));
             
+            //Register Sound Handler
+            proxy.registerSoundHandler();
+            
             //Load Blocks
             ModBlocks.initBlocks();
             
@@ -85,6 +88,7 @@ public class CookingCraft
             
             //Register Tile Entities
             proxy.registerTileEntities();
+            
         }
         
         
@@ -92,7 +96,6 @@ public class CookingCraft
         public void postInit(FMLPostInitializationEvent event)
         {
              LogUtil.info(Messages.MSG_MOD_INIT_SUCCESS);
-            
         }
 
 }
