@@ -3,7 +3,9 @@ package mods.cc.rock.item;
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.util.GeneralHelper;
-
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -48,6 +50,30 @@ public class ItemHammer extends ItemCC
             par3World.setBlockToAir(par4, par5, par6);
     		
     	}
+    	if(!par3World.isRemote && (par3World.getBlockId(par4, par5, par6) == ModBlocks.oven2On.blockID) || (par3World.getBlockId(par4, par5, par6) == ModBlocks.oven2.blockID))
+    	{
+
+    		par1ItemStack.damageItem(1, par2EntityPlayer);
+            GeneralHelper.spawnItemOnGround(par3World, par4, par5, par6, 1, par2EntityPlayer, new ItemStack(ModBlocks.oven2));
+            par3World.setBlockToAir(par4, par5, par6);
+    		
+    	}
+    	if(!par3World.isRemote && (par3World.getBlockId(par4, par5, par6) == ModBlocks.oven3On.blockID) || (par3World.getBlockId(par4, par5, par6) == ModBlocks.oven3.blockID))
+    	{
+
+    		par1ItemStack.damageItem(1, par2EntityPlayer);
+            GeneralHelper.spawnItemOnGround(par3World, par4, par5, par6, 1, par2EntityPlayer, new ItemStack(ModBlocks.oven3));
+            par3World.setBlockToAir(par4, par5, par6);
+    		
+    	}
+    	if(!par3World.isRemote && (par3World.getBlockId(par4, par5, par6) == ModBlocks.foodAssembler.blockID))
+    	{
+
+    		par1ItemStack.damageItem(1, par2EntityPlayer);
+            GeneralHelper.spawnItemOnGround(par3World, par4, par5, par6, 1, par2EntityPlayer, new ItemStack(ModBlocks.foodAssembler));
+            par3World.setBlockToAir(par4, par5, par6);
+    		
+    	}
     	return true;
     }
 	
@@ -56,22 +82,24 @@ public class ItemHammer extends ItemCC
     {
 		w = par2World;
         return par1ItemStack;
+        
     }
     
-    /*@Override
-    public boolean itemInteractionForEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLiving){
+    @Override
+    public boolean func_111207_a(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, EntityLivingBase par3EntityLivingBase){
     	
-    	if(par2EntityLiving instanceof EntityCreeper && w != null){
-    		int tempHp = ((EntityCreeper) par2EntityLiving).getHealth();
-    		((EntityCreeper) par2EntityLiving).onStruckByLightning(new EntityLightningBolt(w, 0, 0, 0));
-    		((EntityCreeper) par2EntityLiving).extinguish();
-    		((EntityCreeper) par2EntityLiving).setEntityHealth(tempHp);
+    	if(par3EntityLivingBase instanceof EntityCreeper && w != null){
+    		//get hp
+    		float tempHp = ((EntityCreeper) par3EntityLivingBase).func_110143_aJ();
+    		((EntityCreeper) par3EntityLivingBase).onStruckByLightning(new EntityLightningBolt(w, 0, 0, 0));
+    		((EntityCreeper) par3EntityLivingBase).extinguish();
+    		((EntityCreeper) par3EntityLivingBase).setEntityHealth(tempHp);
     		
     		return true;
     	}
     	
     	return false;
-    }*/
+    }
     
 	
 	
