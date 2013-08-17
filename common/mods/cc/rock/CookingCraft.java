@@ -12,6 +12,7 @@ import mods.cc.rock.event.CookingCraftLivingDropsEvent;
 import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Messages;
 import mods.cc.rock.lib.Reference;
+import mods.cc.rock.network.PacketHandler;
 import mods.cc.rock.recipie.ModRecipies;
 import mods.cc.rock.world.OreGen;
 
@@ -31,7 +32,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(channels = {Reference.CHANNEL_NAME}, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class CookingCraft
 {
         @Instance(Reference.MOD_ID)
