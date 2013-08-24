@@ -18,6 +18,7 @@ public class ItemCC extends Item
 	public ItemCC(int id)
 	{
 		super(id-256);
+		this.setMaxStackSize(1);
 	}
 	
     public void registerIcons(IconRegister iconRegister)

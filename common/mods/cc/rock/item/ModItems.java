@@ -19,6 +19,8 @@ public class ModItems
     public static Item oilCookedDark;
 	public static Item fryingPan;
 	public static Item dough;
+	public static Item rollingPin1;
+	public static Item rollingPin2;
 	
 	public static void initItems()
     {
@@ -27,12 +29,14 @@ public class ModItems
     	itemHammer = new ItemHammer(ItemIDs.ID_HAMMER, Textures.TEX_HAMMER);
 		itemRod = new ItemCC(ItemIDs.ID_ROD, Textures.TEX_ROD).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("itemRod").setMaxStackSize(64);
 		itemFlour = new ItemCC(ItemIDs.ID_FLOUR, Textures.TEX_FLOUR).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("itemFlour").setMaxStackSize(64);
-		oilLight = new ItemCC(ItemIDs.ID_OIL_LIGHT, Textures.TEX_OIL_LIGHT).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilLight").setMaxStackSize(16);
-		oilDark = new ItemCC(ItemIDs.ID_OIL_DARK, Textures.TEX_OIL_DARK).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilDark").setMaxStackSize(16);
-		oilCookedLight = new ItemCC(ItemIDs.ID_OIL_COOKED_LIGHT, Textures.TEX_OIL_LIGHT).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilCookedLight").setMaxStackSize(16);
-        oilCookedDark = new ItemCC(ItemIDs.ID_OIL_COOKED_DARK, Textures.TEX_OIL_DARK).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilCookedDark").setMaxStackSize(16);
+		oilLight = new ItemCC(ItemIDs.ID_OIL_LIGHT, Textures.TEX_OIL_LIGHT).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilLight").setMaxStackSize(8);
+		oilDark = new ItemCC(ItemIDs.ID_OIL_DARK, Textures.TEX_OIL_DARK).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilDark").setMaxStackSize(8);
+		oilCookedLight = new ItemCC(ItemIDs.ID_OIL_COOKED_LIGHT, Textures.TEX_OIL_LIGHT).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilCookedLight").setMaxStackSize(8);
+        oilCookedDark = new ItemCC(ItemIDs.ID_OIL_COOKED_DARK, Textures.TEX_OIL_DARK).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilCookedDark").setMaxStackSize(8);
     	fryingPan = new ItemCC(ItemIDs.ID_FRYING_PAN, Textures.TEX_FRYING_PAN).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("fryingPan");
 		dough = new ItemCC(ItemIDs.ID_DOUGH, Textures.TEX_DOUGH).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("dough").setMaxStackSize(64);
+    	rollingPin1 = new ItemCC(ItemIDs.ID_ROLLING_PIN_1, Textures.TEX_ROLLING_PIN_1).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("rollingPin1").setMaxDamage(10);
+    	rollingPin2 = new ItemCC(ItemIDs.ID_ROLLING_PIN_2, Textures.TEX_ROLLING_PIN_2).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("rollingPin2").setMaxDamage(25);
     	
     	registry();
     }

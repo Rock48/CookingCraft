@@ -94,6 +94,22 @@ public class CraftingRecipies
         	"LLL",
         	'W', Block.planks, 'L', Block.wood, 'A', "ingotAluminum", 'C', ModBlocks.machineCoreOff
         });
+        
+        //Rolling Pin 1
+        RecipeHelper.addOreRecipe(new ItemStack(ModItems.rollingPin1), new Object[]{
+            "S S",
+            "WWW",
+            "S S",
+            'W', Block.planks, 'S', Item.stick
+        });
+        
+        //Rolling Pin 2
+        RecipeHelper.addOreRecipe(new ItemStack(ModItems.rollingPin2), new Object[]{
+            "S S",
+            "WWW",
+            "S S",
+            'W', Block.planks, 'S', ModItems.itemRod
+        });
 
     }
     

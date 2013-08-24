@@ -50,6 +50,7 @@ public class ModBlocks
 		oven3On = new BlockOven(BlockIDs.ID_OVEN3_ON, true, 3).setUnlocalizedName("Oven3On").setLightValue(1F);
 		
 		foodAssembler = new BlockFoodAssembler(711).setUnlocalizedName("assemblerFood").setCreativeTab(CookingCraft.tabCC);
+		
 		harvests();
 		registry();
 	}
