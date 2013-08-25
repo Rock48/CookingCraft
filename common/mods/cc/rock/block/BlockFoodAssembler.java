@@ -18,7 +18,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
-public class BlockFoodAssembler extends BlockContainerCC{
+public class BlockFoodAssembler extends BlockContainerCC
+{
     private Random rand = new Random();
 
     public BlockFoodAssembler(int id)
@@ -33,7 +34,6 @@ public class BlockFoodAssembler extends BlockContainerCC{
     public TileEntity createNewTileEntity(World world)
     {
         return new TileEntityFoodAssembler();
-        
     }
 
     @Override
@@ -42,10 +42,12 @@ public class BlockFoodAssembler extends BlockContainerCC{
         dropInventory(world, x, y, z);
         super.breakBlock(world, x, y, z, id, meta);
     }
+    
     private Icon sides;
     private Icon front;
     private Icon bottom;
     private Icon top;
+    
     @Override
     public void registerIcons(IconRegister iconRegister)
     {
@@ -54,32 +56,31 @@ public class BlockFoodAssembler extends BlockContainerCC{
         bottom = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":foodprepbottom");
         top = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":foodpreptop");
     }
+    
     @Override
-    public Icon getIcon(int par1, int par2){
+    public Icon getIcon(int par1, int par2)
+    {
     	return par2 == 0 && par1 == 3 ? front : (par1 == par2 ? front : ( par1 == 0  ? bottom : (par1 == 1 ? top : sides)));
     }
     
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
     {
-    	if(player.getHeldItem()!=null){
-	    	if (player.getHeldItem().itemID == ModItems.itemHammer.itemID){
+    	if(player.getHeldItem() != null)
+    	{
+	    	if (player.getHeldItem().itemID == ModItems.itemHammer.itemID)
 	    		return false;
-	    	}
     	}
+    	
         if (player.isSneaking())
             return false;
         else
         {
-            
-                TileEntityFoodAssembler tile = (TileEntityFoodAssembler) world.getBlockTileEntity(x, y, z);
+            TileEntityFoodAssembler tile = (TileEntityFoodAssembler) world.getBlockTileEntity(x, y, z);
 
-                if (tile != null){
-                	
-                    player.openGui(CookingCraft.instance, GuiIDs.FOOD_ASS, world, x, y, z);
-                }
+            if (tile != null)
+                player.openGui(CookingCraft.instance, GuiIDs.FOOD_ASS, world, x, y, z);
             
-
             return true;
         }
     }
@@ -121,6 +122,7 @@ public class BlockFoodAssembler extends BlockContainerCC{
         }
 
     }
+    
     public int idDropped(int par1, Random par2Random, int par3)
     {
         return ModBlocks.machineCoreOff.blockID;

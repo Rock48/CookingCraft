@@ -4,12 +4,12 @@ package mods.cc.rock.inventory;
 
 import mods.cc.rock.recipie.CraftingManagerCC;
 import mods.cc.rock.tileentity.TileEntityFoodAssembler;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -25,7 +25,7 @@ public class ContainerFoodAssembler extends Container
         tileEntity = te;
         this.worldObj = world;
         
-        this.addSlotToContainer(new SlotCrafting(inventoryPlayer.player, this.tileEntity, this.craftResult, 0, 80, 81));
+        this.addSlotToContainer(new SlotCraftingCC(inventoryPlayer.player, this.tileEntity, this.craftResult, 0, 80, 81));
         
         //the Slot constructor takes the IInventory and the slot number in that it binds to
         //and the x-y coordinates it resides on-screen

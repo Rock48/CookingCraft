@@ -9,8 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
 
-import mods.cc.rock.lib.ItemIDs;
-
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class ShapelessRecipeCC extends ShapelessRecipes implements IRecipeCC
 {
