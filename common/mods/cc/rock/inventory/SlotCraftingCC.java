@@ -10,7 +10,6 @@ import net.minecraftforge.event.entity.player.PlayerDestroyItemEvent;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-import mods.cc.rock.core.util.LogUtil;
 import mods.cc.rock.lib.ItemIDs;
 
 public class SlotCraftingCC extends SlotCrafting
@@ -62,11 +61,8 @@ public class SlotCraftingCC extends SlotCrafting
                 }
             }
             
-            if (i == 8 && (itemstack1.itemID == ItemIDs.ID_ROLLING_PIN_1 || itemstack1.itemID == ItemIDs.ID_ROLLING_PIN_2))
-            {
+            if (i == 8 && itemstack1 != null && (itemstack1.itemID == ItemIDs.ID_ROLLING_PIN_1 || itemstack1.itemID == ItemIDs.ID_ROLLING_PIN_2) && par2ItemStack.itemID == ItemIDs.ID_DOUGH)
                 itemstack1.damageItem(1, par1EntityPlayer);
-                LogUtil.info("pins!!!!");
-            }
         }
     }
 }
