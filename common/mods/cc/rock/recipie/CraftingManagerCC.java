@@ -11,15 +11,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 @SuppressWarnings({ "unchecked", "rawtypes" })
-public class CraftingManagerCC{
+public class CraftingManagerCC
+{
 	
     /** The static instance of this class */
     private static final CraftingManagerCC instance = new CraftingManagerCC();
 
     /** A list of all the recipes added */
-    
 	private List recipes = new ArrayList();
 
+	
     /**
      * Returns the static instance of this class
      */
@@ -31,46 +32,37 @@ public class CraftingManagerCC{
     private CraftingManagerCC()
     {
         
-    	addShapelessRecipe(new ItemStack(ModItems.dough), new Object[]{ModItems.oilCookedLight,ModItems.oilCookedLight, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, Item.potion});
-        addShapelessRecipe(new ItemStack(ModItems.oilLight, 4), new Object[]{Block.plantYellow, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
-        addShapelessRecipe(new ItemStack(ModItems.oilDark, 4), new Object[]{Block.plantRed, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
+    	addShapelessRecipe(new ItemStack(ModItems.dough), true, new Object[] {ModItems.oilCookedLight,ModItems.oilCookedLight, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, Item.potion});
+        addShapelessRecipe(new ItemStack(ModItems.oilLight, 4), false, new Object[] {Block.plantYellow, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
+        addShapelessRecipe(new ItemStack(ModItems.oilDark, 4), false, new Object[] {Block.plantRed, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
         
     }
-    //add a shapeless recipe to the food preparation table. max 8 ingrediants
-    public void addShapelessRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)
+    
+    //add a shapeless recipe to the food preparation table. max 8 ingredients, pinNeeded: whether rolling pin is needed
+    public void addShapelessRecipe(ItemStack par1ItemStack, boolean pinNeeded, Object ... par2ArrayOfObj)
     {
         ArrayList arraylist = new ArrayList();
         Object[] aobject = par2ArrayOfObj;
         int i = par2ArrayOfObj.length;
         
-        if(i>8){
+        if(i > 8)
         	throw new RuntimeException("Invalid Food Preparation Table Recipe!");
-        }
         
         for (int j = 0; j < i; ++j)
         {
             Object object1 = aobject[j];
 
             if (object1 instanceof ItemStack)
-            {
-                arraylist.add(((ItemStack)object1).copy());
-            }
+                arraylist.add(((ItemStack) object1).copy());
             else if (object1 instanceof Item)
-            {
-                arraylist.add(new ItemStack((Item)object1));
-            }
+                arraylist.add(new ItemStack ((Item) object1));
+            else if ((object1 instanceof Block))
+                arraylist.add(new ItemStack ((Block) object1));
             else
-            {
-                if (!(object1 instanceof Block))
-                {
-                    throw new RuntimeException("Invalid Food Preparation Table Recipe!");
-                }
-
-                arraylist.add(new ItemStack((Block)object1));
-            }
+                throw new RuntimeException("Invalid Food Preparation Table Recipe!");
         }
 
-        this.recipes.add(new ShapelessRecipeCC(par1ItemStack, arraylist));
+        this.recipes.add(new ShapelessRecipeCC(par1ItemStack, arraylist, pinNeeded));
     }
 
     public ItemStack findMatchingRecipe(TileEntityFoodAssembler tileEntity, World par2World)
@@ -87,14 +79,10 @@ public class CraftingManagerCC{
             if (itemstack2 != null)
             {
                 if (i == 0)
-                {
                     itemstack = itemstack2;
-                }
 
                 if (i == 1)
-                {
                     itemstack1 = itemstack2;
-                }
 
                 ++i;
             }
@@ -109,23 +97,18 @@ public class CraftingManagerCC{
             int j1 = item.getMaxDamage() - i1;
 
             if (j1 < 0)
-            {
                 j1 = 0;
-            }
 
             return new ItemStack(itemstack.itemID, 1, j1);
         }
-        
         else
         {
             for (j = 0; j < this.recipes.size(); ++j)
             {
-                IRecipeCC irecipe = (IRecipeCC)this.recipes.get(j);
+                IRecipeCC irecipe = (IRecipeCC) this.recipes.get(j);
 
                 if (irecipe.matches(tileEntity, par2World))
-                {
                     return irecipe.getCraftingResult(tileEntity);
-                }
             }
 
             return null;

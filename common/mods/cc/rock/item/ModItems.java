@@ -35,8 +35,8 @@ public class ModItems
         oilCookedDark = new ItemCC(ItemIDs.ID_OIL_COOKED_DARK, Textures.TEX_OIL_DARK).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("oilCookedDark").setMaxStackSize(8);
     	fryingPan = new ItemCC(ItemIDs.ID_FRYING_PAN, Textures.TEX_FRYING_PAN).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("fryingPan");
 		dough = new ItemCC(ItemIDs.ID_DOUGH, Textures.TEX_DOUGH).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("dough").setMaxStackSize(64);
-    	rollingPin1 = new ItemCC(ItemIDs.ID_ROLLING_PIN_1, Textures.TEX_ROLLING_PIN_1).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("rollingPin1").setMaxDamage(10);
-    	rollingPin2 = new ItemCC(ItemIDs.ID_ROLLING_PIN_2, Textures.TEX_ROLLING_PIN_2).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("rollingPin2").setMaxDamage(25);
+    	rollingPin1 = new ItemRollingPin(ItemIDs.ID_ROLLING_PIN_1, Textures.TEX_ROLLING_PIN_1).setUnlocalizedName("rollingPin1").setMaxDamage(10);
+    	rollingPin2 = new ItemRollingPin(ItemIDs.ID_ROLLING_PIN_2, Textures.TEX_ROLLING_PIN_2).setUnlocalizedName("rollingPin2").setMaxDamage(25);
     	
     	registry();
     }

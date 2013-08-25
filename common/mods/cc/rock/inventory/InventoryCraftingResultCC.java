@@ -56,9 +56,7 @@ public class InventoryCraftingResultCC implements IInventory
             return itemstack;
         }
         else
-        {
             return null;
-        }
     }
 
     /**
@@ -74,9 +72,7 @@ public class InventoryCraftingResultCC implements IInventory
             return itemstack;
         }
         else
-        {
             return null;
-        }
     }
 
     /**

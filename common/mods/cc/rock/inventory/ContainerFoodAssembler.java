@@ -18,14 +18,10 @@ public class ContainerFoodAssembler extends Container
     protected TileEntityFoodAssembler tileEntity;
     private World worldObj;
     
-    
     public IInventory craftResult = new InventoryCraftingResultCC();
-
     
     public ContainerFoodAssembler (InventoryPlayer inventoryPlayer, TileEntityFoodAssembler te, World world)
     {
-        
-        
         tileEntity = te;
         this.worldObj = world;
         
@@ -33,8 +29,6 @@ public class ContainerFoodAssembler extends Container
         
         //the Slot constructor takes the IInventory and the slot number in that it binds to
         //and the x-y coordinates it resides on-screen
-        
-        
         
         //circle
         
@@ -55,12 +49,11 @@ public class ContainerFoodAssembler extends Container
         this.addSlotToContainer(new Slot(tileEntity, 7, 40, 39));
         
         
+        //Rolling Pin
+        this.addSlotToContainer(new SlotRollingPin(tileEntity, 8, 143, 146));
         
         
-        
-
-        //commonly used vanilla code that adds the player's inventory
-            
+        //Commonly used vanilla code that adds the player's inventory
         this.bindPlayerInventory(inventoryPlayer);
         
         tileEntity.eventHandler = this;
@@ -68,15 +61,15 @@ public class ContainerFoodAssembler extends Container
         this.onCraftMatrixChanged(this.tileEntity);
     }
     
-    protected void bindPlayerInventory(InventoryPlayer inventoryPlayer) {
+    protected void bindPlayerInventory(InventoryPlayer inventoryPlayer)
+    {
     	//player main inv
-    	for (int i = 0; i < 3; i++) {
-    		for (int j = 0; j < 9; j++) {
-    			
-    			addSlotToContainer(new SlotRefrigerator(inventoryPlayer, j + i * 9 + 9, 8 + j * 18, 174 + i * 18,true));
-    			
-    		}
+    	for (int i = 0; i < 3; i++)
+    	{
+    		for (int j = 0; j < 9; j++)
+    			addSlotToContainer(new SlotRefrigerator(inventoryPlayer, j + i * 9 + 10, 8 + j * 18, 174 + i * 18,true));
         }
+    	
     	//player hotbar
         for (int j = 0; j < 9; ++j)
         {
@@ -95,42 +88,31 @@ public class ContainerFoodAssembler extends Container
     {
 
         ItemStack itemstack = null;
-        Slot slot1 = (Slot)this.inventorySlots.get(slot);
+        Slot slot1 = (Slot) this.inventorySlots.get(slot);
 
         if (slot1 != null && slot1.getHasStack())
         {
             ItemStack itemstack1 = slot1.getStack();
             itemstack = itemstack1.copy();
-
-            if (slot < TileEntityFoodAssembler.INVENTORY_SIZE+1)
+            
+            if (slot < TileEntityFoodAssembler.INVENTORY_SIZE + 1)
             {
-                if (!this.mergeItemStack(itemstack1, TileEntityFoodAssembler.INVENTORY_SIZE+1, this.inventorySlots.size(), true))
-                {
+                if (!this.mergeItemStack(itemstack1, TileEntityFoodAssembler.INVENTORY_SIZE + 1, this.inventorySlots.size(), true))
                     return null;
-                }
             }
-            else if (!this.mergeItemStack(itemstack1, 1, TileEntityFoodAssembler.INVENTORY_SIZE+1, false))
-            {
+            else if (!this.mergeItemStack(itemstack1, 1, TileEntityFoodAssembler.INVENTORY_SIZE + 1, false))
                 return null;
-            }
 
             if (itemstack1.stackSize == 0)
-            {
-                slot1.putStack((ItemStack)null);
-            }
+                slot1.putStack((ItemStack) null);
             else
-            {
                 slot1.onSlotChanged();
-            }
+
             if (itemstack1.stackSize == itemstack.stackSize)
-            {
                 return null;
-            }
 
             slot1.onPickupFromSlot(player, itemstack1);
         }
-        
-        
 
         return itemstack;
     }
@@ -141,13 +123,5 @@ public class ContainerFoodAssembler extends Container
     public void onCraftMatrixChanged(IInventory par1IInventory)
     {
         this.craftResult.setInventorySlotContents(0, CraftingManagerCC.getInstance().findMatchingRecipe(this.tileEntity, this.worldObj));
-        
-        
-        
     }
-    
-    
-
-
-   
 }

@@ -46,11 +46,11 @@ public class SlotRefrigerator extends Slot
 				itemstack.getItem().itemID == Item.rottenFlesh.itemID ||
 				itemstack.getItem().itemID == Item.spiderEye.itemID ||
 				itemstack.getItem().itemID == Item.bucketMilk.itemID ||
-			        itemstack.getItem().itemID == ItemIDs.ID_DOUGH ||
-	                itemstack.getItem().itemID == ItemIDs.ID_OIL_LIGHT ||
-	                itemstack.getItem().itemID == ItemIDs.ID_OIL_DARK ||
-	                itemstack.getItem().itemID == ItemIDs.ID_OIL_COOKED_LIGHT ||
-	                itemstack.getItem().itemID == ItemIDs.ID_OIL_COOKED_DARK;
+		        itemstack.getItem().itemID == ItemIDs.ID_DOUGH ||
+                itemstack.getItem().itemID == ItemIDs.ID_OIL_LIGHT ||
+                itemstack.getItem().itemID == ItemIDs.ID_OIL_DARK ||
+                itemstack.getItem().itemID == ItemIDs.ID_OIL_COOKED_LIGHT ||
+                itemstack.getItem().itemID == ItemIDs.ID_OIL_COOKED_DARK;
 	}
 
 }

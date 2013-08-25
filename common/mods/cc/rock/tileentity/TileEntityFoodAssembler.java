@@ -7,12 +7,14 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.ForgeDirection;
 
+import mods.cc.rock.lib.ItemIDs;
+
 public class TileEntityFoodAssembler extends TileCC implements IInventory
 {
 
     public ItemStack[] inventory;
     
-    public static final int INVENTORY_SIZE = 8;
+    public static final int INVENTORY_SIZE = 9;
     
     public Container eventHandler;
     
@@ -199,7 +201,10 @@ public class TileEntityFoodAssembler extends TileCC implements IInventory
 	@Override
 	public boolean isItemValidForSlot(int i, ItemStack itemstack)
 	{
-		return true;
+	    if (i == 8 && itemstack != null)
+	        return (itemstack.itemID == ItemIDs.ID_ROLLING_PIN_1 || itemstack.itemID == ItemIDs.ID_ROLLING_PIN_2);
+	    else
+	        return !(itemstack.itemID == ItemIDs.ID_ROLLING_PIN_1 || itemstack.itemID == ItemIDs.ID_ROLLING_PIN_2);
 	}
 
 

@@ -4,7 +4,8 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public interface IRecipeCC {
+public interface IRecipeCC
+{
     /**
      * Used to check if a recipe matches current crafting inventory
      */
