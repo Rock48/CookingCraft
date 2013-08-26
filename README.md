@@ -10,18 +10,18 @@ Licenced Under the MMPL
 Planned Features
 ----------------
 
-CookingCraft will be adding and changing many things in Minecraft. It will be totally revamping the aquisiton of food and the reasons behind doing it slowly and efficiently.
+CookingCraft will be adding and changing many things in Minecraft. It will be totally revamping the acquisition of food and the reasons behind doing it slowly and efficiently.
 
 ###Game Mechanic Changes
  - More advanced cooking system
  - 15-25 new foods
- - Ovens, only able to cook food, fast, 3 tiers, each get faster
+ - Ovens, which are only able to cook food and new items, are very fast, 3 tiers, each get faster
  - Food will decay over time
- - Refridgerators - large food storage -- prevents food decay
- - Revamp baking -- Will require making flour/dough -- cook in oven
- 
+ - Refrigerators - large food storage -- prevents food decay
+ - Revamped baking -- Will require making flour/dough -- cook in oven
+
 ###Misc Things
- - Kitchen asthetic blocks
+ - Kitchen aesthetic blocks
 	* Floor Tile
 	* Counter
 	* Multiple wall tiles
