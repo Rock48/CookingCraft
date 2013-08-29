@@ -89,7 +89,6 @@ public class BlockMachineCore extends BlockCC
     {
         return ModBlocks.machineCoreOff.blockID;
     }
-
-
+    
 }
 
