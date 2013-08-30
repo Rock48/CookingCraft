@@ -62,7 +62,12 @@ public class SlotCraftingCC extends SlotCrafting
             }
             
             if (i == 8 && itemstack1 != null && (itemstack1.itemID == ItemIDs.ID_ROLLING_PIN_1 || itemstack1.itemID == ItemIDs.ID_ROLLING_PIN_2) && par2ItemStack.itemID == ItemIDs.ID_DOUGH)
+            {
                 itemstack1.damageItem(1, par1EntityPlayer);
+                
+                if (itemstack1.getItem().getDamage(itemstack1) == itemstack1.getMaxDamage())
+                    this.craftMatrix.decrStackSize(i, 1);
+            }
         }
     }
 }
