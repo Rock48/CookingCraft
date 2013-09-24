@@ -41,7 +41,7 @@ public class GuiFoodAssembler extends GuiContainer
         //draw your Gui here, only thing you need to change is the path
         
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.func_110434_K().func_110577_a(Textures.FOOD_ASS_GUI);
+        this.mc.renderEngine.bindTexture(Textures.FOOD_ASS_GUI);
         
         int x = (width - xSize) / 2;
         int y = (height - ySize) / 2;

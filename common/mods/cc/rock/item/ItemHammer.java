@@ -79,14 +79,14 @@ public class ItemHammer extends ItemCC
 
     //on entity right clicked
     @Override
-    public boolean func_111207_a(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, EntityLivingBase par3EntityLivingBase){
+    public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityPlayer, EntityLivingBase par3EntityLivingBase){
     	
     	if(par3EntityLivingBase instanceof EntityCreeper){
     		//get hp
-    		float tempHp = ((EntityCreeper) par3EntityLivingBase).func_110143_aJ();
+    		float tempHp = ((EntityCreeper) par3EntityLivingBase).getHealth();
     		((EntityCreeper) par3EntityLivingBase).onStruckByLightning(new EntityLightningBolt(par2EntityPlayer.worldObj, 0, 0, 0));
     		((EntityCreeper) par3EntityLivingBase).extinguish();
-    		((EntityCreeper) par3EntityLivingBase).setEntityHealth(tempHp);
+    		((EntityCreeper) par3EntityLivingBase).setHealth(tempHp);
     	
     		return true;
     	}

@@ -34,7 +34,7 @@ public class GuiOven extends GuiContainer{
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.func_110434_K().func_110577_a(Textures.OVEN_GUI);
+        this.mc.renderEngine.bindTexture(Textures.OVEN_GUI);
         int k = (this.width - this.xSize) / 2;
         int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);

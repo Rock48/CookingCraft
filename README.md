@@ -7,6 +7,8 @@ by Rock and Darth
 
 Licenced Under the MMPL
 
+Current Release: N/A for Minecraft 1.6.4
+
 Planned Features
 ----------------
 
