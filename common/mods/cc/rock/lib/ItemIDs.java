@@ -15,5 +15,6 @@ public class ItemIDs
     public static final int ID_DOUGH = 1709;
     public static final int ID_ROLLING_PIN_1 = 1710;
     public static final int ID_ROLLING_PIN_2 = 1711;
+    public static final int ID_CHEF_HAT = 1712;
    
 }

@@ -29,5 +29,6 @@
 	<entry key="item.dough.name">Dough</entry>
 	<entry key="item.rollingPin1.name">Wooden Rolling Pin</entry>
 	<entry key="item.rollingPin2.name">Enhanced Rolling Pin</entry>
+	<entry key="item.chefHat.name">Chef's Hat</entry>
 	
 </properties>

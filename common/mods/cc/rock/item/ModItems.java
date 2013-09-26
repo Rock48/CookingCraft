@@ -3,12 +3,17 @@ package mods.cc.rock.item;
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.lib.ItemIDs;
 import mods.cc.rock.lib.Textures;
+
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
+
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModItems
 {
     
+    //Items
 	public static Item ingotAluminum;
 	public static Item itemHammer;
 	public static Item itemRod;
@@ -21,7 +26,12 @@ public class ModItems
 	public static Item dough;
 	public static Item rollingPin1;
 	public static Item rollingPin2;
+	public static Item chefHat;
 	
+	//Custom Enum Armor Materials -- NTS: The int array is # of armor points {helmet, chestpiece, leggings, boots}
+    public static EnumArmorMaterial BLANK_LOOKS = EnumHelper.addArmorMaterial("LOOKS", -1, new int[] {0, 0, 0, 0}, 0);
+    
+    
 	public static void initItems()
     {
 		
@@ -37,6 +47,7 @@ public class ModItems
 		dough = new ItemCC(ItemIDs.ID_DOUGH, Textures.TEX_DOUGH).setCreativeTab(CookingCraft.tabCC).setUnlocalizedName("dough").setMaxStackSize(64);
     	rollingPin1 = new ItemRollingPin(ItemIDs.ID_ROLLING_PIN_1, Textures.TEX_ROLLING_PIN_1).setUnlocalizedName("rollingPin1").setMaxDamage(5);
     	rollingPin2 = new ItemRollingPin(ItemIDs.ID_ROLLING_PIN_2, Textures.TEX_ROLLING_PIN_2).setUnlocalizedName("rollingPin2").setMaxDamage(15);
+    	chefHat = new ArmorBaseCC(ItemIDs.ID_CHEF_HAT, BLANK_LOOKS, 0, 0).setUnlocalizedName("chefHat").setCreativeTab(CookingCraft.tabCC);
     	
     	registry();
     }

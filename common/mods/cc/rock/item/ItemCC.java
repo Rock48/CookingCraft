@@ -11,19 +11,20 @@ public class ItemCC extends Item
 	public ItemCC(int id, String texture) 
 	{
 		super(id-256);
-		this.texture = texture;
 		this.setMaxStackSize(1);
+		
+		if (texture != null)
+		    this.texture = texture;
 	}
 	
 	public ItemCC(int id)
 	{
-		super(id-256);
-		this.setMaxStackSize(1);
+		this(id, null);
 	}
 	
     public void registerIcons(IconRegister iconRegister)
     {
-    	if(this.texture != null)
-        itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.texture);
+    	if (this.texture != null)
+    	    itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.texture);
     }
 }
