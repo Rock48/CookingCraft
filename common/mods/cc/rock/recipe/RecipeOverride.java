@@ -1,4 +1,4 @@
-package mods.cc.rock.recipie;
+package mods.cc.rock.recipe;
 
 import mods.cc.rock.core.util.LogUtil;
 import mods.cc.rock.core.util.RecipeHelper;

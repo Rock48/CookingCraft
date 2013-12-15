@@ -3,13 +3,14 @@ package mods.cc.rock.inventory;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-
+import mods.cc.rock.item.ItemCookingTool;
 import mods.cc.rock.lib.ItemIDs;
+import mods.cc.rock.recipe.EnumCookingTool;
 
-public class SlotRollingPin extends Slot
+public class SlotCookingTool extends Slot
 {
 
-    public SlotRollingPin(IInventory par1iInventory, int par2, int par3, int par4)
+    public SlotCookingTool(IInventory par1iInventory, int par2, int par3, int par4)
     {
         super(par1iInventory, par2, par3, par4);
     }
@@ -17,7 +18,6 @@ public class SlotRollingPin extends Slot
     @Override
     public boolean isItemValid(ItemStack itemstack)
     {
-        return itemstack.getItem().itemID == ItemIDs.ID_ROLLING_PIN_1 ||
-               itemstack.getItem().itemID == ItemIDs.ID_ROLLING_PIN_2;
+        return itemstack.getItem() instanceof ItemCookingTool;
     }
 }

@@ -20,8 +20,8 @@ public class ContainerRefridgerator extends Container{
         //and the x-y coordinates it resides on-screen
         
         //crafting grid
-        for (int y = 0; y < 9; y++) {
-                for (int x = 0; x < 8; x++) {
+        for (int y = 0; y < 8; y++) {
+                for (int x = 0; x < 9; x++) {
                 		
                         addSlotToContainer(new SlotRefrigerator(tileEntity, sn, 8 + x * 18, 17 + y * 18,false));
                         sn++;

@@ -1,4 +1,4 @@
-package mods.cc.rock.recipie;
+package mods.cc.rock.recipe;
 
 import java.util.Arrays;
 import java.util.HashMap;

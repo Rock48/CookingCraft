@@ -1,4 +1,4 @@
-package mods.cc.rock.recipie;
+package mods.cc.rock.recipe;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;

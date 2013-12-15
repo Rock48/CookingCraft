@@ -3,7 +3,7 @@ package mods.cc.rock.item;
 import mods.cc.rock.CookingCraft;
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.util.GeneralHelper;
-
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityCreeper;
@@ -79,7 +79,7 @@ public class ItemHammer extends ItemCC
 
     //on entity right clicked
     @Override
-    public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityPlayer, EntityLivingBase par3EntityLivingBase){
+    public boolean onLeftClickEntity(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, Entity par3EntityLivingBase){
     	
     	if(par3EntityLivingBase instanceof EntityCreeper){
     		//get hp

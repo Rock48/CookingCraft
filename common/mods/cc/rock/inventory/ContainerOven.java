@@ -1,6 +1,6 @@
 package mods.cc.rock.inventory;
 
-import mods.cc.rock.recipie.OvenRecipes;
+import mods.cc.rock.recipe.OvenRecipes;
 import mods.cc.rock.tileentity.TileEntityOven;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;

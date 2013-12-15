@@ -1,15 +1,13 @@
 package mods.cc.rock.tileentity;
 
 import mods.cc.rock.block.BlockOven;
-import mods.cc.rock.recipie.OvenRecipes;
-
+import mods.cc.rock.recipe.OvenRecipes;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntityFurnace;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

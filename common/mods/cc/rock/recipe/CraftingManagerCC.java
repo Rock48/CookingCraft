@@ -1,4 +1,4 @@
-package mods.cc.rock.recipie;
+package mods.cc.rock.recipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +32,14 @@ public class CraftingManagerCC
     private CraftingManagerCC()
     {
         
-    	addShapelessRecipe(new ItemStack(ModItems.dough), true, new Object[] {ModItems.oilCookedLight,ModItems.oilCookedLight, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, Item.potion});
-        addShapelessRecipe(new ItemStack(ModItems.oilLight, 4), false, new Object[] {Block.plantYellow, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
-        addShapelessRecipe(new ItemStack(ModItems.oilDark, 4), false, new Object[] {Block.plantRed, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
+    	addShapelessRecipe(new ItemStack(ModItems.dough), EnumCookingTool.woodenPin, new Object[] {ModItems.oilCookedLight,ModItems.oilCookedLight, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, ModItems.itemFlour, Item.potion});
+        addShapelessRecipe(new ItemStack(ModItems.oilLight, 4), EnumCookingTool.none, new Object[] {Block.plantYellow, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
+        addShapelessRecipe(new ItemStack(ModItems.oilDark, 4), EnumCookingTool.none, new Object[] {Block.plantRed, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle});
         
     }
     
     //add a shapeless recipe to the food preparation table. max 8 ingredients, pinNeeded: whether rolling pin is needed
-    public void addShapelessRecipe(ItemStack par1ItemStack, boolean pinNeeded, Object ... par2ArrayOfObj)
+    public void addShapelessRecipe(ItemStack par1ItemStack, EnumCookingTool toolNeeded, Object ... par2ArrayOfObj)
     {
         ArrayList arraylist = new ArrayList();
         Object[] aobject = par2ArrayOfObj;
@@ -62,7 +62,7 @@ public class CraftingManagerCC
                 throw new RuntimeException("Invalid Food Preparation Table Recipe!");
         }
 
-        this.recipes.add(new ShapelessRecipeCC(par1ItemStack, arraylist, pinNeeded));
+        this.recipes.add(new ShapelessRecipeCC(par1ItemStack, arraylist, toolNeeded));
     }
 
     public ItemStack findMatchingRecipe(TileEntityFoodAssembler tileEntity, World par2World)

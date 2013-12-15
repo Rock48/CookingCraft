@@ -13,13 +13,10 @@ import mods.cc.rock.item.ModItems;
 import mods.cc.rock.lib.Messages;
 import mods.cc.rock.lib.Reference;
 import mods.cc.rock.network.PacketHandler;
-import mods.cc.rock.recipie.ModRecipies;
+import mods.cc.rock.recipe.ModRecipies;
 import mods.cc.rock.world.OreGen;
-
 import net.minecraft.creativetab.CreativeTabs;
-
 import net.minecraftforge.common.MinecraftForge;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;

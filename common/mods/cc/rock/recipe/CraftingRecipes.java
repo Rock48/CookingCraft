@@ -1,4 +1,4 @@
-package mods.cc.rock.recipie;
+package mods.cc.rock.recipe;
 
 import mods.cc.rock.block.ModBlocks;
 import mods.cc.rock.core.util.RecipeHelper;
@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class CraftingRecipies
+public class CraftingRecipes
 {
 
     public static void init()

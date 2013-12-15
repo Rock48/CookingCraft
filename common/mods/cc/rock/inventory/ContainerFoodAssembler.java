@@ -2,9 +2,8 @@ package mods.cc.rock.inventory;
 
 
 
-import mods.cc.rock.recipie.CraftingManagerCC;
+import mods.cc.rock.recipe.CraftingManagerCC;
 import mods.cc.rock.tileentity.TileEntityFoodAssembler;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -50,7 +49,7 @@ public class ContainerFoodAssembler extends Container
         
         
         //Rolling Pin
-        this.addSlotToContainer(new SlotRollingPin(tileEntity, 8, 143, 146));
+        this.addSlotToContainer(new SlotCookingTool(tileEntity, 8, 143, 146));
         
         
         //Commonly used vanilla code that adds the player's inventory
@@ -67,13 +66,13 @@ public class ContainerFoodAssembler extends Container
     	for (int i = 0; i < 3; i++)
     	{
     		for (int j = 0; j < 9; j++)
-    			addSlotToContainer(new SlotRefrigerator(inventoryPlayer, j + i * 9 + 10, 8 + j * 18, 174 + i * 18,true));
+    			addSlotToContainer(new Slot(inventoryPlayer, j + i * 9 + 9, 8 + j * 18, 174 + i * 18));
         }
     	
     	//player hotbar
         for (int j = 0; j < 9; ++j)
         {
-            this.addSlotToContainer(new SlotRefrigerator(inventoryPlayer, j, 8 + j * 18, 232,true));
+            this.addSlotToContainer(new Slot(inventoryPlayer, j, 8 + j * 18, 232));
         }
     }
     
